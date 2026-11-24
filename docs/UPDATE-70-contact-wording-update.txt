@@ -1,0 +1,5 @@
+UPDATE 70 (v2.37.1): Wording
+
+On the Settings page, the WhatsApp row now says "Contact us on WhatsApp" (it used to say "Message the developer on WhatsApp"). Nothing else changed.
+
+Files: public/js/app.js; public/sw.js (cache v58); package.json; docs.

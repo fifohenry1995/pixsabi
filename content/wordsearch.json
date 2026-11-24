@@ -1,0 +1,700 @@
+[
+  {
+    "id": "ws01",
+    "theme": "Naija cities",
+    "words": [
+      "LAGOS",
+      "ABUJA",
+      "IBADAN",
+      "AKURE",
+      "ABEOKUTA",
+      "BENIN"
+    ],
+    "fact": "Lagos is the biggest city in Nigeria."
+  },
+  {
+    "id": "ws02",
+    "theme": "Naija food",
+    "words": [
+      "JOLLOF",
+      "SUYA",
+      "AMALA",
+      "AKARA",
+      "EBA",
+      "YAM",
+      "EWEDU",
+      "PUPURU",
+      "AGIDI",
+      "SEMO"
+    ],
+    "fact": "Jollof rice is cooked in one pot with a tomato and pepper base."
+  },
+  {
+    "id": "ws03",
+    "theme": "Pidgin talk",
+    "words": [
+      "WAHALA",
+      "ABEG",
+      "OGA",
+      "SABI",
+      "GIST",
+      "JAPA",
+      "PANGOLO",
+      "LAPALAPA",
+      "KROKRO",
+      "YAMAYAMA",
+      "GBESE",
+      "WAZOBIA"
+    ]
+  },
+  {
+    "id": "ws04",
+    "theme": "Naija tribes",
+    "words": [
+      "YORUBA",
+      "IGBO",
+      "HAUSA",
+      "IJAW",
+      "TIV",
+      "EFIK"
+    ],
+    "fact": "Nigeria has more than 250 ethnic groups."
+  },
+  {
+    "id": "ws05",
+    "theme": "Getting around",
+    "words": [
+      "DANFO",
+      "OKADA",
+      "KEKE",
+      "TAXI",
+      "BUS",
+      "ROAD",
+      "AGBERO",
+      "KOROPE",
+      "GOSLOW",
+      "MARUWA",
+      "CHANGE",
+      "CONDUCTOR"
+    ]
+  },
+  {
+    "id": "ws06",
+    "theme": "Money matters",
+    "words": [
+      "NAIRA",
+      "KOBO",
+      "BANK",
+      "POS",
+      "CASH",
+      "TRANSFER",
+      "CHARGES",
+      "DEBIT",
+      "ALERT",
+      "RECEIPT"
+    ],
+    "fact": "The naira is divided into 100 kobo."
+  },
+  {
+    "id": "ws07",
+    "theme": "Rivers and hills",
+    "words": [
+      "NIGER",
+      "BENUE",
+      "OSUN",
+      "KAINJI",
+      "ZUMA",
+      "OBUDU"
+    ],
+    "fact": "The Niger and the Benue meet at Lokoja."
+  },
+  {
+    "id": "ws08",
+    "theme": "Naija music",
+    "words": [
+      "FELA",
+      "DAVIDO",
+      "WIZKID",
+      "TIWA",
+      "ASAKE",
+      "TEMS"
+    ]
+  },
+  {
+    "id": "ws09",
+    "theme": "More cities",
+    "words": [
+      "KADUNA",
+      "OWERRI",
+      "BENIN",
+      "ASABA",
+      "UYO",
+      "YOLA",
+      "SOKOTO"
+    ]
+  },
+  {
+    "id": "ws10",
+    "theme": "Chop time",
+    "words": [
+      "EGUSI",
+      "OGBONO",
+      "MOIMOI",
+      "GARRI",
+      "FUFU",
+      "PLANTAIN",
+      "DODO"
+    ]
+  },
+  {
+    "id": "ws11",
+    "theme": "Naija style",
+    "words": [
+      "ASOEBI",
+      "GELE",
+      "AGBADA",
+      "BUBA",
+      "ANKARA",
+      "ADIRE",
+      "FILA"
+    ],
+    "fact": "Asoebi is the matching cloth worn by family and friends at a party."
+  },
+  {
+    "id": "ws12",
+    "theme": "School days",
+    "words": [
+      "WAEC",
+      "NECO",
+      "JAMB",
+      "NYSC",
+      "UNILAG",
+      "HOSTEL",
+      "LECTURE"
+    ]
+  },
+  {
+    "id": "ws13",
+    "theme": "Street gist",
+    "words": [
+      "NAWAO",
+      "OYA",
+      "SHEBI",
+      "WETIN",
+      "CHOP",
+      "WAKA",
+      "KOLO"
+    ]
+  },
+  {
+    "id": "ws14",
+    "theme": "Football heroes",
+    "words": [
+      "OKOCHA",
+      "KANU",
+      "YEKINI",
+      "OSIMHEN",
+      "EAGLES",
+      "OLISEH",
+      "YOBO"
+    ],
+    "fact": "The national team is called the Super Eagles."
+  },
+  {
+    "id": "ws15",
+    "theme": "Naija jobs",
+    "words": [
+      "TAILOR",
+      "TRADER",
+      "DRIVER",
+      "FARMER",
+      "BUTCHER",
+      "MECHANIC",
+      "TEACHER"
+    ]
+  },
+  {
+    "id": "ws16",
+    "theme": "Festivals and fun",
+    "words": [
+      "DURBAR",
+      "OWAMBE",
+      "SALLAH",
+      "CHRISTMAS",
+      "EASTER",
+      "WEDDING",
+      "PARTY"
+    ]
+  },
+  {
+    "id": "ws17",
+    "theme": "Soup and swallow",
+    "words": [
+      "EBA",
+      "AMALA",
+      "PEPPERSOUP",
+      "EGUSI",
+      "EFO",
+      "OGBONO",
+      "TUWO",
+      "OKRA"
+    ]
+  },
+  {
+    "id": "ws18",
+    "theme": "Northern cities",
+    "words": [
+      "KANO",
+      "KADUNA",
+      "SOKOTO",
+      "KATSINA",
+      "MAIDUGURI",
+      "BAUCHI",
+      "GOMBE",
+      "MINNA"
+    ]
+  },
+  {
+    "id": "ws19",
+    "theme": "Southern cities",
+    "words": [
+      "CALABAR",
+      "WARRI",
+      "ONITSHA",
+      "AWKA",
+      "UMUAHIA",
+      "ABAKALIKI",
+      "BENIN",
+      "UYO"
+    ]
+  },
+  {
+    "id": "ws20",
+    "theme": "Naija animals",
+    "words": [
+      "ELEPHANT",
+      "HIPPO",
+      "MONKEY",
+      "TORTOISE",
+      "PARROT",
+      "EAGLE",
+      "CROCODILE",
+      "TOLOTOLO"
+    ],
+    "fact": "Tortoise is the clever trickster in many Nigerian folktales."
+  },
+  {
+    "id": "ws21",
+    "theme": "Market day",
+    "words": [
+      "HAWKER",
+      "BUKA",
+      "SALON",
+      "TAILOR",
+      "PEPPER",
+      "ONION",
+      "TOMATO",
+      "BEANS"
+    ]
+  },
+  {
+    "id": "ws22",
+    "theme": "Naija languages",
+    "words": [
+      "YORUBA",
+      "IGBO",
+      "HAUSA",
+      "FULANI",
+      "KANURI",
+      "NUPE",
+      "URHOBO",
+      "EDO"
+    ]
+  },
+  {
+    "id": "ws23",
+    "theme": "Naija entertainment",
+    "words": [
+      "NOLLYWOOD",
+      "AFROBEATS",
+      "HIGHLIFE",
+      "JUJU",
+      "FUJI",
+      "AMAPIANO",
+      "COMEDY",
+      "DANCE"
+    ]
+  },
+  {
+    "id": "ws24",
+    "theme": "Weather and seasons",
+    "words": [
+      "HARMATTAN",
+      "RAINY",
+      "DRY",
+      "FLOOD",
+      "SUNSHINE",
+      "DUST",
+      "COOL",
+      "HOT"
+    ],
+    "fact": "The harmattan is a dry, dusty wind from the Sahara that blows in the dry season."
+  },
+  {
+    "id": "ws25",
+    "theme": "Naija snacks",
+    "words": [
+      "PUFFPUFF",
+      "CHINCHIN",
+      "AKARA",
+      "MOINMOIN",
+      "KILISHI",
+      "MASA",
+      "SUYA",
+      "PLANTAIN"
+    ]
+  },
+  {
+    "id": "ws26",
+    "theme": "Famous places",
+    "words": [
+      "ZUMA",
+      "OLUMO",
+      "YANKARI",
+      "OBUDU",
+      "LEKKI",
+      "KAINJI",
+      "ARGUNGU",
+      "OSUN"
+    ]
+  },
+  {
+    "id": "ws27",
+    "theme": "Hard pidgin",
+    "words": [
+      "WAHALA",
+      "JAPA",
+      "AGBERO",
+      "OYINBO",
+      "MAGA",
+      "PIKIN",
+      "GBAM",
+      "SHARP"
+    ]
+  },
+  {
+    "id": "ws28",
+    "theme": "Naija states",
+    "words": [
+      "LAGOS",
+      "OYO",
+      "OGUN",
+      "EKITI",
+      "ONDO",
+      "EDO",
+      "DELTA",
+      "RIVERS",
+      "ENUGU",
+      "ABIA"
+    ]
+  },
+  {
+    "id": "ws29",
+    "theme": "Home and family",
+    "words": [
+      "MUMMY",
+      "DADDY",
+      "AUNTY",
+      "UNCLE",
+      "BROTHER",
+      "SISTER",
+      "COUSIN",
+      "GRANNY"
+    ]
+  },
+  {
+    "id": "ws30",
+    "theme": "Big Naija quiz",
+    "words": [
+      "NIGERIA",
+      "ABUJA",
+      "LAGOS",
+      "NAIRA",
+      "NIGER",
+      "BENUE",
+      "AFRICA",
+      "GREEN",
+      "WHITE"
+    ],
+    "fact": "The Nigerian flag is green, white, green."
+  },
+  {
+    "id": "ws31",
+    "theme": "Final boss",
+    "words": [
+      "JOLLOF",
+      "AFROBEATS",
+      "HARMATTAN",
+      "OKOCHA",
+      "WAHALA",
+      "CALABAR",
+      "NOLLYWOOD",
+      "OWAMBE",
+      "ASOEBI",
+      "DURBAR"
+    ]
+  },
+  {
+    "id": "wbfc7cd20",
+    "theme": "Gospel Musicians",
+    "words": [
+      "JUDIKAY",
+      "VICTORIA",
+      "SINACH",
+      "EBEN",
+      "NOSA",
+      "NATHANIEL",
+      "LAWRENCE"
+    ]
+  },
+  {
+    "id": "w83641ec7",
+    "theme": "Inside Naija",
+    "words": [
+      "DSTV",
+      "NEPA",
+      "AGBERO",
+      "AJEPAKO",
+      "PUREWATER",
+      "OGI",
+      "DODO",
+      "KULIKULI",
+      "MARUWA",
+      "MTN",
+      "MADAM",
+      "BABALAWO",
+      "PRESIDO"
+    ]
+  },
+  {
+    "id": "w91bf8836",
+    "theme": "NAMES",
+    "words": [
+      "CHIDINMA",
+      "FEMI",
+      "YINKA",
+      "ODUNLADE",
+      "TOPE",
+      "KUTI",
+      "ABENI",
+      "OMOTOLA",
+      "BALOGUN",
+      "OKOYE",
+      "LOOKMAN",
+      "AHMED",
+      "CHIOMA",
+      "EFE"
+    ]
+  },
+  {
+    "id": "w1ad5b765",
+    "theme": "PIDGIN",
+    "words": [
+      "GALLOP",
+      "JAMBITE",
+      "OJUJU",
+      "PANGOLO",
+      "MAGUN",
+      "TOTORI",
+      "KOROPE",
+      "OLODO",
+      "HARMATTAN",
+      "EXPO",
+      "AKAMU"
+    ]
+  },
+  {
+    "id": "we163284a",
+    "theme": "BANKS",
+    "words": [
+      "UBA",
+      "ACCESS",
+      "GTB",
+      "STANBIC",
+      "WEMA",
+      "OPAY",
+      "PALMPAY",
+      "MONIEPOINT",
+      "ZENITH"
+    ]
+  },
+  {
+    "id": "w2ca72737",
+    "theme": "BRANDS",
+    "words": [
+      "INDOMIE",
+      "MTN",
+      "AIRTEL",
+      "UNILEVER",
+      "KILIMANJARO",
+      "ITEMSEVENGO",
+      "GOTV"
+    ]
+  },
+  {
+    "id": "wf713646a",
+    "theme": "SCHOOL",
+    "words": [
+      "UNILAG",
+      "FUNAAB",
+      "OAU",
+      "FUTA",
+      "EKPOMA",
+      "LASU",
+      "UNIBEN",
+      "BABCOCK",
+      "COVENANT"
+    ]
+  },
+  {
+    "id": "w076b700a",
+    "theme": "CLERGYMEN",
+    "words": [
+      "ADEBOYE",
+      "OYEDEPO",
+      "AROME",
+      "SELMAN",
+      "IDAHOSA",
+      "ENENCHE",
+      "KUMUYI",
+      "ASHIMOLOWO",
+      "IBIYEOMIE",
+      "JERRY",
+      "IREN"
+    ]
+  },
+  {
+    "id": "w5055aed6",
+    "theme": "big oyinbo",
+    "words": [
+      "ABSORBENT",
+      "LYMPHATIC",
+      "ENTHUSIASM",
+      "METAMATERIAL",
+      "FREQUENCY",
+      "FUNDAMENTAL",
+      "CELESTIAL",
+      "APPETITE"
+    ]
+  },
+  {
+    "id": "wb1eaebca",
+    "theme": "tiktokers",
+    "words": [
+      "PELLER",
+      "TITOKKING",
+      "VERYDARKMAN",
+      "PURPLESPEEDY",
+      "SANDRA",
+      "KIRIKU",
+      "KALU"
+    ]
+  },
+  {
+    "id": "wd2e5b0ac",
+    "theme": "comedian",
+    "words": [
+      "APROKO",
+      "ELENU",
+      "AKPORORO",
+      "SEYILAW",
+      "BASKETMOUTH",
+      "IGOSAVE",
+      "AYOMAKUN",
+      "ALIBABA"
+    ]
+  },
+  {
+    "id": "w435bd50c",
+    "theme": "legend",
+    "words": [
+      "KINGSUNNYADE",
+      "KANAYO",
+      "BAMILOYE",
+      "EDOCHIE",
+      "OKOCHA",
+      "OMOTOLA",
+      "OLUJACOBS",
+      "EBENEZEROBEY"
+    ]
+  },
+  {
+    "id": "w2c8599c5",
+    "theme": "politics",
+    "words": [
+      "CHAIRMAN",
+      "SENATOR",
+      "PRESIDENT",
+      "HONORABLE",
+      "COMMISSIONER",
+      "FIRSTLADY",
+      "SENATE",
+      "EXCELLENCY"
+    ]
+  },
+  {
+    "id": "wb11fe5a2",
+    "theme": "security",
+    "words": [
+      "POLICE",
+      "ARMY",
+      "SOLDER",
+      "INSPECTOR",
+      "AMOTEKUN",
+      "GENERAL",
+      "FRSC",
+      "NAVY",
+      "AIRFORCE"
+    ]
+  },
+  {
+    "id": "wfdac614d",
+    "theme": "clothes",
+    "words": [
+      "KAMPALA",
+      "ANKARA",
+      "SENATOR",
+      "ASOOKE",
+      "ADIRE",
+      "AGBADA",
+      "DANSIKI",
+      "BUBA",
+      "FILA",
+      "GELE"
+    ]
+  },
+  {
+    "id": "wcf8190a4",
+    "theme": "big big oyinbo",
+    "words": [
+      "INADEQUATE",
+      "APPALLING",
+      "ECCENTRIC",
+      "EXORBITANT",
+      "PSYCHOLOGIC",
+      "ANALOGICAL",
+      "CHEMOTHERAPY"
+    ]
+  },
+  {
+    "id": "wea0534f6",
+    "theme": "yoruba musical instrument",
+    "words": [
+      "SHEKERE",
+      "GANGAN",
+      "OMELE",
+      "BAATA",
+      "AGOGO"
+    ]
+  }
+]

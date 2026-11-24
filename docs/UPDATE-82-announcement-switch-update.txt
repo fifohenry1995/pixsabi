@@ -1,0 +1,6 @@
+UPDATE 82 - v2.44.1 - Switch for the race winner announcements
+
+1. Admin page > "Public chat room": new tick box "Race results in chat". Untick it and the game stops posting "A just defeated B, C" lines; tick it to bring them back. It takes effect at once and is saved across restarts.
+2. Lines already in the chat stay until they scroll away or you delete them (Delete on each line).
+
+Files: src/chatlock.js; src/routes/chat.js; src/routes/challenges.js; public/js/admin.js; public/sw.js (cache v70); scripts/chat-test.js, group-test.js; package.json; docs.

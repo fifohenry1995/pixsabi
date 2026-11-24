@@ -1,0 +1,9 @@
+UPDATE 68 (v2.36.2): "Online" counter hidden from players
+
+- The login screen and the top of every game screen now show only "N players" (registered). The green "online" number is gone for everyone except the admin.
+- The admin still sees "N online (only you see this)" on the game screens, and "Online right now" in the Dashboard.
+- The investor report link still shows "Online right now" (investors see everything). Advertiser links never showed it.
+- The numbers are no longer even sent to other players' phones (not just hidden), so nobody can find them by looking at the page's data.
+- The small green dot next to an individual player in private messages, and "Online now" on a player's profile, are unchanged (they show whether that one friend is around). Tell me if you want those hidden too.
+
+Files: src/routes/chat.js, src/routes/auth.js; public/js/app.js; public/sw.js (cache v56); scripts/chat-test.js; package.json; docs.

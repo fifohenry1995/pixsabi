@@ -1,0 +1,9 @@
+UPDATE 41 (v2.17.0): simpler home screen, with left and right buttons on the game cards
+
+- Removed from the home screen: the streak card ("6 day streak" with the week dots and the "Play today's puzzle" button) and the level ladder/journey map with the chest counter.
+  The Daily puzzle is still one tap away on the bottom bar, and levels, progress and the chest are still on each game card and in the game itself.
+- The home screen is now: welcome line, the latest announcement (if any), the three game cards, and the Invite a friend card.
+- The game cards now have a left and a right button. They glide on their own all the time (every 3 seconds, slowly, going round and round).
+  If a player touches or presses a button, the sliding waits 4 seconds and then carries on.
+
+Files: public/js/app.js, public/css/style.css, public/sw.js (cache v30).

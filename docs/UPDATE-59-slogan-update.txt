@@ -1,0 +1,9 @@
+UPDATE 59 (v2.29.1): New slogan on the login page
+
+- "Look. Think. Answer." is now "Play. Learn. Sabi."
+- The little "Naija" and "Universal" labels under the slogan are removed, so the login page is cleaner (the players and online counts stay).
+- Share messages for races and the page description still say "look, think, answer". Tell me if you want those changed to the new slogan too.
+
+NOTHING TO SET UP.
+
+Files: public/js/app.js, public/css/style.css, public/sw.js (cache v47), package.json, docs.

@@ -1,0 +1,9 @@
+UPDATE 43 (v2.18.1): the home game slider is now a true endless slider
+
+- The three game cards now move every 4 seconds: Naija, then Universal, then Word Search, then straight on to Naija again, Universal, and so on,
+  always sliding the same way (no fade, no sliding back). It is slow and smooth (about 1.6 seconds per move).
+- How it works: the first two games are repeated after the last one; when the slide reaches the repeat it quietly jumps back to the real card (they look identical).
+- Swiping by hand or pressing the left and right buttons works the same, including going left from Naija to Word Search.
+  After a touch or button press the automatic sliding waits 4 seconds, then carries on.
+
+Files: public/js/app.js, public/css/style.css, public/sw.js (cache v32).

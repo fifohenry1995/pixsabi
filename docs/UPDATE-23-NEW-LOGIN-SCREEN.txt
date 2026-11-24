@@ -1,0 +1,23 @@
+UPDATE 23: NEW LOGIN SCREEN (v2.4.0)
+
+WHAT CHANGED
+- New login / create-account screen, a blend of the two designs you liked (B and C):
+  * a green hero with a Naija pattern, the big headline "YOU THINK SAY / YOU SABI?", the line "Look. Think. Answer." and your category names as chips (they follow your puzzle categories automatically);
+  * a dark glass login sheet with a pill switch (Log in / Create account), icon fields and a gold button ("Log in" or "Create account and play");
+  * the green-white-green flag stripe along the bottom, and "players / online" counts under the sheet.
+- On laptops (900 px wide and up) the hero sits on the left and the login sheet on the right. On phones they stack, and it fits a 360 x 640 phone without scrolling.
+- The login page has no adverts and uses the full width. Adverts come back after login, as before.
+- Wording: the game no longer says "four pictures" because puzzles can ask questions about the picture. Updated in the login page, the page description shown in search/sharing, the WhatsApp invite text, the screen-reader labels of the puzzle picture, the README and package description. The invite now says "Look, think, answer".
+- The public /api/stats now also returns the category names (used for the chips).
+- Login still works exactly as before (same fields, same checks, same errors).
+
+COPY THESE FILES over your naija-sabi folder (replace the old ones):
+  public/js/app.js  public/js/game.js  public/css/style.css  public/index.html  public/sw.js
+  src/routes/chat.js  scripts/chat-test.js
+  package.json  README.md  docs/CHANGELOG.md  docs/UPDATE-23-NEW-LOGIN-SCREEN.txt
+
+Then restart the server and refresh the browser.
+
+NOT CHANGED
+- Puzzle questions: puzzles are still one collage picture with a word to spell. If you want a question shown above the picture (set from the Admin page), that is a separate update.
+- The admin page still says "the four pictures already joined into one" when you upload a collage. That is only an instruction to you, and is still true for collage puzzles.

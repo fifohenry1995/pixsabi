@@ -1,0 +1,8 @@
+UPDATE 83 - v2.44.2 - Chat announcements name the winner only
+
+1. The chat line is now "Ada [party face] just won a race against 3 other players!". Losers are no longer named or stored, and the crying faces are gone.
+2. Older result lines already in the chat that listed losers now show as "Ada just won a race!" (the losers are dropped from the display).
+3. The admin on/off switch for announcements is removed (not needed). Players can still hide the lines for themselves in Settings > Chat.
+4. Disclaimer and rules wording updated.
+
+Files: src/routes/challenges.js; src/routes/chat.js; src/chatlock.js; public/js/app.js, admin.js; public/css/style.css; public/sw.js (cache v71); pages/disclaimer.html; scripts/chat-test.js, group-test.js; package.json; docs.

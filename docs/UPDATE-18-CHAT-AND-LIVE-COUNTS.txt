@@ -1,0 +1,22 @@
+UPDATE 18: CHAT ROOM AND LIVE PLAYER COUNTS (v2.2.0)
+
+WHAT CHANGED
+- New "Chat" tab (bottom bar): one chat room for every player. Messages show the player's photo and name (tap the name to see their profile) and the time. New messages appear by themselves every few seconds.
+- Live counts: a strip under the top bar on every page shows "players" (everyone registered) and "online" (players seen in the last 2.5 minutes). The login screen shows the same numbers. Online status is kept in memory only, so it needs no database space.
+- Chat rules (built in): plain text only (never shown as HTML, so nobody can inject code), up to 300 letters, no more than 15 messages a minute and 1.5 seconds between messages, the same message twice in a minute is refused, no more than 2 links per message, hidden/control characters are removed. Only the newest 1000 messages are kept.
+- Moderation: admins (the names in content/admin.txt or ADMIN_USER) see "Delete" and "Mute 24h" next to other people's messages. Muting deletes that message and stops that player chatting for 24 hours; admins cannot be muted. Deleted messages disappear from other players' open chat within seconds.
+- New database table "chat" is created automatically on the first start. Nothing to migrate.
+
+COPY THESE FILES over your naija-sabi folder (replace the old ones):
+  src/presence.js (new)  src/routes/chat.js (new)  src/db.js  src/app.js  src/routes/admin.js
+  public/js/app.js  public/css/style.css  public/sw.js
+  scripts/chat-test.js (new)  package.json  README.md  docs/CHANGELOG.md  docs/UPDATE-18-CHAT-AND-LIVE-COUNTS.txt
+
+Then restart the server (Ctrl+C, then npm start).
+Then press Ctrl+F5 once in the browser (phones: close and reopen the page).
+Run npm test if you like: all checks pass.
+
+GOOD TO KNOW
+- The chat checks for new messages every 3 seconds only while someone has the Chat tab open and the page is visible. Every open game also sends one tiny "I am here" ping a minute, which is what "online" counts.
+- If your game is public, people can write anything. Keep an eye on the chat the first days, and tell me if you want a word filter, a report button, or "only players with 10+ solved puzzles can chat".
+- Behind a proxy or host that limits requests per IP, many players on one network share the 300 requests/minute limit in src/app.js. Raise it if a school or office plays together.

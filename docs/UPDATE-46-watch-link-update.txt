@@ -1,0 +1,17 @@
+UPDATE 46 (v2.21.0): watch a race live from a shared link
+
+ANSWER TO A QUESTION: yes, a race ends the moment the first player clears every level. The winner is paid, the others are told who won and stop playing.
+If nobody finishes, it ends after 3 days and the player with the most levels cleared wins.
+
+WATCH LINK
+- In a race lobby, and on the race screen while racing, there are two new buttons: "Share watch link" (WhatsApp) and "Copy watch link".
+- The link looks like https://yoursite/#/watch/CODE. Anyone who opens it must have an account (people who are not logged in are sent to log in or sign up, then land on the race).
+- Watchers see: the race (levels, category, stake and pot), each racer's progress ("7 of 20 levels"), who won and the prizes when it ends, and a screen that refreshes every 4 seconds.
+- Watchers never see the pictures, word searches or answers, and cannot chat or play. If the race is still in the lobby they get a "Join this race instead" button.
+- A racer who opens the watch link goes straight to their own race screen.
+- Only races can be watched (not old-style challenges).
+
+WATCHING COUNTER
+- Racers see "👀 N watching" in the lobby and on the race screen. Each watcher counts once; someone counts while their screen is open (checks in every few seconds).
+
+Files: src/routes/challenges.js, public/js/app.js, public/sw.js (cache v35), scripts/group-test.js (20 checks), package.json, README.md.

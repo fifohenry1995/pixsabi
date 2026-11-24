@@ -1,0 +1,26 @@
+UPDATE 65 (v2.35.0): Watch an advert, get coins (players choose)
+
+WHAT IT IS
+Players who would rather watch an advert than buy coins can do it. They tap "Watch an advert, get 5 coins" in the coins box (the + next to their coins, and anywhere the game says "Buy coins"). The advert plays full screen; when the wait is over the button says "Collect 5 coins". Tapping it closes the advert and the coins are added. Nothing is forced on anybody.
+
+SWITCH IT ON (Admin > "Watch adverts for coins")
+- Tick "Players can watch adverts for coins" and save. It is OFF until you do.
+- You set: coins per advert (default 5), seconds the player must watch (default 10), most adverts per player per day (default 10), seconds to wait between adverts (default 60).
+- It shows how many adverts were watched and how many coins were given.
+
+WHICH ADVERTS
+- The ones in Admin > "Pop-up adverts" (your advertisers' pictures, GIFs and videos). Each now has a box "Use for coin rewards" (ticked by default).
+- An advert can be reward-only: untick "Active (pops up by itself after levels)" and keep "Use for coin rewards" ticked. Adverts take turns.
+- Google AdSense cannot be used for this (AdSense has no reward-for-watching ads for websites), so the AdSense section from update 64 stays off unless you want it for the side slots.
+- If you want adverts ONLY as a reward, untick "Show pop-up adverts" in the Pop-up adverts section.
+
+ANTI-CHEAT
+- The server keeps the clock: coins come only if the full time passed since the advert was sent, so skipping, editing the page or repeating the request does nothing.
+- One claim per advert; one advert at a time per player; daily limit and wait between adverts; the count restarts at midnight Nigeria time.
+- The countdown waits while the player is on another tab.
+- If the picture or video will not load, the advert closes and no coins are given.
+- Premium members can still watch for coins if they want.
+
+NOTHING TO SET UP. Settings are saved in DATA_DIR/rewards.json.
+
+Files: src/rewards.js, src/routes/rewards.js (new); src/app.js, src/routes/admin.js; public/js/app.js, popup.js, admin.js; public/css/style.css; public/sw.js (cache v53); scripts/reward-test.js (12 checks); package.json; docs.

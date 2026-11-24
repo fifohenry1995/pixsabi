@@ -1,0 +1,6 @@
+UPDATE 85 - v2.44.4 - Fix: Admin page showed nothing
+
+A typo I made in public/js/admin.js (a missing closing bracket when the announcement switch was removed in v2.44.2/2.44.3) stopped the whole Admin page from loading. Fixed. The test run now also checks that every script file parses, so a typo like this is caught before you get the files.
+If you installed v2.44.2 or v2.44.3, install this one.
+
+Files: public/js/admin.js; public/sw.js (cache v72); scripts/syntax-test.js (new); package.json; docs.

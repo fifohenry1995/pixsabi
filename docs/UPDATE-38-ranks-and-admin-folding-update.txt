@@ -1,0 +1,21 @@
+UPDATE 38 (v2.15.0): Ranks has Naija, Universal and Word Search; "X passed you" alerts; admin sections fold away
+
+RANKS PAGE
+- The tabs are now just Naija, Universal and Word Search (the Overall and This week tabs are gone). Each tab ranks players by the
+  points they earned in that game. Word Search now has its OWN points: solo word searches and word search races add to it,
+  and they no longer add to the Naija board. Points still add to a player's total (rank title, photo frame, badges) and to the weekly points.
+- Points players already earned in solo word searches before this update are moved from the Naija board to the Word Search board once, automatically.
+- The weekly prizes are NOT removed: they still run (top 3 of the week win 200, 100 and 50 coins, points from every game count).
+  They now show as a "Weekly prizes" card under each board, with the top 3 this week, the player's own weekly rank and the countdown.
+- The page refreshes by itself every 20 seconds while it is open, so when somebody passes another player the list changes
+  without anyone reloading.
+- When a player passes other players on a board, those players get an alert ("Tunde passed you in Naija ranks. Play to take your place back!")
+  in the bell and as a phone notification if they switched that on. To avoid spamming, a player gets at most ONE such alert per board per day,
+  at most 5 players are alerted for one jump, and a player's very first points alert nobody.
+
+ADMIN PAGE
+- Every section (Announcements, Word Search, Help a player, Adverts, Login screen background, Pop-up adverts, Puzzles) is now a folding header.
+  Tap a header to open or close it. "Open all" and "Close all" are at the top. Sections start closed; what you leave open is remembered on that device.
+
+Files: src/db.js (new pts_ws column, added automatically), src/points.js, src/routes/leaderboard.js, src/routes/wordsearch.js,
+public/js/app.js, public/js/admin.js, public/css/style.css, public/css/admin.css, public/sw.js (cache v27), scripts/ranks-test.js (10 checks).

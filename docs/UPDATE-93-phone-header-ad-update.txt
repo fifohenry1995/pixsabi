@@ -1,0 +1,18 @@
+UPDATE 93 - v2.50.0 - AdSense header for phones, smaller buttons
+
+WHAT CHANGED
+1. Phone header ad. The side adverts only fit on laptops, so phones and tablets (screens under 1100px) now get one Google ad in a
+   fixed strip at the top of the game. Admin page > Google AdSense > "Phone header ad": paste an AdSense Display ad code
+   (a small horizontal banner such as 320x50 or 320x100 works best) and save. It shows only while AdSense is ON, is kept apart
+   from the game buttons, is labelled "Advertisement", is never in pop-ups or chat-style screens, and is hidden when the player's
+   Data Saver is on. Laptops are unchanged.
+2. Smaller controls on phones and tablets: letter buttons are 40px high (were square), the gap between the letters and between
+   Reveal / Shuffle / Clue / Skip is smaller, and on short screens the picture grid shrinks a little, so the header ad, letters and
+   hints fit together.
+
+NOTES
+- Keep Auto ads OFF in AdSense. Do not put anything clickable right next to the ad.
+- On very short phones (about 640px tall) the four hint buttons can sit just under the bottom menu until the player scrolls a little.
+
+FILES: src/adsense.js, src/routes/admin.js, public/index.html, public/js/ads.js, public/js/admin.js, public/css/ads.css,
+public/css/style.css, public/sw.js (cache v78), scripts/adsense-test.js (12 checks), package.json (2.50.0).

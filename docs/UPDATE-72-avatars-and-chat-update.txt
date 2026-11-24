@@ -1,0 +1,8 @@
+UPDATE 72 (v2.39.0): Avatars instead of photos, 200-message chat, pinned messages
+
+1. No more photo uploads (they used disk space). Players now pick a display picture from a built-in set: 4 men and 4 women (vector icons in different skin tones, hair and colours) and 6 animated faces (happy, cool, laughing, in love, star eyes, winking). They are drawn in the browser, so they use no storage: the server saves only a short key. The picker is on the Me page ("Choose a picture"). Players who had uploaded a photo keep it until they pick a picture; picking one (or removing) deletes the old photo file. Animations stop for people who turn on "reduce motion" on their phone.
+2. The public chat keeps only the latest 200 messages (it was 1000). Private messages are still kept for 90 days.
+3. Admins can pin admin messages (Pin / Unpin on the message, up to 3 at a time). Pinned messages show in a bar at the top of the chat for everybody and are never cleared, until unpinned or deleted.
+4. Admins can delete announcements: on the admin page (as before) and now also with a "Delete announcement" button on the Announcements page.
+
+Files: src/avatars.js (new); public/js/avatars.js (new); src/db.js; src/routes/profile.js; src/routes/chat.js; public/js/app.js; public/css/style.css; public/index.html; public/sw.js (cache v60); scripts/profile-test.js; scripts/chat-test.js; package.json; docs.

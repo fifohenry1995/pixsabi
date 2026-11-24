@@ -1,0 +1,10 @@
+UPDATE 24 (v2.5.0): blurred sliding login background
+
+The login screen can now show blurred pictures that slowly slide and fade behind the form.
+
+- Admin page > "Login screen background": up to 8 pictures (landscape, about 1280 wide). Choosing a file saves it at once. Remove any picture with its button.
+- With no pictures, the plain green design shows as before.
+- Puzzle pictures are NOT used on purpose: the login page is public, and showing puzzle pictures would give answers away. Upload separate pictures (streets, food, markets, landmarks) that you own or have the right to use.
+- Slides change every 6 seconds; they stay still for people who set "reduce motion", and pause while the tab is hidden.
+- Files are saved in content/loginbg/ (1.jpg ... 8.jpg). Public routes: /api/loginbg and /bg/1 ... /bg/8. Admin routes: /api/admin/loginbg.
+- Optional env LOGINBG_DIR keeps the pictures elsewhere. Back up content/loginbg with your other content folders.

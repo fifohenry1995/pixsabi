@@ -1,0 +1,11 @@
+UPDATE 67 (v2.36.1): Quiz report sheet for the host
+
+- The host of a quiz (and the admin) can download a report sheet any time, and it is most useful once the quiz has ended or been closed. Two places: a new "Report sheet" button in Host controls on the quiz page, and "Download report sheet" on the Results page.
+- The sheet opens in Excel, Google Sheets or any spreadsheet app (a .csv file named quiz-CODE-report.csv). It has:
+  * the quiz title, code, how many players started and finished;
+  * one row per player: rank, name, finished or not, questions answered, score, number correct, total seconds, and Right/Wrong for every question (Q1, Q2, ...);
+  * a second table: each question, how many players got it right, how many reached it, and the percent right.
+- Names that start with = + - or @ are made safe so a spreadsheet can never run them as a formula; accents and emoji in names show correctly in Excel.
+- Players never see this sheet and it contains no emails.
+
+Files: src/routes/quiz.js; public/js/app.js; public/sw.js (cache v55); scripts/quiz-test.js; package.json; docs.

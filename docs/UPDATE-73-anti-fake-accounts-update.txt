@@ -1,0 +1,8 @@
+UPDATE 73 (v2.40.0): Protection against fake accounts and coin farming
+
+1. Email confirmation. When email sending is set up (RESEND_API_KEY + MAIL_FROM), every new account is emailed a confirmation link (works 3 days; opens #/verify/...). Until the player opens it they can play normally, but they cannot host or join staked races, collect weekly coin prizes, or earn or give invite coins. A reminder bar with "Send the link again" (one a minute) shows until they confirm. Changing the email on the Me page asks for confirmation again and the old link stops working. Players who joined before this update are not affected. With no email sending set up, nothing is blocked. Set EMAIL_VERIFY=off to switch the feature off.
+2. Invite coins: the friend must have confirmed their email, and an inviter is now paid for at most 5 friends a day (on top of the existing 20 in total). The friend still gets their own coins.
+3. Cloudflare Turnstile on sign-up (free "I am human" check). Off until you set TURNSTILE_SITE_KEY and TURNSTILE_SECRET_KEY on Railway (from dash.cloudflare.com > Turnstile, add your site's domain). When on, sign-up needs the check; if Cloudflare cannot be reached, sign-up is refused with a "try again" message. The secret key never leaves the server.
+Weekly prizes skipped for an unconfirmed player are not given to the next player.
+
+Files: src/verify.js (new); src/turnstile.js (new); src/app.js; src/routes/auth.js; src/routes/invites.js; src/routes/challenges.js; src/routes/chat.js; src/weekly.js; public/js/app.js; public/css/style.css; public/sw.js (cache v61); scripts/verify-test.js (new); scripts/account-test.js; package.json; README.md; docs.

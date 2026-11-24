@@ -1,0 +1,18 @@
+UPDATE 28 (v2.9.0): giving points a purpose
+
+1. RANK TITLES (from total points). Newcomer 0, Learner 300, Sabi Person 1,000, Gist Master 2,500, Oga Sabi 5,000, Area Champion 8,000, Naija Legend 12,000.
+   Shown on the Me page (with a progress bar to the next title), on profiles, in chat (a small icon next to the name) and on the leaderboards.
+   Edit the numbers or add titles in src/titles.js (add higher ones as you add more puzzles).
+2. WEEKLY LEADERBOARD WITH COIN PRIZES. The week runs Monday 00:00 to Sunday 23:59 Lagos time. When it ends the top 3 get coins: 1st 200, 2nd 100, 3rd 50
+   (players need at least 100 points that week to qualify). The winners get an alert and the coins at once, and the first place gets the "Weekly champion" badge.
+   The week is paid exactly once (recorded in the database), also after a restart. If the server was off for more than a week, only the latest finished week can be paid.
+   Change prizes and the minimum in src/weekly.js (PRIZES, MIN_POINTS).
+3. PER-CATEGORY LEADERBOARDS. The Ranks page now has four tabs: Overall, This week, Naija, Universal. Points are counted per category (from solo, the daily puzzle and races).
+   Players from before this update get their Naija and Universal totals worked out automatically the first time the new version starts.
+4. PHOTO FRAMES AND BADGES. The frame around a player's photo changes colour with their title (bronze, silver, gold, glowing gold, green glow, and the green-white-green Legend frame).
+   Badges on the Me page (locked ones are greyed with how to earn them) and on other players' profiles (earned only):
+   First race win, 10 race wins, 7-day streak, 30-day streak, Naija 25, Naija 100, Universal 10, Universal 50, Weekly champion. Edit in src/titles.js.
+
+Still true: points cannot be spent and never go down, so rankings stay about skill. Coins are separate.
+Technical: new files src/points.js (adds points everywhere), src/titles.js, src/weekly.js; users table gets 4 new columns (added automatically on start); scripts/ranks-test.js (8 checks).
+Anti-cheat note: weekly prizes are small and need 100 points, but several accounts owned by one person can still each earn them. Watch the weekly winners for repeat names.

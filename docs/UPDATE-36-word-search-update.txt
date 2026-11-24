@@ -1,0 +1,31 @@
+UPDATE 36 (v2.13.0): WORD SEARCH, a new game mode
+
+WHAT PLAYERS SEE
+- A third tab "Word Search" next to Naija and Universal on the home screen and the play screen.
+- Home shows a Word Search card (theme, number of words, a peek at the grid) and a big Play button.
+- The puzzle: a grid of letters and a list of words underneath. The player drags a finger over a word to find it. Found words
+  turn colour and are struck off the list. Words run across and down at first; slanted words come from level 7; backwards words from level 25.
+  The grid grows from 8x8 to 12x12 as levels go up. Leaving the screen keeps what the player found.
+- Hints: "Mark a first letter" (15 coins) rings the first letter of one word. "Reveal a word" (30 coins) finds one word.
+- Finishing a level: points (20 per word, minus 10 per first-letter hint and 20 per revealed word, never below 40% of the full score),
+  +10 coins, a treasure chest with +25 coins on every 10th word search, a fun fact if you wrote one, and a WhatsApp share button.
+- Word Search points count toward the player's total points, the Naija points and the weekly ranks (so it feeds the Ranks page).
+
+WHAT YOU DO (admin page, new "Word Search" section)
+- Type a theme and the words to find (separated by spaces or commas, letters only, 3 to 12 letters each, 4 to 14 words) and tap
+  "Add word search". The game makes the letter grid itself. New ones go to the END of the list and are live straight away.
+- Edit changes the theme or words. Delete removes one: players on it move to the next one, and the levels after it shift up by one.
+- 31 starter word searches are included (content/wordsearch.json).
+
+RAILWAY: add one more variable: WORDSEARCH_FILE = /data/content/wordsearch.json (the first start copies the 31 starters there once;
+after that the admin page edits that copy). Locally nothing needs to be set.
+
+Notes
+- Players are never stuck: if the admin deletes the level a player is on, the game says "The admin just updated the word search"
+  and loads the next one.
+- Word Search is not part of races or the daily puzzle. There is no skip button: a level can only be finished, or deleted by you.
+- Dragging works with a finger or a mouse. Screen readers cannot play it yet.
+
+Files: src/wordsearch.js (grid maker), src/routes/wordsearch.js, src/routes/admin.js, src/app.js, src/db.js unchanged, public/js/app.js,
+public/js/admin.js, public/css/style.css, public/sw.js (cache v25), scripts/seed-volume.js, scripts/wordsearch-test.js (7 checks),
+content/wordsearch.json, docs/DEPLOY-RAILWAY.md.

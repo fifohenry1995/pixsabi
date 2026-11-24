@@ -1,0 +1,6 @@
+UPDATE 53 (v2.26.1): Small tidy-up after the bug check
+
+- The Naija, Universal, Word Search and Slide Puzzle screens no longer ask the server for the list of games (the tabs that used it are gone), so they open with one less request. The unused tab code was removed.
+- Dashboard: "Players who bought coins", its percentage and "Average coin purchase" now count coin orders only. Premium buyers are shown separately in the Premium numbers. Sales totals still include both.
+
+NOTHING TO SET UP. Files: public/js/app.js, dash.js, src/stats.js, public/sw.js (cache v42), package.json, docs.

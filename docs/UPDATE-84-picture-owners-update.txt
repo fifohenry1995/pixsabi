@@ -1,0 +1,6 @@
+UPDATE 84 - v2.44.3 - Picture owners section on the Disclaimer
+
+Disclaimer page: new "Pictures and copyright" section. Says pictures are AI-made, our own, or found online; we claim no ownership of others' pictures; owners can email {{CONTACT_EMAIL}} (subject "Picture removal") with name, where it appears, proof of ownership and a true-statement; we review and usually remove within a few days. Admin removes a picture from Admin > puzzles (delete the puzzle and the picture file).
+IMPORTANT: this text does not by itself protect against a copyright claim. Best protection: replace pictures taken from Instagram/Pinterest with AI-made, own or licensed ones over time, answer every owner email quickly, and have a Nigerian lawyer read the page. Check your contact email works.
+
+Files: pages/disclaimer.html; package.json; docs.

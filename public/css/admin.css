@@ -1,0 +1,82 @@
+/* Admin page only. Uses the colours from style.css. */
+.adm { max-width: 860px; margin: 0 auto; padding: 16px 16px 120px; }
+.adm h1 { font-family: var(--serif); color: var(--gold); margin: 0; font-size: 1.6rem; }
+.adm-top { display: flex; align-items: center; justify-content: space-between; gap: 12px; flex-wrap: wrap; margin-bottom: 14px; }
+.adm-top a { color: var(--lav); font-weight: 700; }
+.adm-tools { display: grid; grid-template-columns: 1fr; gap: 10px; margin-bottom: 12px; }
+@media (min-width: 620px) { .adm-tools { grid-template-columns: 1fr 200px auto; align-items: end; } }
+.adm-summary { color: var(--muted); margin: 4px 0 12px; }
+.adm-list { display: grid; gap: 10px; }
+.adm-item { display: grid; grid-template-columns: 96px 1fr; gap: 12px; padding: 10px; }
+.adm-item .adm-thumb { width: 96px; height: 96px; border-radius: 12px; background: rgba(0, 0, 0, 0.25); border: 1.5px solid var(--lav-soft); display: grid; place-items: center; overflow: hidden; text-align: center; font-size: 0.75rem; color: var(--red); font-weight: 700; padding: 4px; }
+.adm-item .adm-thumb img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.adm-answer { font-family: var(--serif); font-size: 1.25rem; font-weight: 800; letter-spacing: 0.08em; color: var(--text); }
+.adm-pill { display: inline-block; font-size: 0.75rem; font-weight: 800; padding: 2px 9px; border-radius: 999px; background: rgba(245, 197, 66, 0.16); color: var(--gold-hi); border: 1px solid rgba(245, 197, 66, 0.4); margin-left: 8px; letter-spacing: 0; vertical-align: middle; }
+.adm-line { color: var(--muted); font-size: 0.92rem; margin: 2px 0; overflow-wrap: anywhere; }
+.adm-line b { color: var(--lav); }
+.adm-actions { display: flex; gap: 8px; margin-top: 8px; flex-wrap: wrap; }
+.btn.danger { background: rgba(255, 122, 122, 0.14); color: var(--red); border-color: rgba(255, 122, 122, 0.5); box-shadow: 0 4px 0 rgba(5, 0, 20, 0.5); }
+.adm-form-img { width: 100%; max-height: 260px; object-fit: contain; border-radius: 12px; border: 1.5px solid var(--lav-soft); background: rgba(0, 0, 0, 0.25); margin-top: 8px; display: block; }
+.adm-note { font-size: 0.85rem; color: var(--gold-hi); margin: 6px 0 0; }
+.adm-hint { font-size: 0.85rem; color: var(--muted); margin: 4px 0 0; }
+.adm-dialog { max-height: 92vh; overflow-y: auto; max-width: 560px; }
+.adm-dialog h2 { margin-top: 0; font-family: var(--serif); color: var(--gold); }
+.adm-dialog .row-end { display: flex; gap: 10px; justify-content: flex-end; margin-top: 16px; flex-wrap: wrap; }
+.adm-msg { text-align: center; padding: 40px 10px; }
+
+/* adverts section */
+.adm-ads h2, .adm-h2 { font-family: var(--serif); color: var(--gold); margin: 18px 0 6px; font-size: 1.25rem; }
+.adm-ad-grid { display: grid; grid-template-columns: 1fr; gap: 12px; margin-bottom: 8px; }
+@media (min-width: 620px) { .adm-ad-grid { grid-template-columns: 1fr 1fr; } }
+.adm-ad .field + .field { margin-top: 8px; }
+.adm-ad-prev { width: 100%; aspect-ratio: 1 / 1; max-width: 220px; margin: 8px 0; border-radius: 14px; border: 1.5px solid var(--lav-soft); background: rgba(0, 0, 0, 0.25); display: grid; place-items: center; overflow: hidden; color: var(--muted); font-weight: 700; }
+.adm-ad-prev img { width: 100%; height: 100%; object-fit: cover; display: block; }
+
+/* pop-up adverts section */
+.adm-ad-prev.wide { aspect-ratio: auto; max-width: 100%; min-height: 120px; }
+.adm-ad-prev.wide img, .adm-ad-prev.wide video { width: 100%; height: auto; max-height: 240px; object-fit: contain; display: block; }
+.adm-check { display: flex; align-items: center; gap: 10px; }
+.adm-check label { margin: 0; }
+.adm-check input[type="checkbox"] { width: 22px; height: 22px; accent-color: var(--gold); }
+
+.adm-h3 { font-family: var(--serif); color: var(--lav); margin: 14px 0 6px; font-size: 1.05rem; }
+@media (min-width: 900px) { .adm-ad-grid { grid-template-columns: repeat(3, 1fr); } }
+
+.adm-ann { display: flex; align-items: center; justify-content: space-between; gap: 12px; padding: 8px 0; border-bottom: 1px solid rgba(255,255,255,0.12); }
+.adm-ann-list { margin-top: 6px; }
+
+/* folding sections */
+.adm-foldbar { display: flex; gap: 8px; margin-bottom: 10px; }
+.adm-ads { border-bottom: 1px solid var(--lav-soft); }
+.adm-ads h2 { margin: 0; }
+.adm-fold { display: flex; align-items: center; gap: 10px; width: 100%; padding: 14px 4px; background: transparent; border: 0; color: var(--gold); font: inherit; font-weight: 700; text-align: left; cursor: pointer; }
+.adm-fold:focus-visible { outline: 2px solid var(--gold-hi); outline-offset: 2px; }
+.adm-arrow { width: 0; height: 0; border-left: 7px solid currentColor; border-top: 5px solid transparent; border-bottom: 5px solid transparent; transition: transform 0.12s; flex: none; }
+.adm-fold.open .adm-arrow { transform: rotate(90deg); }
+.adm-body { padding: 0 0 18px; }
+.adm-body[hidden] { display: none; }
+@media (prefers-reduced-motion: reduce) { .adm-arrow { transition: none; } }
+.adm-thumb { width: 56px; height: 56px; flex: none; border-radius: 10px; overflow: hidden; background: rgba(0,0,0,0.3); display: flex; align-items: center; justify-content: center; font-size: 0.65rem; }
+.adm-thumb img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.adm-toplinks a.btn { color: #2a1068; }
+
+/* sponsor winner check */
+.adm-check-box { margin: 8px 0; padding: 10px 12px; border-radius: 12px; border: 1px solid var(--gold-deep, #b9861a); background: rgba(245, 197, 66, 0.08); display: grid; gap: 6px; }
+.adm-flags { margin: 0; padding-left: 18px; color: #ffcf7a; font-weight: 700; font-size: 0.88rem; }
+
+.adm-gads textarea { width: 100%; font: 0.8rem/1.3 ui-monospace, monospace; }
+.adm-hint code { word-break: break-all; }
+
+.adm-req { border-top: 1px solid rgba(255,255,255,0.15); padding: 8px 0; }
+.adm-req.done { opacity: 0.55; }
+
+.adm-temp { font-size: 1.3rem; letter-spacing: 0.08em; background: #111; color: #f5c542; padding: 2px 8px; border-radius: 6px; user-select: all; }
+
+.adm-facts { background: rgba(255,255,255,0.06); border-radius: 10px; padding: 8px 10px; margin: 6px 0; font-size: 0.85rem; }
+.adm-facts p { margin: 2px 0; }
+.adm-facts .row { margin-top: 6px; align-items: center; }
+.adm-hint.ok { color: #6be08a; font-weight: 700; }
+
+.btn.danger { background: #b3261e; color: #fff; }
+
+.wm-prev { width: 100%; max-width: 320px; border-radius: 10px; display: block; }

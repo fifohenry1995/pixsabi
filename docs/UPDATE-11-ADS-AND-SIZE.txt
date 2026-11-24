@@ -1,0 +1,11 @@
+SIX ADVERTS + BIGGER PUZZLE (v1.8.1)
+
+Copy these files over your naija-sabi folder (replace the old ones):
+  src/ads.js  src/app.js  src/routes/admin.js
+  public/index.html  public/js/ads.js  public/js/admin.js
+  public/css/ads.css  public/css/style.css  public/css/admin.css
+  scripts/admin-test.js  package.json  README.md  docs/CHANGELOG.md
+
+Then run: npm test and npm start. Press Ctrl+F5 once in the browser.
+Admin page > Adverts now has Left side (1 to 3) and Right side (4 to 6).
+Your existing adverts 1 and 2 stay on the left.

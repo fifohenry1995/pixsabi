@@ -1,0 +1,9 @@
+UPDATE 88 - v2.47.0 - Naija pictures for sliding puzzles, and a watermark
+
+1. Sliding puzzle can use a picture from the Naija game. Admin > Sliding puzzle > "Or use a picture from the Naija game": type a Naija answer, pick the grid size, press "Use this picture". Nothing new is stored: the level shares the Naija puzzle's picture. The title and fun fact are filled from that puzzle (you can edit them). Those pictures need a login to view, like the Naija ones. If you rename the Naija puzzle, the level follows it; if you delete it, the level is skipped and shows as "picture missing".
+2. Watermark. New Admin > Watermark section. Type the text (up to 30 characters; empty = off). It is printed small in the bottom right of every puzzle picture, sliding puzzle picture and game card photo you upload on the Admin page, so it stays on the file if someone saves it. A live preview shows how it looks. Default text: "Sabi Naija". Sponsor adverts, pop-ups, logos and login backgrounds are NOT stamped.
+3. "Add the watermark to my existing pictures": a one-time button that stamps all puzzle and sliding pictures saved before today (originals are replaced; keep the page open; has a Stop button). Pictures saved after the watermark started are skipped. Running it a second time asks for confirmation, because it would stamp twice.
+4. Changing the text only affects pictures uploaded afterwards (the old text stays on old pictures). A watermark in the corner can be cropped out by someone determined: it discourages casual copying, it does not make copying impossible.
+5. Sliding puzzle pictures are cut into pieces; the corner piece with the watermark is the gap while playing and shows when the puzzle is finished.
+
+Files: src/watermark.js (new); src/slide.js; src/app.js; src/routes/admin.js; public/js/admin.js; public/css/admin.css; public/sw.js (cache v75); scripts/naijapic-test.js (new); package.json; docs.

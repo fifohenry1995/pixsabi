@@ -1,0 +1,6 @@
+UPDATE 95 - v2.50.2 - Player count only in chat, slimmer game top line
+
+- The line with the number of registered players (and, for the admin, players online) is removed from every page except the public chat room, where it stays above the messages. The dashboard still shows the numbers. The space the line used is gone.
+- Game page (phones): the top line with the game name and level (for example "Naija ... LEVEL 6") now uses smaller text, less space around it, and the level is plain text with no shape around it.
+
+FILES: public/js/app.js, public/css/style.css, public/sw.js (cache v80), package.json (2.50.2).

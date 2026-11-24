@@ -1,0 +1,13 @@
+UPDATE 26 (v2.7.0): two categories, Naija and Universal
+
+- The game now has exactly two categories: Naija (for Nigeria) and Universal (for everybody in every country). Food, Places, Stars and the other old categories are gone from what players see.
+- A Naija / Universal switch on the Play page. Anybody can switch at any time; the game remembers the last choice on that device.
+- Separate levels: each category has its own level counter and its own puzzles. Skipping and hints stay inside the category. The Me page and other players' profiles show a Naija level and a Universal level.
+- Coins and points are shared (one wallet, one total score).
+- Races: the host picks Naija or Universal (no more "mix of everything"). A race needs at least 20 puzzles in its category, and the most levels you can choose is the number of puzzles in that category. Race and invite screens show the category as before.
+- Universal starts empty. Until you add puzzles, players see "Universal puzzles are coming soon" and Universal is greyed out when creating a race. It becomes playable as you add puzzles in the admin page, and raceable at 20 puzzles.
+- Admin page: the Category box is now a choice of Naija or Universal. Add your Universal puzzles there (plain English, nothing only Nigerians would know).
+- Your existing 104 puzzles all became Naija. The old category (Food, Places, ...) is kept quietly as a "topic" note in content/puzzles.json, so nothing is lost. If you keep your own puzzles.json on your server, you do NOT have to replace it: any other category name plays as Naija automatically.
+- The Daily puzzle is still one puzzle a day for everyone, picked from all puzzles.
+- Leaderboard is still one overall ranking. Per-category rankings could be added later.
+- Tests: new scripts/worlds-test.js (4 checks); older tests updated.

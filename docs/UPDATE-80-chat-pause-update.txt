@@ -1,0 +1,8 @@
+UPDATE 80 - v2.43.0 - Admin can pause the public chat room
+
+1. Admin page > "Public chat room": Pause chat for 15 minutes, 1 hour, 6 hours, 1 day or until you open it, with an optional message players see.
+2. While paused, players can read the room but cannot write or edit there; they can still delete their own messages. Admins can still write. Private messages are not affected.
+3. Players see "Chat is paused by the admin" with your message and the time it reopens, and the box is switched off. A timed pause ends by itself.
+4. The pause is saved, so it survives a restart.
+
+Files: src/chatlock.js (new); src/routes/chat.js; public/js/app.js; public/js/admin.js; public/sw.js (cache v68); scripts/chat-test.js; package.json; docs.

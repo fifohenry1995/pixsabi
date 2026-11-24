@@ -1,0 +1,43 @@
+/* Advert panels: up to three pictures on each side of the game, wide screens only.
+   Each picture is as big as the screen allows: limited by the free width beside the game
+   (the game column is 600px) and by the height, so all of a side's pictures stay in view. */
+.ads { display: none; }
+@media (min-width: 1100px) {
+  .ads.has {
+    --n: 3;
+    --adw: clamp(160px, min(calc((100vw - 600px) / 2 - 36px), calc((100vh - 170px - (var(--n) - 1) * 12px) / var(--n))), 340px);
+    display: flex; flex-direction: column; gap: 12px;
+    position: fixed; top: 80px; width: var(--adw); z-index: 2;
+  }
+  .ads.left.has  { left: calc(50% - 300px - 24px - var(--adw)); }  /* just left of the centred game column */
+  .ads.right.has { right: calc(50% - 300px - 24px - var(--adw)); } /* just right of it */
+}
+.ad {
+  position: relative; display: block; width: 100%; aspect-ratio: 1 / 1; border-radius: 18px; overflow: hidden;
+  border: 1.5px solid var(--lav-soft); background: rgba(12, 4, 32, 0.6); box-shadow: 0 12px 34px rgba(5, 0, 20, 0.45);
+}
+a.ad:hover { border-color: var(--gold); }
+.ad img { display: block; width: 100%; height: 100%; object-fit: cover; }
+.ad-tag {
+  position: absolute; top: 6px; left: 6px; font: 700 0.6rem/1 system-ui, sans-serif; letter-spacing: 0.08em; text-transform: uppercase;
+  padding: 3px 6px; border-radius: 6px; background: rgba(12, 4, 32, 0.72); color: var(--lav);
+}
+
+/* Google AdSense units: sized by AdSense, with a small label above (never on top of the ad) */
+.ad.adsense { aspect-ratio: auto; min-height: 250px; overflow: hidden; background: rgba(255, 255, 255, 0.04); }
+.ad-label { display: block; padding: 4px 8px; font: 700 0.6rem/1 system-ui, sans-serif; letter-spacing: 0.08em; text-transform: uppercase; color: var(--lav); text-align: center; }
+.ad.adsense ins.adsbygoogle { min-height: 220px; width: 100%; }
+
+/* Phone header ad: one strip at the top of the page on screens narrower than the side panels (under 1100px).
+   Space is kept for it so the game does not jump, and there is clear room below it so it is never close to a button. */
+.ad-mobile { display: none; }
+@media (max-width: 1099px) {
+  .ad-mobile.has { display: block; width: 100%; max-width: 600px; margin: 0 auto; padding: 2px 8px 6px; position: relative; z-index: 1; }
+  .ad-mobile .ad.adsense { min-height: 0; max-height: 120px; width: 100%; border: 0; box-shadow: none; background: none; border-radius: 10px; margin: 0 auto; text-align: center; }
+  .ad-mobile .ad.adsense ins.adsbygoogle { min-height: 50px; width: 100%; }
+  .ad-mobile .ad-label { padding: 2px 6px; }
+}
+
+/* Banner on the finished race results page: clear space above and below, never beside a button */
+.results-ad { margin: 22px auto; max-width: 600px; }
+.results-ad .ad.adsense { min-height: 0; max-height: 300px; border: 0; box-shadow: none; background: none; text-align: center; }

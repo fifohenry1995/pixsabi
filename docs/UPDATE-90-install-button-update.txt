@@ -1,0 +1,10 @@
+UPDATE 90 - v2.48.0 - "Install Sabi Naija" buttons
+
+The game could already be installed as a web app (manifest, icons, offline page) and showed a small bar at the bottom ("Install Sabi Naija on your phone", with an iPhone hint). New:
+1. Settings: an "Install the game" card at the very top, above Sound / Theme song and Contact and follow us. The "Install Sabi Naija" button opens the browser's install window. If the browser has not offered installing (for example Safari on iPhone, or Chrome has not decided yet), the card shows how to do it by hand: iPhone "Share, then Add to Home Screen"; Android "browser menu, then Install app or Add to Home screen".
+2. Home: a "Get the app" card under "Invite a friend", shown once the player has closed the bottom bar (so there is never a double ask).
+3. Both cards disappear (Home) or say "installed" (Settings) once the game runs as an installed app.
+4. One shared install helper now (public/js/pwa.js, NS.install), so the browser's install window cannot open twice.
+Not a Play Store app: for that see the Android plan (TWA/Capacitor) discussed earlier. Installing only needs the website; there is no extra storage cost.
+
+Files: public/js/pwa.js; public/js/app.js; public/css/style.css; public/sw.js (cache v76); package.json; docs.

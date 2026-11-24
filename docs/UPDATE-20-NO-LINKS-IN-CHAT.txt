@@ -1,0 +1,13 @@
+UPDATE 20: NO LINKS IN CHAT, CHALLENGE CODES ONLY (v2.2.2)
+
+- The chat now refuses every kind of link, so nobody can post spam or scam links: http/https, www, "site.com", "site(.)com", "site dot com", emails, t.me / wa.me / bit.ly and WhatsApp group invites. The player sees: "Links are not allowed in chat. You can share a challenge code instead."
+- Ordinary sentences are not affected ("I scored 3.5", "ok. net worth...", "jollof rice is life.").
+- Challenge codes ARE allowed. When a message contains the code of a real race that can still be joined, the chat shows a "Join race ABC234: 30 levels, 20 coin stake (1/2)" button under it. Tapping it opens the normal join page (which shows the stake before charging anything). Made-up codes and races that already started or are full get no button.
+- Admins (content/admin.txt or ADMIN_USER) can still post links, for announcements.
+- Tip for players: when sharing a race in the chat, paste only the code. The "Copy invite" text contains a web address, so it is for WhatsApp, not for the chat.
+
+COPY THESE FILES over your naija-sabi folder (replace the old ones):
+  src/routes/chat.js  public/js/app.js  public/css/style.css  public/sw.js
+  scripts/chat-test.js  package.json  docs/CHANGELOG.md  docs/UPDATE-20-NO-LINKS-IN-CHAT.txt
+
+Then restart the server and press Ctrl+F5 in the browser (phones: close and reopen the page).

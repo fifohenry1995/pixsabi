@@ -1,0 +1,9 @@
+UPDATE 81 - v2.44.0 - Staking removed, race winners announced in the public chat
+
+1. Staking is gone. Races are free: the "Coin stake" and "Who gets the pot" choices are removed from the Challenge page, and nobody pays in or wins coins in a race. If an old app screen still sends a stake, the server ignores it. Sponsored-race prizes (given by the sponsor) are unchanged.
+2. Races that were already created with a stake before this update still end the old way (refunds if cancelled or never started, pot paid to the winner), so nobody loses coins.
+3. When a race (or a 2-player challenge) finishes with a winner, the public chat shows: "Ada [party face] just defeated Bola [crying face], Chidi [crying face] and Emeka [crying face]". The faces are animated. Up to 6 losers are named, then "and N more". The admin can delete a result line.
+4. When a player deletes their account, result lines naming them are removed from the chat.
+5. Text updated: About, Disclaimer (stakes paragraph replaced), Privacy (race results shown in chat), Rules, email-confirmation messages.
+
+Files: src/routes/challenges.js; src/routes/chat.js; src/db.js; src/accountDelete.js; src/verify.js; pages/about.html, disclaimer.html, privacy.html; public/js/app.js; public/css/style.css; public/sw.js (cache v69); scripts/group-test.js, chat-test.js, racetimer-test.js, verify-test.js, wordsearch-test.js; package.json; docs.

@@ -1,0 +1,20 @@
+UPDATE 22: SEE THE CATEGORY BEFORE JOINING A RACE (v2.3.0)
+
+- Every race now shows a "Join this race?" page BEFORE a player is added. It lists: Category, Levels, Players joined (for example 1 of 2), and Stake (or "None, just for fun"). The player taps "Join race" (or "Join and stake N coins") only if they like it, or "No thanks".
+  Before this update only staked races asked first.
+- The category also shows:
+  - in the lobby (host and everyone waiting): "Category: Food"
+  - on the Join button the chat makes from a challenge code: "Join race ABC234: Food, 30 levels, 20 coin stake (1/2)"
+  - in "Your challenges": "Race, 20 levels, Food"
+  - in the invite text for WhatsApp / Copy invite: "...Category: Food."
+- "Mix of everything" is shown when the host did not pick a category.
+- If a category does not have enough puzzles, the page says so honestly: "Food (12 of 20 levels, the rest mixed)".
+- Nothing about the answers is revealed: only the category name and counts.
+
+COPY THESE FILES over your naija-sabi folder (replace the old ones):
+  src/routes/challenges.js  src/routes/chat.js
+  public/js/app.js  public/css/style.css  public/sw.js
+  scripts/group-test.js  scripts/chat-test.js
+  package.json  docs/CHANGELOG.md  docs/UPDATE-22-CATEGORY-BEFORE-JOINING.txt
+
+Then restart the server and refresh the browser (updates now show up by themselves; phones: close and reopen once).

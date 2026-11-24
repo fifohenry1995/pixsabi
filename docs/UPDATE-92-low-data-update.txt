@@ -1,0 +1,21 @@
+UPDATE 92 - v2.49.0 - Low-data and weak-connection update
+
+WHAT CHANGED
+1. Smaller downloads. Text answers (pages, scripts, styles, chat, JSON) are now sent compressed (Brotli, or gzip on older phones).
+   Typically 65-80% smaller. Pictures are not touched. New file: src/compress.js. Test: scripts/compress-test.js.
+2. Data Saver (Settings > Data Saver). Turns itself on if the phone asks for data saving or the connection is 2G, until the
+   player chooses. When on: chat, alerts and "who is online" are checked about 3x less often, GIF and video pop-ups are
+   skipped, the game-page photos and side adverts are left out, animations stop. Puzzle pictures still show.
+   New file: public/js/saver.js.
+3. Saved pictures. Puzzle pictures (/pic and /sl) are kept on the phone after the first view (up to 80), so they open at once
+   and work on a weak connection. They are forgotten on log out. Answers, profile photos and every /api reply are never saved.
+4. Weak-connection mode. A small "Weak connection. Reconnecting..." bar appears when requests fail. Reading requests retry
+   quietly 3 times. Sending an answer is never repeated automatically, and the typed answer stays on screen.
+
+NOT DONE / LIMITS
+- The server cannot shrink puzzle pictures (no image library). Smaller pictures should be uploaded by the admin.
+- No full offline play: answers live on the server so they cannot be cheated.
+- Next-level picture preloading is not done (the server does not say which puzzle comes next).
+
+FILES: src/compress.js, src/app.js, public/js/saver.js, public/js/app.js, popup.js, ads.js, public/sw.js (cache v77), index.html,
+public/css/style.css, scripts/compress-test.js, package.json (2.49.0).

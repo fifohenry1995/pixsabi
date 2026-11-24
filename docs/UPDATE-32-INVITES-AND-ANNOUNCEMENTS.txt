@@ -1,0 +1,10 @@
+UPDATE 32 (v2.12.0): invite a friend, announcements, ADMIN tag
+
+1. INVITE A FRIEND. Every player has a link: https://YOUR-SITE/?ref=THEIR-USERNAME. Me page > "Invite a friend" (also a card at the bottom of the home screen) shows the link, a Copy button, a WhatsApp share button, how many friends joined / solved a level, and the coins earned.
+   When a friend signs up through the link and solves their first level (solo or the daily puzzle), BOTH get 50 coins, once. The inviter gets an alert. One player can earn this for at most 20 friends (the friend is still rewarded after that).
+   Change the numbers at the top of src/routes/invites.js (INVITE_COINS, MAX_REWARDED).
+   Anti-cheat: the friend must be a new account with its own email and must solve a level; the cap limits farming with fake accounts. Watch for one player with many "friends" who never play again.
+2. ANNOUNCEMENTS. Admin page > Announcements: write a title and message (up to 600 letters), then tick if you also want it posted in the chat room and/or sent as an alert (bell + phone notification) to every player. Players see it on the Announcements page (#/news, also linked from the Me page) and as a card at the top of their home screen with a "new" count until they open it. You can delete old ones.
+3. ADMIN TAG. Your messages in the chat room and your announcements show a gold ADMIN tag beside your name, and admin chat messages have a gold bar on the left, so everybody knows it is you.
+Also: a safety net so a missing section can never print the word "null" on a page again.
+Technical: new table announcements; new files src/routes/announce.js, src/routes/invites.js, scripts/announce-test.js (6 checks); account-test +1 check; notify.broadcast for alerts to everyone. sw cache v22.

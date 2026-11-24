@@ -1,0 +1,24 @@
+UPDATE 16: LEVEL RACES (v2.0.0)
+
+WHAT CHANGED
+- Challenges are now races. The person who creates one picks the number of levels: 20 or more, up to the number of puzzles in the game (type any number, or tap 20 / 50 / 100). The old 5-puzzle challenge is gone for new challenges.
+- Works for 2 players and for groups of up to 8.
+- Everyone joins a lobby (by code or WhatsApp link). The host taps "Start race" once at least 2 players are in. Nobody can play before that, and nobody can join after it.
+- Everyone plays the same levels at the same time. The FIRST player to finish ALL the levels wins and the race ends immediately for everyone. The others are ranked by how many levels they cleared.
+- Skip costs 10 points and the skipped level comes back at the end of your list, so nobody can win by skipping. A wrong guess only costs time and a few points.
+- No hints in races. Progress ("12 of 50") for every player updates live above the puzzle.
+- If a chosen category has fewer puzzles than the levels, the rest are filled with puzzles from other categories.
+- Admin: you can no longer delete puzzles below 20 in total (races need 20).
+- Challenges that were already running (5 puzzles, highest score wins) still work the old way.
+
+COPY THESE FILES over your naija-sabi folder (replace the old ones):
+  src/routes/challenges.js  src/routes/admin.js
+  public/js/app.js  public/css/style.css  public/sw.js
+  scripts/group-test.js  scripts/smoke-test.js  scripts/admin-test.js
+  package.json  README.md  docs/CHANGELOG.md  docs/UPDATE-16-LEVEL-RACES.txt
+
+Then restart the server (Ctrl+C, then npm start). No database change is needed.
+Then press Ctrl+F5 once in the browser (phones: close and reopen the page).
+Run npm test if you like: all checks pass.
+
+TIP: a 100-level race uses almost all of your 104 puzzles. Add more puzzles from the Admin page for bigger races.

@@ -1,0 +1,17 @@
+UPDATE 34 (v2.12.2): remove a puzzle (and its picture) instantly
+
+HOW TO REMOVE A PUZZLE AT ONCE (wrong answer, blurred picture, picture owner wants it down):
+1. Open the live admin page (https://YOUR-SITE/admin.html), find the puzzle (search box), tap Delete.
+2. Tick "Also delete the picture file from the server" if the picture owner asked for it to come down.
+3. Tap "Delete it". No restart is needed. For every player the puzzle is gone at once: it is never offered again, its picture link stops working, and a player who still has it open sees "The admin just updated this puzzle. Loading a fresh one..." the next time they tap anything, then gets a new puzzle.
+Their level goes down by one if they had solved it (the level counts puzzles that exist). A backup of the puzzle list is saved first (content/backups).
+
+WRONG ANSWER ONLY? Use Edit instead of Delete: change the answer (players who solved it keep their credit, the picture file is renamed to match).
+PICTURE ONLY? Edit the puzzle and upload a new picture: it replaces the old one (the old file is overwritten) and shows at once.
+
+LIMITS you should know
+- A puzzle used by a race that is still running cannot be deleted (it would break the race): you get a message saying how many races use it. Finish or wait for those races, or use Edit and upload a different picture meanwhile.
+- A picture someone has already loaded stays on their phone's temporary storage until they refresh or it expires (up to 24 hours). The server cannot reach into other people's phones. Screenshots people took are also out of your hands.
+- Keep at least 20 puzzles (races need them).
+- Pictures in the legacy public/images folder are never deleted by this (only content/images, or IMAGE_DIR on Railway).
+Technical: DELETE /api/admin/puzzles/:id accepts { deleteFile: true }; the game shows a fresh puzzle when it gets "could not find that puzzle"; admin-test has a takedown check.

@@ -1,0 +1,10 @@
+UPDATE 66 (v2.36.0): "Watch an advert for coins" removed
+
+As you asked, the coin reward for watching adverts (update 65) is gone, and pop-up adverts work exactly as they did in version 2.34.0.
+
+- Removed: the "Watch an advert, get coins" button in the coins box, the Admin "Watch adverts for coins" section, the "Use for coin rewards" box on each pop-up advert, and the server code behind them.
+- Pop-up adverts: back to the way they were: they pop up after levels (Admin > "Pop-up adverts" > Show pop-up adverts, every N levels, close button after the wait), Premium members see none, and the "go Premium" line still shows once Premium is open.
+- Google AdSense (update 64) is unchanged and still OFF until you switch it on.
+- If a rewards.json file exists in your data folder from testing, it is no longer used; you can delete it.
+
+Files: src/app.js, src/routes/admin.js; public/js/app.js, popup.js, admin.js; public/css/style.css; public/sw.js (cache v54); package.json; src/rewards.js, src/routes/rewards.js and scripts/reward-test.js deleted; docs.

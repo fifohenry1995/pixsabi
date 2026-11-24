@@ -1,0 +1,23 @@
+UPDATE 44 (v2.19.0): races for up to 20 players, and the host can share the pot between the top 3
+
+PLAYERS
+- A race (free or staked) can now have 2 to 20 players. The "How many players?" list goes up to 20. Nothing else changes about lobbies: the host starts the race
+  as soon as at least 2 players are in (no need to wait for a full lobby), and everyone who joined plays the same levels.
+
+WHO GETS THE POT (staked races with 9 or more players)
+- When the host picks a stake and 9 or more players, a new choice appears: "Who gets the pot?"
+    * Winner takes it all (the default, and the only option for races of 8 or fewer players), or
+    * Share between the top 3: 60% / 25% / 15%.
+- The top 3 are the winner (first to clear every level, or the leader when the 3-day limit ends) plus the two players who had cleared the most levels when the race ended
+  (ties broken by score). If two players tie for 2nd, they share the 2nd and 3rd place money equally. If only two players cleared a level, the split is 70% / 30%.
+  If nobody except the winner cleared a level, the winner takes everything. Odd leftover coins go to the winner. The whole pot is always paid out.
+- Players are told on the join screen, in the lobby and in the invite message which rule applies. Prize winners get an alert, and the results screen lists the prizes.
+  The races list shows e.g. "2nd, won 300 coins".
+
+RACE SCREEN
+- In a race with more than 8 players the live progress shows a leaderboard: the top 5 plus you, and "+ N more racing".
+
+FIX
+- A race ended by the 3-day limit now shows its winner as the winner (and 1st place) on the results screen.
+
+Files: src/routes/challenges.js, public/js/app.js, public/sw.js (cache v33), scripts/group-test.js (19 checks).

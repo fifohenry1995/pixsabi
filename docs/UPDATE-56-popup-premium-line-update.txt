@@ -1,0 +1,9 @@
+UPDATE 56 (v2.28.0): "Go Premium" line under pop-up adverts
+
+- Under every pop-up advert there is now a small line: "Tired of adverts? Go Premium for no pop-up adverts, fun facts and a gold crown by your name." "Go Premium" is a link: tapping it closes the advert and opens the Premium page.
+- HIDDEN UNTIL YOU OPEN PREMIUM. While Premium is locked (the default), the line is not shown at all. It appears the moment you tick "Premium is open to players" on the Admin page (Premium members). Untick it and the line disappears again.
+- Premium members never see pop-ups, so they never see the line.
+
+NOTHING TO SET UP.
+
+Files: public/js/popup.js, public/css/popup.css, src/routes/admin.js (the pop-up list tells the page whether Premium is open), public/sw.js (cache v45), scripts/premium-test.js (checks the line is off when locked and on when open), package.json.

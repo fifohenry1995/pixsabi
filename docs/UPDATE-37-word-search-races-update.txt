@@ -1,0 +1,17 @@
+UPDATE 37 (v2.14.0): WORD SEARCH RACES
+
+WHAT PLAYERS SEE
+- On the "Challenge your friends" screen the Category list has a new choice: Word Search.
+- Choosing it changes the length box to "How many word searches? (3 to 31)" with quick buttons 5, 10 and 20 (default 5), because one word search
+  takes a minute or two. Players (2 to 8), coin stake, friend name and the share code work exactly like the other races.
+- Everybody in the race gets the SAME word searches in the same order (a random pick from your list, easiest first).
+  Each player finds the words by dragging over them. Finishing one opens the next. The first player to finish ALL of them wins the whole pot.
+- The race strip on top shows how many each player has finished, live.
+- No hints and no skipping in a word search race (so coins cannot buy a win).
+- Points: 20 per word found, added to each player's points when the race ends, like other races.
+- The 3-day limit works the same: the player with the most word searches finished wins the pot, a tie refunds everyone.
+- The Rematch button on the results page repeats a word search race.
+
+If you delete a word search on the admin page while a race is using it, the race simply counts that one as done for everybody (nobody gets stuck).
+
+Files: src/routes/challenges.js, public/js/app.js, public/sw.js (cache v26), scripts/wordsearch-test.js (now 10 checks), README.md, docs.

@@ -1,0 +1,32 @@
+UPDATE 60 (v2.30.0): Sponsored races (step 1)
+
+WHAT IT IS
+A free race you set up for a brand. Players see it on their home screen with the sponsor's logo, name and prize, join for free, and race the normal way: same levels for everybody, first to finish all of them wins.
+
+SET IT UP (Admin page > "Sponsored race")
+1. Type the sponsor name, the prize (for example "N5,000 airtime"), an optional link and an optional logo (shrunk for you).
+2. Pick the game (Naija, Universal, Word Search or Slide Puzzle), the levels (picture races need at least 20, word search and sliding puzzle races are shorter) and the most players that can join (up to 200).
+3. Press "Create sponsored race". It shows on every player's home screen straight away.
+4. When enough players have joined, press "Open the race lobby" and then "Start race". You are the host, so DO NOT play it yourself (the prize is for the players). You need at least one player in it to start.
+5. When it is over, check the winner and send the prize yourself. The winner sees "You won the [sponsor] prize" and is told you will contact them by email.
+
+WHAT PLAYERS SEE
+- Home screen: a gold card "Sponsored race by [sponsor] / Win [prize]" with a Join button (Open once they have joined, Watch once it has started).
+- Join page, race lobby and finish screen: the sponsor box with logo, "Sponsored by", the prize and "Visit sponsor".
+- No coins are taken: sponsored races are always free, even if a stake were sent.
+- The watch link works as for other races, so anybody with an account can watch it live.
+
+THE SPONSOR REPORT (Admin page > Sponsored race > Sponsor report)
+For each race: players who saw the card (counted once per player), taps on the sponsor link, players joined, players finished, the winner and the status. Send these numbers to the sponsor.
+
+OTHER DETAILS
+- Only the admin can create a sponsored race. Everybody else gets "Only the admin can set up a sponsored race".
+- A sponsored lobby is not closed by the 48 hour clean-up, so you can announce it days ahead and start when you are ready. Cancel it from the lobby if you change your mind.
+- The host is not counted as a player on the home card and the join page.
+- Up to 3 open sponsored races show on the home screen, newest first. Finished and cancelled ones disappear.
+
+COMING IN STEP 2 (if you want it): a start time with a countdown and automatic start, an announcement to everyone when it opens, a report link for the sponsor (like the advertiser links), and winner checking before the prize is shown as paid.
+
+NOTHING TO SET UP. No new settings.
+
+Files: src/routes/challenges.js; public/js/app.js, admin.js; public/css/style.css; public/sw.js (cache v48); scripts/sponsor-test.js (6 checks); package.json; docs.

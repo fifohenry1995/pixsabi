@@ -1,0 +1,7 @@
+UPDATE 100 - v2.52.2 - Data Saver removed
+
+- The Data Saver switch (Settings) and everything it did are gone: slower chat/alert checks, skipping GIF/video pop-ups and game photos, hiding adverts, stopping animations. Ads and pop-ups now show for every player.
+- Kept from update 92: compressed downloads, saved puzzle pictures, and the weak-connection banner with quiet retries.
+- Players who had turned Data Saver on: the old setting is simply ignored.
+
+FILES: public/js/app.js, popup.js, ads.js, admin.js, public/index.html, public/css/style.css, public/sw.js (cache v84), public/js/saver.js (deleted; delete it from your folder too), package.json (2.52.2).

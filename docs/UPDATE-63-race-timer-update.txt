@@ -1,0 +1,17 @@
+UPDATE 63 (v2.33.0): Race timer set by the host
+
+WHAT'S NEW
+- When a player creates a race (Challenge page) there is a new "Race timer (optional)" list: no timer, 5, 10, 15, 20, 30, 45 minutes, 1, 2, 3, 6, 12 hours or 24 hours. The default is no timer (first to finish all levels wins, as before).
+- The timer starts when the host presses Start (or when a sponsored race starts by itself). Before that the lobby and the join page just show the length ("Timer: 20 minutes").
+- During the race everyone sees a live "Time left" clock that turns red in the last minute.
+- When the timer runs out the race ends by itself:
+  * the player who cleared the most levels wins (a tie on levels is settled by points);
+  * if they are still level, or nobody cleared a level, the race closes with no winner and every stake is refunded;
+  * the winner takes the pot (or the top-3 split in big races), exactly like a normal win; everybody gets an alert saying who won.
+- If somebody finishes all the levels before the timer ends, they win straight away as always.
+- Ending is exact: the server checks every 10 seconds and also the moment anybody opens or plays the race, so nobody can sneak in an answer after time is up.
+- The old 3-day limit for started races still applies to races without a timer.
+
+NOTHING TO SET UP. Existing races are not affected.
+
+Files: src/routes/challenges.js; public/js/app.js, public/css/style.css, public/sw.js (cache v51); scripts/racetimer-test.js (7 checks); package.json; docs.

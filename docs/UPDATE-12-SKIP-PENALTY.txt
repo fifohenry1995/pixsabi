@@ -1,0 +1,9 @@
+SKIP PENALTY IN CHALLENGES (v1.8.2)
+
+Copy these files over your naija-sabi folder (replace the old ones):
+  src/routes/challenges.js  public/js/app.js
+  scripts/smoke-test.js  scripts/group-test.js
+  package.json  README.md  docs/CHANGELOG.md
+
+Then run: npm test and npm start. Press Ctrl+F5 once in the browser.
+Skipping a puzzle in a challenge now costs 10 points. Highest score still wins; ties go to the faster player.

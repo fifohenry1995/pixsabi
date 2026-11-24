@@ -1,0 +1,25 @@
+UPDATE 21: UPDATES SHOW UP RIGHT AWAY (v2.2.3)  (fixes "the Chat tab is not showing")
+
+THE PROBLEM
+The server told browsers to keep the game's scripts and styles for 1 hour. So after an update, a browser or phone that had already opened the game could keep running the OLD app.js and never show new things such as the Chat tab, until the hour passed or the page was force-refreshed.
+
+THE FIX
+- Scripts, styles, pages and the manifest are now re-checked with the server on every load. If nothing changed, the server answers with a tiny "304 not modified" (ETag), so the game still loads fast.
+- The service worker (the installed-app helper) also asks the server before using its saved copy.
+- Pictures and icons are still kept for an hour.
+After this update is installed, future updates reach everyone as soon as they open or refresh the game.
+
+THIS ZIP ALSO CONTAINS EVERY CHAT FILE, so it works even if an earlier zip was only partly copied. It is safe to copy over version 2.1.0 or any later version.
+
+IF THE CHAT TAB STILL DOES NOT SHOW (checklist)
+1. The server must be restarted after copying files: press Ctrl+C in the terminal, then run: npm start. (An old server keeps running the old code.)
+2. The terminal must show no red error on start. A message like "Cannot find module './presence'" means src/presence.js was not copied.
+3. Open the game, then press Ctrl+F5 (computer) or close and reopen the page / the installed app (phone). Do this once.
+4. The bottom bar should now show 6 tabs: Play, Daily, Challenge, Chat, Ranks, Me, and a strip "players / online" under the top bar.
+5. Still nothing? Open  your-site/js/app.js  in the browser and search for "#/chat". If it is missing, the old file is still on the server.
+
+COPY THESE FILES over your naija-sabi folder (replace the old ones):
+  src/presence.js (new)  src/routes/chat.js (new)  src/db.js  src/app.js  src/routes/admin.js  src/routes/profile.js
+  public/js/app.js  public/css/style.css  public/sw.js
+  scripts/chat-test.js (new)  scripts/smoke-test.js  scripts/group-test.js
+  package.json  README.md  docs/CHANGELOG.md  docs/UPDATE-21-UPDATES-SHOW-UP-RIGHT-AWAY.txt

@@ -1,0 +1,26 @@
+UPDATE 51 (v2.25.0): Premium members
+
+WHAT PREMIUM GIVES
+- No pop-up adverts. (The side adverts on laptops and big screens still show; only pop-ups are hidden.)
+- Fun facts. After a level, a puzzle, a word search, a sliding puzzle or the daily puzzle, only Premium members see the fun fact. Everybody else sees a small gold-edged note "There is a fun fact here. Fun facts are for Premium members" that opens the Premium page. The server removes the fact for non-members, so it cannot be seen by looking at the page code.
+- A gold crown beside the name in chat, on profiles, on your own profile and on the home greeting.
+
+PRICE AND TIME
+- 1,000 naira for 30 days, paid with Paystack (same as Buy coins, needs PAYSTACK_SECRET_KEY and PUBLIC_URL).
+- It does not renew by itself and nobody is charged again unless they pay again. When the 30 days end, the crown, fun facts and no-pop-up stop and the player can pay again.
+- Paying before it ends adds 30 days on top of the days left. The Premium page warns when 3 days or fewer are left.
+- Paying once cannot be counted twice (return page and webhook are both safe). Premium gives no coins.
+- To change the price set PREMIUM_NAIRA (optional, default 1000, minimum 100).
+
+WHERE PLAYERS FIND IT
+- My profile > "Go Premium" bar, which opens the Premium page (benefits, days left, email, Pay with Paystack). The rules page mentions it too (no refunds once paid).
+
+ADMIN
+- Admin page > "Premium members": type a username and days to give Premium by hand (gift, or a payment you got another way). Days stack. Put 0 to remove it.
+
+DASHBOARD
+- Money now shows Premium sales (naira and purchases) and Premium members right now. Premium orders are also inside the overall sales figures.
+
+NOTHING TO SET UP. Existing players keep everything. Players who were seeing fun facts will now see the locked note until they go Premium.
+
+Files: src/premium.js (new); src/routes/coins.js, challenges.js, daily.js, solo.js, wordsearch.js, slide.js, admin.js, auth.js, profile.js, chat.js; src/stats.js; public/js/app.js, admin.js, dash.js; public/css/style.css; public/sw.js (cache v40); scripts/premium-test.js (7 checks), slide-test.js; package.json; README.md.

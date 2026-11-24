@@ -1,0 +1,14 @@
+UPDATE 52 (v2.26.0): Win picture with confetti, simpler game header
+
+SLIDING PUZZLE CELEBRATION
+- When a player finishes a sliding puzzle level, the finished picture is shown big on the win screen, above the title, points, coins and slides, with confetti falling for about 7 seconds. The picture stays on screen for as long as the player wants: the game only moves on when they tap "Next puzzle", so there is no timer rushing them.
+- People who have "reduce motion" switched on in their phone settings do not get the confetti (the picture still shows).
+- The picture is small enough that the whole win screen fits on a phone without scrolling the top away.
+
+SIMPLER GAME HEADER
+- On the screen where players play (Naija, Universal, Word Search and Slide Puzzle) the row of game tabs is gone. The top now shows only the name of the game being played, next to the level, for example "Slide Puzzle   Level 3".
+- To change game, players pick another game on the Home screen (the same carousel as before). The "all levels done" messages now say this too.
+
+NOTHING TO SET UP. No new settings. Existing players keep everything.
+
+Files: public/js/app.js, public/css/style.css, public/sw.js (cache v41), package.json, README.md (no change), docs.

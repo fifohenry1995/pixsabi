@@ -1,0 +1,11 @@
+UPDATE 19: PLAYER PROFILES FROM CHAT (v2.2.1)
+
+- In the chat room, tap a player's NAME or PHOTO to open their profile: photo, description, rank, level, best streak and challenge record, plus a "Challenge" button.
+- The profile now shows "Online now" when that player is online.
+- The profile's last button says "Back to chat" when you came from the chat (otherwise "Back to ranks"), and the Chat tab stays highlighted.
+
+COPY THESE FILES over your naija-sabi folder (replace the old ones):
+  src/routes/profile.js  public/js/app.js  public/css/style.css  public/sw.js
+  package.json  docs/CHANGELOG.md  docs/UPDATE-19-PROFILES-FROM-CHAT.txt
+
+Then restart the server and press Ctrl+F5 in the browser (phones: close and reopen the page).

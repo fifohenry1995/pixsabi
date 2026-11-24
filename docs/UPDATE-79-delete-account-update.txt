@@ -1,0 +1,10 @@
+UPDATE 79 (v2.42.0): Delete my account
+
+1. Me page > "Delete my account": the player types their password and the word DELETE. The account is deleted 3 days later; until then they can keep playing and tap "Cancel deletion" (on the Me page or in the bar shown at the top). They are emailed when they ask and when it is done (if the game can send emails).
+2. Public page /delete-account (linked from the login screen, the Me page, and the Privacy Policy) for people who cannot log in. They type their username or email. If the account has an email, a confirmation link is sent; opening it starts the same 3-day countdown. If it has no email, the request appears in the admin page ("Password help requests") for the admin to check by hand. The page gives the same answer whether or not the account exists.
+3. What is removed: profile, email, picture, recovery answer, coins, points, levels, Premium time, chat messages (public and private), alerts and push alerts, quiz results and quizzes they hosted, reset links, activity counts. Their finished races stay in other players' history showing "Deleted player". A lobby that only invited them is closed (stakes refunded). Payment records are kept (law and accounting) without the email, as "deleted". The username and email can be used again.
+4. A player inside a race that has not ended is deleted as soon as the race ends (a race ends within 3 days at most). Checked hourly.
+5. Admin: "Delete this account now" in "Help a player" and on each password/delete request (confirmation asked; admin accounts cannot be deleted; if the player is in a running race it is done when the race ends).
+6. Privacy Policy updated (retention, rights) and a new Delete your account page. Have a lawyer read it.
+
+Files: src/accountDelete.js (new); src/routes/auth.js; src/routes/admin.js; src/routes/challenges.js; src/db.js; src/app.js; src/pages.js; pages/delete-account.html (new); pages/privacy.html; public/js/delete-account.js (new); public/js/app.js; public/js/admin.js; public/css/style.css, admin.css, pages.css; public/sw.js (cache v67); scripts/delete-test.js (new); package.json; docs.

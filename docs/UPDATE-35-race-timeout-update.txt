@@ -1,0 +1,13 @@
+UPDATE 35 (v2.12.3): races can no longer get stuck
+
+WHAT CHANGED (checked every hour and when the server starts)
+- A race that STARTED and has no finisher after 3 days is ended automatically.
+  The player who cleared the most levels wins the whole pot (ties on levels are broken by points).
+  If the top spot is still shared, or nobody cleared a single level, every player gets their stake back.
+  Everyone in the race gets an alert saying what happened.
+- A staked race nobody started within 24 hours: everyone refunded (as before, now with an alert).
+- A FREE race lobby nobody started within 2 days is closed, so it stops counting toward a player's limit of 10 open challenges.
+- The rules text (how-it-works card, create-race screen, race page) now mentions the 3-day limit.
+
+Files: src/routes/challenges.js, src/db.js, public/js/app.js, scripts/group-test.js (new checks), public/sw.js (cache v24).
+To change the limits, edit ABANDON_MS, STALE_MS and LOBBY_MS at the top of src/routes/challenges.js.

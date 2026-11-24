@@ -1,0 +1,26 @@
+UPDATE 45 (v2.20.0): dashboard for you, investors and advertisers
+
+WHAT YOU GET
+- New page /dashboard.html (admins only; there is a "Dashboard" button at the top of the Admin page).
+  Players: total, new sign-ups, active today / this week / this month, how many come back after 1 and 7 days, players who cleared a level.
+  Games: levels cleared per game (Naija, Universal, Word Search), daily puzzles, races made / joined / finished, chat and private messages.
+  Money: coin sales in naira (all time and for the period), buyers, average order.
+  Adverts: for every side advert and pop-up: views, unique visitors, taps, click rate (pop-ups also: closed by the player), with a daily chart.
+  Pick 7 / 30 / 90 days, download a CSV spreadsheet, or print / save as PDF.
+- Private links: on the same page, "Make a private link".
+    * Investor link: sees everything above (never names, emails or IPs).
+    * Advertiser link: sees only the adverts that carry their advertiser name, plus how many players the game has. No revenue.
+  Anyone with the link can open it without logging in, so send it only to the right person. You can switch a link off or delete it at any time.
+- Admin page: every side advert and pop-up now has an "Advertiser name" box. Type the same spelling on all of one advertiser's adverts. Players never see this name.
+
+COUNTING STARTS TODAY
+- Sign-ups, levels cleared and coin sales are already in the database, so those numbers include the past.
+- Advert views/taps, daily activity, retention and races/chat/solve counts start counting from the day you install this update.
+- No new environment variable and nothing to set up on Railway. Your data folder is kept; new tables are added automatically.
+
+PRIVACY
+- Adverts are counted with a random number kept on the player's phone (no name). Bots are ignored. Privacy page has a new sentence about this.
+
+Files: src/stats.js (new), src/routes/dashboard.js (new), src/app.js, src/db.js, src/ads.js, src/routes/admin.js, solo/wordsearch/daily/challenges/chat routes,
+public/dashboard.html, report.html, css/dashboard.css, js/dash.js, dashboard.js, report.js, track.js, ads.js, popup.js, admin.js, index.html, sw.js (cache v34),
+pages/privacy.html, scripts/dashboard-test.js (4 checks), package.json, README.md.

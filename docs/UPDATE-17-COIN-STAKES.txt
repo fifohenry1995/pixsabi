@@ -1,0 +1,24 @@
+UPDATE 17: COIN STAKES IN RACES (v2.1.0)
+
+WHAT CHANGED
+- When creating a race the host can set a coin stake: none, 10, 20, 50, 100, 200 or 500 coins each (the server accepts any whole number from 0 to 1000).
+- Every player pays the stake when they join (the host pays when creating the race). The coins go into the race's pot.
+- The first player to finish all the levels wins the WHOLE pot, added to their coins straight away.
+- Before paying, a player sees a confirmation page: levels, stake, pot so far and their balance. Nothing is charged until they tap "Join and stake N coins". If they do not have enough coins, they are offered to buy coins and are not added to the race.
+- Refunds: the host can "Cancel race and refund" and any other player can "Leave and get my coins back", both only before the race starts. A staked race that nobody starts within 24 hours is cancelled and refunded automatically (checked every hour and whenever someone opens the challenge list).
+- Once the race has started there are no refunds. Coins are never created or lost: the pot paid out equals the stakes paid in.
+- Cancelled races show as "Cancelled, refunded" in the challenge list. A cancelled race can never be started. Puzzles used only by cancelled races can be deleted in Admin again.
+- Rematch keeps the same levels and stake. The invite message (WhatsApp / copy) mentions the stake.
+- Races without a stake work exactly as before and never touch coins.
+
+COPY THESE FILES over your naija-sabi folder (replace the old ones):
+  src/db.js  src/routes/challenges.js  src/routes/admin.js
+  public/js/app.js  public/sw.js
+  scripts/group-test.js
+  package.json  README.md  docs/CHANGELOG.md  docs/UPDATE-17-COIN-STAKES.txt
+
+Then restart the server (Ctrl+C, then npm start). No database change is needed.
+Then press Ctrl+F5 once in the browser (phones: close and reopen the page).
+Run npm test if you like: all checks pass.
+
+IMPORTANT BEFORE YOU GO PUBLIC: players can buy coins with real money (Paystack) and a stake moves those coins to the winner. Coins cannot be cashed out, which keeps this a game, but staking can still be treated as betting or gaming under Nigerian rules. Get a quick legal opinion before you advertise it, and do not add a cash-out feature without one.

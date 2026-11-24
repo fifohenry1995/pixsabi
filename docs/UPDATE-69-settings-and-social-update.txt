@@ -1,0 +1,23 @@
+UPDATE 69 (v2.37.0): Settings page, contact and social links
+
+WHAT'S NEW FOR PLAYERS
+- The speaker/music button at the top is now a gear (Settings). Tapping it opens a Settings page.
+- Settings has: Sound (sound effects on/off, theme song on/off; moved here from the Me page) and "Contact and follow us".
+- Contact and follow us is a list of clickable rows (the whole row is a link that opens in a new tab):
+  * Contact us on WhatsApp (for adverts, partnerships or any problem; opens a chat with your number with a ready "Hello Sabi Naija..." message)
+  * Join our WhatsApp channel
+  * Follow @handle on X
+  * Follow @handle on Instagram
+  * Follow @handle on TikTok
+  * Follow your page on Facebook
+- Only the rows you fill in appear. If you fill in none, players see no contact section.
+
+WHAT YOU DO (Admin > "Contact and social links")
+- Type your WhatsApp number with country code (08012345678 also works), the channel link, and your X, Instagram, TikTok handles and Facebook page name. A handle, a plain name or a full link all work; leave a box empty to hide that row. Press "Save links". Changes show at once.
+- Only links to those websites are accepted. Anything else (other websites, look-alike addresses, scripts) is refused with a message.
+
+ICONS
+- The rows use simple stand-in icons (coloured squares with WA, CH, X, IG, a music note and f), not the official logos.
+- To use the official icons: download them from each platform's brand page and save them as contact.svg, channel.svg, x.svg, instagram.svg, tiktok.svg and facebook.svg in public/img/social/ (create the folder). They replace the stand-ins by themselves.
+
+Files: src/social.js, src/routes/social.js (new); src/app.js; public/js/app.js, admin.js; public/css/style.css; public/sw.js (cache v57); scripts/social-test.js (6 checks); package.json; docs.

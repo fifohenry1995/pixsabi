@@ -1,0 +1,5 @@
+UPDATE 91 - v2.48.1 - Friendlier wording in the cartoons paragraph
+
+Disclaimer > Cartoons of public figures: the last two sentences were reworded to "Sabi Naija is not connected to any of the people shown, and they have not approved or endorsed the game. We respect them, and if anyone would like a cartoon removed, we will take it down."
+
+Files: pages/disclaimer.html; package.json; docs.

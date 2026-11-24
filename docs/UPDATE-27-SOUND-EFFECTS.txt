@@ -1,0 +1,8 @@
+UPDATE 27 (v2.8.0): sound effects on all buttons
+
+- Every button, tab, menu link, checkbox and drop-down in the game now makes a soft tap. It is one listener for the whole page, so buttons you add later get it too.
+- Their own sounds: letter tiles (tick), coin buttons (coin), nav bar (soft blip), right answer (rising notes), wrong answer (low buzz), skip (falling notes), winning a race (short fanfare), and alerts (two-note ping).
+- Nothing to download: the sounds are made on the phone with the browser's audio (Web Audio). New file: public/js/sound.js. Quiet and short on purpose; fast tapping does not stack sounds.
+- Players switch sounds off in Me > Sound > Sound effects. The choice is remembered on that device.
+- Browsers only allow sound after the player has tapped something, so the very first tap after opening the game may be silent on some phones.
+- The admin page has no sounds.

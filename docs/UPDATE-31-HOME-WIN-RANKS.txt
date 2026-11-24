@@ -1,0 +1,9 @@
+UPDATE 31 (v2.11.0): new Home, Level complete and Ranks screens (from the mockups)
+
+1. HOME (the Play tab). The Play tab now opens a home screen: welcome with your rank title, a streak card (daily-puzzle streak with the last 7 days ticked), the Naija / Universal switch showing your level in each, a big "Play level N" button, and a winding level map around your current level.
+   Tap "Play level N" to open the puzzle (it lives at #/play now). After you solve a level, "Next level" goes straight to the next puzzle.
+2. TREASURE CHEST. Every 10th level you finish in a category opens a chest with 25 bonus coins (on top of the usual 10). Change CHEST_EVERY and CHEST_COINS at the top of src/routes/solo.js.
+3. LEVEL COMPLETE POPUP. Shows points, coins and levels done, the progress to the next chest, the fun fact, "Next level", and "Share my score on WhatsApp" (opens WhatsApp with a ready message and your site link). The daily puzzle popup has the same look with points, coins and day streak.
+4. RANKS. A podium for the top 3 (with the coin prizes on the This week board), a countdown pill for the weekly reset, then ranks 4 and below as a list.
+Not built from the mockups: the "combo" meter (nothing in the game tracks combos yet).
+Technical: new routes GET /api/solo/map; GET /api/daily now returns "week"; POST /api/solo/guess returns chest, coins_earned, category; scripts/home-test.js (3 checks). sw cache v19.

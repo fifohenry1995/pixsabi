@@ -1,0 +1,8 @@
+UPDATE 78 (v2.41.0): Account details on password requests, and an optional recovery question
+
+Helps the admin be sure a person asking for a password reset really owns the account.
+1. Account details. Each open request in "Password help requests", and the "Help a player" lookup, now shows: joined date, last login, email on file, levels in each game, coins and points, friends invited, Premium, and the last 3 paid coin purchases (with the Paystack reference). The last login is recorded from this version on (older accounts show "not recorded" until they log in).
+2. Recovery question (optional). A player can pick a question (mother's first name, primary school, favourite meal, town born, childhood best friend, first phone) and an answer, either when creating the account ("Add a recovery question") or later on the Me page (asks for the password). Only a scrambled hash of the answer is stored, so nobody can read it. When someone cannot use the email reset, the admin sees the question on the request, asks the person, types their answer into "Check their answer" and gets only "Matches" or "Does not match". Capital letters, extra spaces and punctuation do not matter.
+Advice: ask for at least two proofs when the account has no email, and never share a temporary password in public chat.
+
+Files: src/recovery.js (new); src/routes/auth.js; src/routes/admin.js; public/js/app.js; public/js/admin.js; public/css/style.css; public/css/admin.css; public/sw.js (cache v66); scripts/account-test.js; package.json; docs.

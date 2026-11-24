@@ -1,0 +1,1961 @@
+[
+ {
+  "a": "NIGERIA",
+  "c": "Naija",
+  "topic": "Food",
+  "t": [
+   "🍚",
+   "🍅",
+   "🌶️",
+   "🔥"
+  ],
+  "clue": "Country in West Africa",
+  "fact": "Nigeria is a West African nation located on the Gulf of Guinea, known as the Giant of Africa"
+ },
+ {
+  "a": "ZOBO",
+  "c": "Naija",
+  "topic": "Food",
+  "t": [
+   "🌺",
+   "🥤",
+   "🧊",
+   "🔴"
+  ],
+  "clue": "Red hibiscus drink.",
+  "fact": "Zobo is brewed from dried roselle (hibiscus) petals, often with ginger, cloves and pineapple."
+ },
+ {
+  "a": "OGBONO",
+  "c": "Naija",
+  "topic": "Food",
+  "t": [
+   "🌰",
+   "🥣",
+   "🍲",
+   "🤤"
+  ],
+  "clue": "Draw soup made from ground bush mango seeds.",
+  "fact": "Ogbono seeds come from the wild mango tree. When ground and cooked they give the soup its famous slippery draw."
+ },
+ {
+  "a": "SHAWARMA",
+  "c": "Naija",
+  "topic": "Food",
+  "t": [
+   "🌯",
+   "🍢",
+   "🌶️",
+   "🌃"
+  ],
+  "clue": "A wrap that is a late-night Lagos staple.",
+  "fact": "Shawarma arrived from the Middle East and Nigerians gave it their own twist with sausage, plantain and extra sauce."
+ },
+ {
+  "a": "BOLE",
+  "c": "Naija",
+  "topic": "Food",
+  "t": [
+   "🍌",
+   "🔥",
+   "🌶️",
+   "🐟"
+  ],
+  "clue": "Roasted plantain, often with pepper sauce and fish.",
+  "fact": "Bole is the Port Harcourt name for roasted plantain, and it is sold roadside with grilled fish."
+ },
+ {
+  "a": "INDOMIE",
+  "c": "Naija",
+  "topic": "Food",
+  "t": [
+   "🍜",
+   "🥚",
+   "🌶️",
+   "🍳"
+  ],
+  "clue": "Instant noodles that are basically a Nigerian love language.",
+  "fact": "Nigerians dress up their noodles with eggs, sausage, vegetables and sometimes fish."
+ },
+ {
+  "a": "LAGOS",
+  "c": "Naija",
+  "topic": "Places",
+  "t": [
+   "🏙️",
+   "🚌",
+   "🌉",
+   "🌊"
+  ],
+  "clue": "Eko o ni baje. The hustle never sleeps here.",
+  "fact": "Lagos was Nigeria's capital until 1991 and is still the country's biggest city."
+ },
+ {
+  "a": "ABUJA",
+  "c": "Naija",
+  "topic": "Places",
+  "t": [
+   "🪨",
+   "🏛️",
+   "🕌",
+   "🌇"
+  ],
+  "clue": "The capital, home of Aso Rock.",
+  "fact": "Abuja became Nigeria's capital in 1991, replacing Lagos."
+ },
+ {
+  "a": "IBADAN",
+  "c": "Naija",
+  "topic": "Places",
+  "t": [
+   "🏘️",
+   "🟠",
+   "🌆",
+   "🎓"
+  ],
+  "clue": "Rust-roofed city with Nigeria's first university.",
+  "fact": "The University of Ibadan opened in 1948 and was Nigeria's first university."
+ },
+ {
+  "a": "CALABAR",
+  "c": "Naija",
+  "topic": "Places",
+  "t": [
+   "🎭",
+   "🎉",
+   "🍲",
+   "🌴"
+  ],
+  "clue": "Hosts a huge street carnival every December.",
+  "fact": "The Calabar Carnival is billed as Africa's biggest street party."
+ },
+ {
+  "a": "WIZKID",
+  "c": "Naija",
+  "topic": "Stars",
+  "t": [
+   "🧙",
+   "🧒",
+   "🎤",
+   "⭐"
+  ],
+  "clue": "Starboy behind Made in Lagos.",
+  "fact": "Wizkid released his album Made in Lagos in 2020, and it carried the global hit Essence."
+ },
+ {
+  "a": "BURNABOY",
+  "c": "Naija",
+  "topic": "Stars",
+  "t": [
+   "🔥",
+   "👦",
+   "🎤",
+   "🌍"
+  ],
+  "clue": "The African Giant.",
+  "fact": "Burna Boy won a Grammy for Best Global Music Album with Twice as Tall."
+ },
+ {
+  "a": "DAVIDO",
+  "c": "Naija",
+  "topic": "Stars",
+  "t": [
+   "🪨",
+   "🏹",
+   "👑",
+   "⭕"
+  ],
+  "clue": "OBO and a giant-slaying namesake.",
+  "fact": "Davido's full name is David Adedeji Adeleke."
+ },
+ {
+  "a": "FALZ",
+  "c": "Naija",
+  "topic": "Stars",
+  "t": [
+   "🎭",
+   "😈",
+   "🎤",
+   "🧥"
+  ],
+  "clue": "The Bahd Guy who is also a lawyer.",
+  "fact": "Falz is a trained lawyer and is known for sharp, funny songs about Nigerian life."
+ },
+ {
+  "a": "OKOCHA",
+  "c": "Naija",
+  "topic": "Stars",
+  "t": [
+   "⚽",
+   "🕺",
+   "✨",
+   "🟢"
+  ],
+  "clue": "Jay-Jay, so good they named him twice.",
+  "fact": "Jay-Jay Okocha dazzled at Paris Saint-Germain and Bolton Wanderers and is a Super Eagles legend."
+ },
+ {
+  "a": "KANU",
+  "c": "Naija",
+  "topic": "Stars",
+  "t": [
+   "⚽",
+   "📏",
+   "🥇",
+   "💚"
+  ],
+  "clue": "Tall striker with an Olympic gold from 1996.",
+  "fact": "Nwankwo Kanu won Olympic gold with Nigeria at Atlanta 1996 and later starred for Arsenal."
+ },
+ {
+  "a": "OSIMHEN",
+  "c": "Naija",
+  "topic": "Stars",
+  "t": [
+   "⚽",
+   "🎭",
+   "🦅",
+   "🟢"
+  ],
+  "clue": "Striker who wears a mask and won Serie A with Napoli.",
+  "fact": "Victor Osimhen won the Serie A title with Napoli in 2023 and was named African Footballer of the Year."
+ },
+ {
+  "a": "SOYINKA",
+  "c": "Naija",
+  "topic": "Stars",
+  "t": [
+   "📚",
+   "🏆",
+   "✍️",
+   "🎭"
+  ],
+  "clue": "First African to win the Nobel Prize in Literature.",
+  "fact": "Wole Soyinka won the Nobel Prize in Literature in 1986."
+ },
+ {
+  "a": "FELA",
+  "c": "Naija",
+  "topic": "Stars",
+  "t": [
+   "🎷",
+   "✊",
+   "🕺",
+   "👑"
+  ],
+  "clue": "Abami Eda, creator of Afrobeat.",
+  "fact": "Fela Kuti blended jazz, funk and highlife into Afrobeat and set up the Kalakuta Republic."
+ },
+ {
+  "a": "BASKETMOUTH",
+  "c": "Naija",
+  "topic": "Stars",
+  "t": [
+   "🧺",
+   "👄",
+   "🎤",
+   "😂"
+  ],
+  "clue": "Comedian whose name sounds like a loud mouth in a basket.",
+  "fact": "Basketmouth's real name is Bright Okpocha, and he is one of Nigeria's best-known stand-up comedians."
+ },
+ {
+  "a": "JAPA",
+  "c": "Naija",
+  "topic": "Slang",
+  "t": [
+   "✈️",
+   "🏃",
+   "💨",
+   "🛄"
+  ],
+  "clue": "To relocate abroad in a hurry.",
+  "fact": "Japa is Yoruba for 'run away', and it became the word for emigrating in search of better opportunities."
+ },
+ {
+  "a": "PEPPERDEM",
+  "c": "Naija",
+  "topic": "Slang",
+  "t": [
+   "🌶️",
+   "👥",
+   "🔥",
+   "😎"
+  ],
+  "clue": "Rub it in their face, in pidgin.",
+  "fact": "'Pepper dem' means to flaunt your success in front of rivals or critics."
+ },
+ {
+  "a": "ASOEBI",
+  "c": "Naija",
+  "topic": "Culture",
+  "t": [
+   "👗",
+   "🧵",
+   "🎉",
+   "👯"
+  ],
+  "clue": "Matching outfits for family or friends at a party.",
+  "fact": "Aso ebi means 'family cloth' in Yoruba, and guests wear the same fabric to show they belong together."
+ },
+ {
+  "a": "OWAMBE",
+  "c": "Naija",
+  "topic": "Culture",
+  "t": [
+   "🎉",
+   "🥁",
+   "💃",
+   "🍾"
+  ],
+  "clue": "A big, loud Yoruba party.",
+  "fact": "An owambe has live bands, aso ebi, mountains of jollof and plenty of dancing."
+ },
+ {
+  "a": "GELE",
+  "c": "Naija",
+  "topic": "Culture",
+  "t": [
+   "👩",
+   "🎀",
+   "👑",
+   "🧣"
+  ],
+  "clue": "The folded head wrap that makes a statement.",
+  "fact": "Tying a gele is an art, and skilled gele stylists are booked weeks before big weddings."
+ },
+ {
+  "a": "ANKARA",
+  "c": "Naija",
+  "topic": "Culture",
+  "t": [
+   "🧵",
+   "🎨",
+   "🌈",
+   "👗"
+  ],
+  "clue": "Bold wax-print fabric.",
+  "fact": "Ankara fabric started as Dutch wax prints and became a West African fashion staple."
+ },
+ {
+  "a": "JUJU",
+  "c": "Naija",
+  "topic": "Culture",
+  "t": [
+   "🔮",
+   "🐓",
+   "🥁",
+   "🕯️"
+  ],
+  "clue": "Spiritual power, and also King Sunny Ade's music.",
+  "fact": "Juju is also a style of Yoruba popular music, made famous by King Sunny Ade."
+ },
+ {
+  "a": "SUPEREAGLES",
+  "c": "Naija",
+  "topic": "Culture",
+  "t": [
+   "⚽",
+   "🦸",
+   "🦅",
+   "🟢"
+  ],
+  "clue": "Our national football team.",
+  "fact": "The Super Eagles won the Africa Cup of Nations in 1980, 1994 and 2013."
+ },
+ {
+  "a": "DANFO",
+  "c": "Naija",
+  "topic": "Naija Life",
+  "t": [
+   "🚌",
+   "🟡",
+   "⚫",
+   "🏁"
+  ],
+  "clue": "Yellow Lagos minibus with a black stripe.",
+  "fact": "Danfo buses are painted yellow with a black stripe and often carry funny slogans on the back."
+ },
+ {
+  "a": "OKADA",
+  "c": "Naija",
+  "topic": "Naija Life",
+  "t": [
+   "🏍️",
+   "💨",
+   "😬",
+   "🚦"
+  ],
+  "clue": "Motorcycle taxi.",
+  "fact": "Okada is often said to be named after Okada Air, an old Nigerian airline."
+ },
+ {
+  "a": "MARUWA",
+  "c": "Naija",
+  "topic": "Naija Life",
+  "t": [
+   "🚕",
+   "🟡",
+   "3️⃣",
+   "🛣️"
+  ],
+  "clue": "Three-wheeled taxi.",
+  "fact": "Keke (the Keke NAPEP tricycle) became popular in the early 2000s as cheap local transport."
+ },
+ {
+  "a": "HARMATTAN",
+  "c": "Naija",
+  "topic": "Naija Life",
+  "t": [
+   "🌬️",
+   "🏜️",
+   "🥶",
+   "🌫️"
+  ],
+  "clue": "Dusty, dry-season wind.",
+  "fact": "The Harmattan blows from the Sahara between roughly November and March, bringing dust and cool mornings."
+ },
+ {
+  "a": "NYSC",
+  "c": "Naija",
+  "topic": "Naija Life",
+  "t": [
+   "🪖",
+   "🟢",
+   "🎓",
+   "🤝"
+  ],
+  "clue": "Youth service after graduation.",
+  "fact": "The National Youth Service Corps was founded in 1973 after the civil war to unite young Nigerians."
+ },
+ {
+  "a": "KINGKONG",
+  "c": "Universal",
+  "clue": "Giant Ape movie",
+  "fact": "KINGKONG is a 2005 epic monster film directed, co-written, and produced by Peter Jackson."
+ },
+ {
+  "a": "SHARK",
+  "c": "Universal",
+  "clue": "elasmobranch cartilaginous fishes.",
+  "fact": "SHARKS are ancient cartilaginous fish that have roamed the oceans for more than 400 million years, predating the dinosaurs."
+ },
+ {
+  "a": "FERRY",
+  "c": "Universal",
+  "clue": "special boat or ship",
+  "fact": "A ferry is a boat or ship that transports passengers, and occasionally vehicles and cargo, across a body of water."
+ },
+ {
+  "a": "PARIS",
+  "c": "Universal",
+  "clue": "France",
+  "fact": "Paris is the capital and largest city of France"
+ },
+ {
+  "a": "TILAPIA",
+  "c": "Universal",
+  "clue": "Freshwater fish",
+  "fact": "Tilapia are mainly freshwater fish native to Africa and the Middle East"
+ },
+ {
+  "a": "JUNGLE",
+  "c": "Universal",
+  "clue": "thick vegetations with animals",
+  "fact": "A jungle is a dense, tangled land of thick vegetations and trees"
+ },
+ {
+  "a": "ANIMALS",
+  "c": "Universal",
+  "clue": "Living Organisms",
+  "fact": "Animals are multicellular, living organisms that belong to the biological kingdom Animalia."
+ },
+ {
+  "a": "ELEPHANT",
+  "c": "Universal",
+  "clue": "largest land animal",
+  "fact": "Elephants are the largest living land animals"
+ },
+ {
+  "a": "CROCODILE",
+  "c": "Universal",
+  "clue": "Reptile",
+  "fact": "Crocodiles are ancient, semi-aquatic reptiles belonging to the family Crocodylidae."
+ },
+ {
+  "a": "TORNADO",
+  "c": "Universal",
+  "clue": "rapid rotating air",
+  "fact": "Tornado is a rapidly rotating column of air that extends vertically from the surface of the Earth to the cumulus cloud."
+ },
+ {
+  "a": "STORM",
+  "c": "Universal",
+  "clue": "violent disturbance",
+  "fact": "Lightning strikes are hotter than the sun's surface."
+ },
+ {
+  "a": "CHIPS",
+  "c": "Universal",
+  "clue": "crunchy",
+  "fact": "The United States and France tie for the highest percentage of the population that consumes potato chips."
+ },
+ {
+  "a": "CHEF",
+  "c": "Universal",
+  "clue": "Professional cook",
+  "fact": "Your friend who is a chef will probably never text you back. Don't take it personal, they barely have time."
+ },
+ {
+  "a": "LIPSTICK",
+  "c": "Universal",
+  "clue": "Cosmetic",
+  "fact": "A Lipstick is a cosmetic product made of waxes, oils, pigments and emollients."
+ },
+ {
+  "a": "AIRPORT",
+  "c": "Universal",
+  "clue": "AIR",
+  "fact": "The busiest airports aren't always the largest"
+ },
+ {
+  "a": "SKYSCRAPER",
+  "c": "Universal",
+  "clue": "very tall building",
+  "fact": "The tallest Skyscraper in the world is the Burj Khalifa in Dubai."
+ },
+ {
+  "a": "SICK",
+  "c": "Universal",
+  "clue": "ill",
+  "fact": "You are actually more likely to pick up a cold virus from shaking someone's hand than kissing them."
+ },
+ {
+  "a": "NURSE",
+  "c": "Universal",
+  "clue": "Medical staff",
+  "fact": "Nurses are often unrecognizable outside of work."
+ },
+ {
+  "a": "HIBISCUS",
+  "c": "Universal",
+  "clue": "large flowering plant",
+  "fact": "Hibiscus is used for treating loss of appetite, colds, heart and nerve diseases."
+ },
+ {
+  "a": "GOLF",
+  "c": "Universal",
+  "clue": "club and ball",
+  "fact": "Golf has been played on the moon!"
+ },
+ {
+  "a": "LANTERN",
+  "c": "Universal",
+  "clue": "light",
+  "fact": "Lanterns are portable or fixed lighting sources that feature a protective enclosure, such as glass, metal-around a flame, gas mantle or electric bulb."
+ },
+ {
+  "a": "RADIO",
+  "c": "Universal",
+  "clue": "communication",
+  "fact": "The first true radio transmission of voice was made by Guglielmo Marconi in 1895."
+ },
+ {
+  "a": "POLICE",
+  "c": "Universal",
+  "clue": "No clue",
+  "fact": "If they are on uniforms, they have to tell you their name, rank and station. If the officer do not tell you, you can ASK."
+ },
+ {
+  "a": "PENGUIN",
+  "c": "Universal",
+  "clue": "flightless seabird",
+  "fact": "Many male Penguins gift female penguins with rocks in order to woo them."
+ },
+ {
+  "a": "DEER",
+  "c": "Universal",
+  "clue": "Primary homophone is Dear.",
+  "fact": "Almost all male deer grow antlers."
+ },
+ {
+  "a": "FLAMINGO",
+  "c": "Universal",
+  "clue": "wading bird",
+  "fact": "A group of flamingos is called flamboyance"
+ },
+ {
+  "a": "BEETLE",
+  "c": "Universal",
+  "clue": "B2",
+  "fact": "Rhino Beetles are able to lift up to 850 times their own body weight."
+ },
+ {
+  "a": "CHAMELEON",
+  "c": "Universal",
+  "clue": "Camouflage",
+  "fact": "Chameleons change color mainly to regulate their body temperature, signal dominance, show mood or attract a mate."
+ },
+ {
+  "a": "SALAMANDER",
+  "c": "Universal",
+  "clue": "superpower regeneration",
+  "fact": "Salamanders can regrow not just lost limbs and tails, but also complex organs like parts of their heart, brain and spinal cord."
+ },
+ {
+  "a": "TEACHER",
+  "c": "Universal",
+  "clue": "NO CLUE",
+  "fact": "Teachers can hear a whispered side conversation across a packed room even while writing on the board with their back turned."
+ },
+ {
+  "a": "PILOT",
+  "c": "Universal",
+  "clue": "NO CLUE",
+  "fact": "Pilots are generally forbidden from eating shellfish while on duty to lower the risk of foodborne illness."
+ },
+ {
+  "a": "PALMTREE",
+  "c": "Universal",
+  "clue": "NO CLUE",
+  "fact": "There are more than 2,500 known species of palms."
+ },
+ {
+  "a": "BOOT",
+  "c": "Universal",
+  "clue": "Footwear",
+  "fact": "Some boots can be as high enough to protect your calves."
+ },
+ {
+  "a": "VUVUZELA",
+  "c": "Universal",
+  "clue": "NO CLUE",
+  "fact": "Vuvuzela is a traditional and modern stadium horn originating from South Africa."
+ },
+ {
+  "a": "ANACONDA",
+  "c": "Universal",
+  "clue": "NO CLUE",
+  "fact": "The green Anaconda is the heaviest snake in the world."
+ },
+ {
+  "a": "RIO",
+  "c": "Universal",
+  "clue": "NO CLUE",
+  "fact": "Rio is the second largest city in Brazil."
+ },
+ {
+  "a": "KUNGFUPANDA",
+  "c": "Universal",
+  "clue": "2008 Family/Comedy movie",
+  "fact": "The Character of the Monkey in Kung Fu Panda was voiced by the legendary Jackie Chan."
+ },
+ {
+  "a": "SONIC",
+  "c": "Universal",
+  "clue": "SEGA",
+  "fact": "Sonic the Hedgehog is a prominent video game and media franchise created by SEGA."
+ },
+ {
+  "a": "VENOM",
+  "c": "Universal",
+  "clue": "Marvel Comic",
+  "fact": "Venom has hunger for human flesh and brains, but it can curb its blood cravings by eating chocolate."
+ },
+ {
+  "a": "TRANSPORT",
+  "c": "Universal",
+  "clue": "NO CLUE",
+  "fact": "Air transport is the fastest conventional and commercial means of transport available."
+ },
+ {
+  "a": "PITCH",
+  "c": "Universal",
+  "clue": "NO CLUE",
+  "fact": "A pitch can also be the name for a playing field, especially in sports like football (soccer), cricket and rugby."
+ },
+ {
+  "a": "BASKETBALL",
+  "c": "Universal",
+  "clue": "NO CLUE",
+  "fact": "Basketball is a global team sport invented in December 1891 by Dr. James Naismith in Springfield, Massachusetts."
+ },
+ {
+  "a": "TEMPLE",
+  "c": "Universal",
+  "clue": "NO CLUE",
+  "fact": "The oldest known temple in the world is Gobekli Tepe in southeastern Turkey. Built around 11,600 years ago."
+ },
+ {
+  "a": "TRUCK",
+  "c": "Universal",
+  "clue": "NO CLUE",
+  "fact": "German inventor Gottlieb Daimler built the world's first gasoline-powered motor truck in 1896."
+ },
+ {
+  "a": "TRAIN",
+  "c": "Universal",
+  "clue": "NO CLUE",
+  "fact": "The Japan LO Series Maglev is the fastest train in the world, having reached a record speed of 603 km/h (375 MPH) during a Test."
+ },
+ {
+  "a": "LAGBAJA",
+  "c": "Naija",
+  "clue": "Afrobeat musician",
+  "fact": "Lagbaja whose birth name is Bisade Ologunde is a graduate of Obafemi Awolowo University."
+ },
+ {
+  "a": "KOREDE",
+  "c": "Naija",
+  "clue": "God win",
+  "fact": "Korede bello is a Nigerian singer and songwriter known for his hit single \"Godwin\""
+ },
+ {
+  "a": "PAPAAJASCO",
+  "c": "Naija",
+  "clue": "Wale Adenuga Production",
+  "fact": "Papa Ajasco and Company is a Nigeria family television sitcom created by Wale Adenuga in 1996."
+ },
+ {
+  "a": "SUYA",
+  "c": "Naija",
+  "clue": "Tsire",
+  "fact": "Suya is a popular West African smoke-grilled spiced meat on a skewer, originating from the Hausa People of Northern Nigeria."
+ },
+ {
+  "a": "PUFFPUFF",
+  "c": "Naija",
+  "clue": "Dough",
+  "fact": "Puff-Puff is a traditional snack made of fried dough and eaten across West and central Africa. The name is from Nigeria."
+ },
+ {
+  "a": "SMALLCHOPS",
+  "c": "Naija",
+  "clue": "commonly served at parties",
+  "fact": "Small chops are popular bite-sized finger foods in Nigerian Cuisine, commonly served at parties, weddings, birthdays, and corporate events."
+ },
+ {
+  "a": "ASHIMOLOWO",
+  "c": "Naija",
+  "clue": "Clergyman",
+  "fact": "Matthew Ashimolowo is a Nigerian Clergyman, the senior pastor of Kingsway International Christian Centre."
+ },
+ {
+  "a": "LAWRENCEOYOR",
+  "c": "Naija",
+  "clue": "Jugular Jugular",
+  "fact": "Lawrence Oyor is a Gospel Music Minister and Evangelist."
+ },
+ {
+  "a": "SINACH",
+  "c": "Naija",
+  "clue": "Singer, Songwriter",
+  "fact": "Osinachi Kalu Okoro Egbu, known professionally as Sinach is a Nigeria singer, songwriter and senior worship leader."
+ },
+ {
+  "a": "EBEN",
+  "c": "Naija",
+  "clue": "Gospel Singer",
+  "fact": "Emmanuel Benjamin is a Gospel Singer, Vocalist and Songwriter."
+ },
+ {
+  "a": "GLO",
+  "c": "Naija",
+  "clue": "Telecommunication",
+  "fact": "Globacom Limited, commonly known as Glo, is a Nigerian Multinational Telecommunications company, founded in 2003."
+ },
+ {
+  "a": "TYBELLO",
+  "c": "Naija",
+  "clue": "Songwriter, Photographer",
+  "fact": "Toyin Sokefun-Bello, known as TY Bello is a Nigerian Singer, Songwriter, Photographer and Philanthropist."
+ },
+ {
+  "a": "KIZZDANIEL",
+  "c": "Naija",
+  "clue": "Musician",
+  "fact": "Daniel Oluwatobiloba Anidugbe, professionally known as KIZZ DANIEL is a Nigerian Singer and Songwriter born in 1994."
+ },
+ {
+  "a": "MTN",
+  "c": "Naija",
+  "clue": "Telecommunication",
+  "fact": "MTN Group Limited is a South African multinational corporation and mobile telecommunications provider."
+ },
+ {
+  "a": "SHARONOOJA",
+  "c": "Naija",
+  "clue": "Actress",
+  "fact": "Sharon Ooja Nwoke, known as Sharon Ooja is a Nigerian actress born in 1991."
+ },
+ {
+  "a": "RAILWAY",
+  "c": "Universal",
+  "clue": "NO CLUE",
+  "fact": "The Qinghai-Tibet Railway in China reaches an extreme altitude of 16,640 feet (5,071 meters) at the Tanggula pass, making it the highest railway on Earth."
+ },
+ {
+  "a": "FACTORY",
+  "c": "Universal",
+  "clue": "NO CLUE",
+  "fact": "A Factory is an individual building or facility where workers and machines turn raw materials into finished goods on a large scale."
+ },
+ {
+  "a": "YACHT",
+  "c": "Universal",
+  "clue": "recreational boat",
+  "fact": "Yachts are luxury recreational boats, but were originally created by the Dutch Navy in the 14th century to chase pirates and thieves."
+ },
+ {
+  "a": "CASTLE",
+  "c": "Universal",
+  "clue": "NO CLUE",
+  "fact": "Windsor Castle in England is the oldest and largest occupied castle in the world, with a history going back more than 900 years."
+ },
+ {
+  "a": "CHEESE",
+  "c": "Universal",
+  "clue": "Dairy",
+  "fact": "Cheese has been around for over 7,000 years."
+ },
+ {
+  "a": "MONK",
+  "c": "Universal",
+  "clue": "NO CLUE",
+  "fact": "A monk commonly refers to a man who belongs to a religious order and lives apart from mainstream society in a monastery."
+ },
+ {
+  "a": "DRONE",
+  "c": "Universal",
+  "clue": "NO CLUE",
+  "fact": "Drones have cut the time needed for hazardous infrastructure inspections (like wind turbines, bridges, and power lines) by up to 80% compared to traditional manual methods"
+ },
+ {
+  "a": "ROCKET",
+  "c": "Universal",
+  "clue": "NO CLUE",
+  "fact": "Rockets move fast enough to circle the entire Earth in just 90 minutes."
+ },
+ {
+  "a": "MALL",
+  "c": "Universal",
+  "clue": "NO CLUE",
+  "fact": "Traditional mall designs often omitted exterior windows and natural light to help shoppers lose track of time and focus on the stores."
+ },
+ {
+  "a": "PARK",
+  "c": "Universal",
+  "clue": "NO CLUE",
+  "fact": "Studies show that spending just 20 minutes in a park can help lower your stress levels."
+ },
+ {
+  "a": "FARM",
+  "c": "Universal",
+  "clue": "NO CLUE",
+  "fact": "Farm animals are surprisingly smart—pigs have been shown to have cognitive abilities matching young children or dogs, and chickens can recognize up to 100 different faces and perceive future events."
+ },
+ {
+  "a": "CANYON",
+  "c": "Universal",
+  "clue": "deep narrow valley with steep rocky sides.",
+  "fact": "The Yarlung Tsangpo Grand Canyon in Tibet is the deepest and largest canyon on Earth, reaching about 5,300 meters (17,388 feet) from top to bottom."
+ },
+ {
+  "a": "CAVE",
+  "c": "Universal",
+  "clue": "NO CLUE",
+  "fact": "Mammoth Cave in Kentucky, USA, is the longest known cave system in the world, stretching over 675.9 kilometers (420 miles)."
+ },
+ {
+  "a": "VOLCANO",
+  "c": "Universal",
+  "clue": "Eruption",
+  "fact": "There are roughly 1,500 active volcanoes worldwide, with many more located hidden beneath the ocean floor."
+ },
+ {
+  "a": "ISLAND",
+  "c": "Universal",
+  "clue": "Landmass that is completely surrounded by water.",
+  "fact": "Sweden has over 221,800 islands—more than any other nation in the world."
+ },
+ {
+  "a": "FOX",
+  "c": "Universal",
+  "clue": "Dog family",
+  "fact": "A group of foxes is called a skulk or a leash."
+ },
+ {
+  "a": "OTTER",
+  "c": "Universal",
+  "clue": "densest fur of any animal on Earth",
+  "fact": "Sea otters use rocks as tools to crack open hard shells like clams, mussels, and sea urchins. They even keep their favorite rocks in special skin pouches under their armpits."
+ },
+ {
+  "a": "SUPERHERO",
+  "c": "Universal",
+  "clue": "super strength",
+  "fact": "The Hulk was supposed to be gray: The character was originally colored gray, but printing issues at the factory forced Marvel to change him to green."
+ },
+ {
+  "a": "RHINOCEROS",
+  "c": "Universal",
+  "clue": "NO CLUE",
+  "fact": "A group of rhinos is called a crash."
+ },
+ {
+  "a": "KOALA",
+  "c": "Universal",
+  "clue": "NO CLUE",
+  "fact": "They sleep or rest 18 to 22 hours a day to conserve energy because their diet of eucalyptus leaves is low in nutrients."
+ },
+ {
+  "a": "FAIRY",
+  "c": "Universal",
+  "clue": "Tiny glowing powerful supernatural being",
+  "fact": "Cold iron is traditionally considered toxic or painful to fairies; touching or being near iron is said to burn them, weaken their magic, and cause severe discomfort."
+ },
+ {
+  "a": "DREAM",
+  "c": "Universal",
+  "clue": "Night vision in your mind",
+  "fact": "The average person has about 4–6 dreams every night, but we forget most of them within minutes of waking up."
+ },
+ {
+  "a": "CAPTURE",
+  "c": "Universal",
+  "clue": "Catch or take control",
+  "fact": "The word “capture” comes from the Latin *capere*, which means “to take” or “to seize”"
+ },
+ {
+  "a": "PIZZA",
+  "c": "Universal",
+  "clue": "Cheesy Italian favorite",
+  "fact": "The world’s most expensive pizza costs over $12,000 and is topped with edible gold and rare caviar."
+ },
+ {
+  "a": "SCIENCE",
+  "c": "Universal",
+  "clue": "Knowledge through experiments",
+  "fact": "The word “science” comes from the Latin *scientia*, which simply means “knowledge”."
+ },
+ {
+  "a": "TUBE",
+  "c": "Universal",
+  "clue": "Long hollow cylinder",
+  "fact": "The London Underground is nicknamed “the Tube” because of its circular tunnels."
+ },
+ {
+  "a": "CITRUS",
+  "c": "Universal",
+  "clue": "Orange, lemon family",
+  "fact": "Citrus fruits were first cultivated in Southeast Asia over 4,000 years ago."
+ },
+ {
+  "a": "CODE",
+  "c": "Universal",
+  "clue": "Secret system of symbols",
+  "fact": "The first computer “bug” was an actual moth found inside a computer in 1947."
+ },
+ {
+  "a": "CASE",
+  "c": "Universal",
+  "clue": "Container or situation",
+  "fact": "In law, a “case” can last for years, while in fashion a phone case can go out of style in months."
+ },
+ {
+  "a": "PLAN",
+  "c": "Universal",
+  "clue": "Future arrangement of steps",
+  "fact": "The saying “failing to plan is planning to fail” is often attributed to Benjamin Franklin."
+ },
+ {
+  "a": "TRACK",
+  "c": "Universal",
+  "clue": "Path or follow closely",
+  "fact": "The first music “tracks” were named after the physical grooves on vinyl records."
+ },
+ {
+  "a": "PANEL",
+  "c": "Universal",
+  "clue": "Flat board or group of people",
+  "fact": "Solar panels can still generate electricity on cloudy days, just less efficiently."
+ },
+ {
+  "a": "DATE",
+  "c": "Universal",
+  "clue": "Calendar day or sweet fruit",
+  "fact": "Date palms can live for over 100 years and still produce fruit"
+ },
+ {
+  "a": "ADDRESS",
+  "c": "Universal",
+  "clue": "Location or formal speech",
+  "fact": "The first email was sent in 1971 by Ray Tomlinson, who also chose the “@” symbol"
+ },
+ {
+  "a": "MAST",
+  "c": "Universal",
+  "clue": "Tall pole on a ship",
+  "fact": "Ship masts were traditionally made from a single tall tree, usually pine or fir."
+ },
+ {
+  "a": "SATELLITE",
+  "c": "Universal",
+  "clue": "Object orbiting a planet",
+  "fact": "There are currently over 8,000 active satellites orbiting Earth."
+ },
+ {
+  "a": "CYBERTRUCK",
+  "c": "Universal",
+  "clue": "Tesla’s futuristic pickup",
+  "fact": "The Cybertruck’s stainless steel body is so strong that it can resist dents from a sledgehammer."
+ },
+ {
+  "a": "AFRICA",
+  "c": "Universal",
+  "clue": "Second largest continent",
+  "fact": "Africa is home to the world’s largest desert (Sahara) and the world’s longest river (Nile)."
+ },
+ {
+  "a": "PYRAMID",
+  "c": "Universal",
+  "clue": "Ancient triangular monument",
+  "fact": "The Great Pyramid of Giza was the tallest man-made structure in the world for over 3,800 years."
+ },
+ {
+  "a": "MOUNTEVEREST",
+  "c": "Universal",
+  "clue": "Highest peak on Earth",
+  "fact": "Mount Everest grows about 4 millimeters taller every year due to tectonic plate movement."
+ },
+ {
+  "a": "COUPLE",
+  "c": "Universal",
+  "clue": "Two people in love",
+  "fact": "The word “couple” originally comes from the Latin word meaning “to join” or “to link together."
+ },
+ {
+  "a": "NOTE",
+  "c": "Universal",
+  "clue": "Short written message",
+  "fact": "Musical notes were first written down over 1,000 years ago by monks."
+ },
+ {
+  "a": "MUSIC",
+  "c": "Universal",
+  "clue": "Sounds arranged in time",
+  "fact": "Listening to music can release dopamine, the same chemical your brain produces when you eat chocolate."
+ },
+ {
+  "a": "GOLD",
+  "c": "Universal",
+  "clue": "Precious yellow metal",
+  "fact": "Almost all the gold ever mined in human history could fit into just three Olympic-sized swimming pools."
+ },
+ {
+  "a": "SEAHORSE",
+  "c": "Universal",
+  "clue": "Fish that swims upright",
+  "fact": "Male seahorses are the ones that get pregnant and give birth."
+ },
+ {
+  "a": "OCTOPUS",
+  "c": "Universal",
+  "clue": "Sea creature with eight arms",
+  "fact": "Octopuses have three hearts and blue blood"
+ },
+ {
+  "a": "SAD",
+  "c": "Universal",
+  "clue": "Feeling unhappy",
+  "fact": "Crying when you’re sad can actually help reduce stress hormones in your body."
+ },
+ {
+  "a": "LONELY",
+  "c": "Universal",
+  "clue": "Feeling alone",
+  "fact": "Loneliness can affect your health as much as smoking 15 cigarettes a day."
+ },
+ {
+  "a": "LAWYER",
+  "c": "Universal",
+  "clue": "Person who practices law",
+  "fact": "The first lawyers existed in ancient Rome over 2,000 years ago."
+ },
+ {
+  "a": "JACKSPARROW",
+  "c": "Universal",
+  "clue": "Pirate from Pirates of the Caribbean",
+  "fact": "Johnny Depp partly based Jack Sparrow’s walk and behavior on Keith Richards from The Rolling Stones."
+ },
+ {
+  "a": "THEFLASH",
+  "c": "Universal",
+  "clue": "Fastest superhero",
+  "fact": "The Flash can run so fast that he can travel through time."
+ },
+ {
+  "a": "BATMAN",
+  "c": "Universal",
+  "clue": "Dark knight of Gotham",
+  "fact": "Batman has no superpowers — he relies only on his intelligence, training, and technology."
+ },
+ {
+  "a": "THOR",
+  "c": "Universal",
+  "clue": "God of thunder",
+  "fact": "In Norse mythology, Thor’s hammer Mjolnir was so heavy that only he could lift it."
+ },
+ {
+  "a": "IRONMAN",
+  "c": "Universal",
+  "clue": "Genius in a metal suit",
+  "fact": "Tony Stark built the first Iron Man suit in a cave using scrap metal."
+ },
+ {
+  "a": "JOKER",
+  "c": "Universal",
+  "clue": "Batman’s greatest enemy",
+  "fact": "The Joker was originally supposed to be killed off after his first appearance, but fans loved him too much."
+ },
+ {
+  "a": "TERMINATOR",
+  "c": "Universal",
+  "clue": "Killer robot from the future",
+  "fact": "The famous line “I’ll be back” was almost changed to “I will be back” because Arnold struggled with the contraction."
+ },
+ {
+  "a": "CHINA",
+  "c": "Universal",
+  "clue": "Most populous country",
+  "fact": "China is home to the world’s largest high-speed rail network."
+ },
+ {
+  "a": "BRAZIL",
+  "c": "Universal",
+  "clue": "Largest country in South America",
+  "fact": "Brazil is the only country in South America that speaks Portuguese as its official language."
+ },
+ {
+  "a": "CANADA",
+  "c": "Universal",
+  "clue": "Maple leaf northern country",
+  "fact": "Canada has more lakes than the rest of the world combined."
+ },
+ {
+  "a": "GHANA",
+  "c": "Universal",
+  "clue": "West African gold coast",
+  "fact": "Ghana was the first African country to gain independence from colonial rule in 1957."
+ },
+ {
+  "a": "PEACE",
+  "c": "Universal",
+  "clue": "Opposite of war and conflict",
+  "fact": "The olive branch has been a symbol of peace for over 2,500 years."
+ },
+ {
+  "a": "CAPTAIN",
+  "c": "Universal",
+  "clue": "Leader of a team or ship",
+  "fact": "The word “captain” comes from the Latin word for “head.”"
+ },
+ {
+  "a": "ROBOT",
+  "c": "Universal",
+  "clue": "Machine that acts like human",
+  "fact": "The word “robot” was first used in a 1920 Czech play and means “forced labor.”"
+ },
+ {
+  "a": "ALIEN",
+  "c": "Universal",
+  "clue": "Being from outer space",
+  "fact": "Scientists estimate there could be billions of Earth-like planets in our galaxy alone."
+ },
+ {
+  "a": "PREDATOR",
+  "c": "Universal",
+  "clue": "Animal that hunts others",
+  "fact": "The fastest land predator is the cheetah, reaching up to 110 km/h."
+ },
+ {
+  "a": "SCORPION",
+  "c": "Universal",
+  "clue": "Desert creature with stinger",
+  "fact": "Scorpions glow a bright blue-green color under ultraviolet light"
+ },
+ {
+  "a": "MORTALKOMBAT",
+  "c": "Universal",
+  "clue": "Famous fighting video game",
+  "fact": "The game was created to compete with Street Fighter II in the early 1990s"
+ },
+ {
+  "a": "DESERT",
+  "c": "Universal",
+  "clue": "Hot dry sandy place",
+  "fact": "Antarctica is actually the largest desert in the world."
+ },
+ {
+  "a": "CAMEL",
+  "c": "Universal",
+  "clue": "Animal with humps in desert",
+  "fact": "A camel’s hump stores fat, not water."
+ },
+ {
+  "a": "LIGHTHOUSE",
+  "c": "Universal",
+  "clue": "Tall tower that guides ships",
+  "fact": "The first known lighthouse was the Lighthouse of Alexandria, one of the Seven Wonders."
+ },
+ {
+  "a": "COLD",
+  "c": "Universal",
+  "clue": "Opposite of hot",
+  "fact": "The coldest temperature ever recorded on Earth was -89.2°C in Antarctica"
+ },
+ {
+  "a": "BIRD",
+  "c": "Universal",
+  "clue": "Animal with feathers and wings",
+  "fact": "There are over 10,000 different species of birds in the world"
+ },
+ {
+  "a": "ROLL",
+  "c": "Universal",
+  "clue": "Move by turning over",
+  "fact": "The phrase “let’s roll” became famous after the 9/11 flights."
+ },
+ {
+  "a": "SPRAY",
+  "c": "Universal",
+  "clue": "Liquid shot into the air",
+  "fact": "The first aerosol spray can was invented in 1927."
+ },
+ {
+  "a": "BABY",
+  "c": "Universal",
+  "clue": "Very young child",
+  "fact": "Babies are born with about 300 bones, while adults have 206."
+ },
+ {
+  "a": "ASSEMBLE",
+  "c": "Universal",
+  "clue": "Put all the parts together",
+  "fact": "The word comes from Latin meaning “to bring together.”"
+ },
+ {
+  "a": "SIGN",
+  "c": "Universal",
+  "clue": "Board that gives information",
+  "fact": "The first traffic signs were used by the ancient Romans."
+ },
+ {
+  "a": "BED",
+  "c": "Universal",
+  "clue": "Place where people sleep",
+  "fact": "The oldest known bed is over 77,000 years old and was found in South Africa."
+ },
+ {
+  "a": "RUN",
+  "c": "Universal",
+  "clue": "Move faster than walking",
+  "fact": "The fastest recorded human sprint speed is about 44.7 km/h."
+ },
+ {
+  "a": "PULL",
+  "c": "Universal",
+  "clue": "Opposite of push",
+  "fact": "In physics, forces can only pull or push — never both at once in the same way."
+ },
+ {
+  "a": "JUMP",
+  "c": "Universal",
+  "clue": "Push off the ground upward",
+  "fact": "The highest recorded dunk jump by a human is over 1.5 meters."
+ },
+ {
+  "a": "DUNK",
+  "c": "Universal",
+  "clue": "NO CLUE",
+  "fact": "The highest recorded dunk jump by a human is over 1.5 meters."
+ },
+ {
+  "a": "DANCE",
+  "c": "Universal",
+  "clue": "Move body to music",
+  "fact": "Dancing is found in every human culture on Earth."
+ },
+ {
+  "a": "BARK",
+  "c": "Universal",
+  "clue": "Sound a dog makes",
+  "fact": "Dogs bark for many reasons — not just to be aggressive."
+ },
+ {
+  "a": "CANBERRA",
+  "c": "Universal",
+  "clue": "NO CLUE",
+  "fact": "Canberra was specially designed and built to be Australia’s capital."
+ },
+ {
+  "a": "MARS",
+  "c": "Universal",
+  "clue": "Red planet in space",
+  "fact": "A day on Mars is only 37 minutes longer than a day on Earth"
+ },
+ {
+  "a": "NILE",
+  "c": "Universal",
+  "clue": "NO CLUE",
+  "fact": "The Nile River was the lifeline of ancient Egyptian civilization."
+ },
+ {
+  "a": "VATICANCITY",
+  "c": "Universal",
+  "clue": "NO CLUE",
+  "fact": "Vatican City is the smallest country in the world, covering only 0.44 square kilometers."
+ },
+ {
+  "a": "PACIFICOCEAN",
+  "c": "Universal",
+  "clue": "NO CLUE",
+  "fact": "The Pacific Ocean is bigger than all the land on Earth combined."
+ },
+ {
+  "a": "BRASILIA",
+  "c": "Universal",
+  "clue": "NO CLUE",
+  "fact": "Brasilia was built in just 4 years and became Brazil’s capital in 1960."
+ },
+ {
+  "a": "OTTAWA",
+  "c": "Universal",
+  "clue": "NO CLUE",
+  "fact": "Ottawa was chosen as Canada’s capital by Queen Victoria in 1857."
+ },
+ {
+  "a": "TOKYO",
+  "c": "Universal",
+  "clue": "NO CLUE",
+  "fact": "Tokyo is the most populated city in the world with over 37 million people in its metro area."
+ },
+ {
+  "a": "CAIRO",
+  "c": "Universal",
+  "clue": "NO CLUE",
+  "fact": "Cairo is known as “The City of a Thousand Minarets” because of its many mosques."
+ },
+ {
+  "a": "WELLINGTON",
+  "c": "Universal",
+  "clue": "NO CLUE",
+  "fact": "Wellington is the southernmost capital city in the world."
+ },
+ {
+  "a": "BUENOSAIRES",
+  "c": "Universal",
+  "clue": "NO CLUE",
+  "fact": "Buenos Aires means “good airs” or “fair winds” in Spanish."
+ },
+ {
+  "a": "MADRID",
+  "c": "Universal",
+  "clue": "NO CLUE",
+  "fact": "Madrid is the highest capital city in Europe, sitting at 667 meters above sea level."
+ },
+ {
+  "a": "YEN",
+  "c": "Universal",
+  "clue": "NO CLUE",
+  "fact": "The Japanese yen is the third most traded currency in the world after the US dollar and the euro."
+ },
+ {
+  "a": "CHEETAH",
+  "c": "Universal",
+  "clue": "NO CLUE",
+  "fact": "A cheetah can go from 0 to 100 km/h in just 3 seconds"
+ },
+ {
+  "a": "SHAKESPEARE",
+  "c": "Universal",
+  "clue": "NO CLUE",
+  "fact": "William Shakespeare invented over 1,700 words that we still use today."
+ },
+ {
+  "a": "DIAMOND",
+  "c": "Universal",
+  "clue": "NO CLUE",
+  "fact": "Diamonds are made of pure carbon and form deep inside the Earth under extreme pressure."
+ },
+ {
+  "a": "VITAMIND",
+  "c": "Universal",
+  "clue": "NO CLUE",
+  "fact": "Your body can produce Vitamin D when your skin is exposed to sunlight."
+ },
+ {
+  "a": "YURIGAGARIN",
+  "c": "Universal",
+  "clue": "NO CLUE",
+  "fact": "Yuri Gagarin completed a full orbit of Earth in 108 minutes in 1961."
+ },
+ {
+  "a": "JAGUAR",
+  "c": "Universal",
+  "clue": "Big spotted cat",
+  "fact": "Jaguars have the strongest bite force of any big cat and can crush turtle shells."
+ },
+ {
+  "a": "CERAMIC",
+  "c": "Universal",
+  "clue": "Baked clay material",
+  "fact": "Ceramic is one of the oldest materials used by humans, dating back over 20,000 years."
+ },
+ {
+  "a": "SCULPTURE",
+  "c": "Universal",
+  "clue": "3D artwork",
+  "fact": "The oldest known sculpture is over 35,000 years old and was carved from mammoth ivory."
+ },
+ {
+  "a": "COPPER",
+  "c": "Universal",
+  "clue": "Reddish metal",
+  "fact": "Copper was the first metal used by humans over 10,000 years ago."
+ },
+ {
+  "a": "SMELL",
+  "c": "Universal",
+  "clue": "Sense of the nose",
+  "fact": "Humans can detect over 1 trillion different smells."
+ },
+ {
+  "a": "AQUAMAN",
+  "c": "Universal",
+  "clue": "Underwater superhero",
+  "fact": "Aquaman can communicate with all sea creatures and swim at super speed."
+ },
+ {
+  "a": "SPONGEBOB",
+  "c": "Universal",
+  "clue": "Yellow sea sponge",
+  "fact": "SpongeBob SquarePants first aired in 1999 and became one of the most popular cartoons ever."
+ },
+ {
+  "a": "SCOOBYDOO",
+  "c": "Universal",
+  "clue": "Cowardly mystery dog",
+  "fact": "Scooby-Doo has been running since 1969, making it one of the longest-running cartoon franchises."
+ },
+ {
+  "a": "JELLYFISH",
+  "c": "Universal",
+  "clue": "Stinging sea creature",
+  "fact": "Some jellyfish are biologically immortal and can reverse their aging process."
+ },
+ {
+  "a": "FAN",
+  "c": "Universal",
+  "clue": "Blows air",
+  "fact": "The earliest known fans were used in ancient China over 3,000 years ago."
+ },
+ {
+  "a": "GIFT",
+  "c": "Universal",
+  "clue": "Present for someone",
+  "fact": "The tradition of giving gifts dates back thousands of years to ancient Egypt and Rome."
+ },
+ {
+  "a": "BALANCE",
+  "c": "Universal",
+  "clue": "Stay steady",
+  "fact": "Your inner ear plays a major role in helping you keep your balance."
+ },
+ {
+  "a": "PRIMARY",
+  "c": "Universal",
+  "clue": "Main or first",
+  "fact": "Primary colors (red, blue, and yellow) cannot be created by mixing other colors."
+ },
+ {
+  "a": "SABINUS",
+  "c": "Naija",
+  "clue": "Funny Skit Maker",
+  "fact": "Oga Sabinus is one of Nigeria’s most loved skit makers, famous for his hilarious village-boy characters and viral comedy videos."
+ },
+ {
+  "a": "EXPO",
+  "c": "Naija",
+  "clue": "Exam malpractice material",
+  "fact": "In Nigerian student slang, “Expo” means leaked exam questions or already-solved answers shared before or during exams."
+ },
+ {
+  "a": "JUDIKAY",
+  "c": "Naija",
+  "clue": "Gospel singer, “More Than Gold",
+  "fact": "Judikay is a powerful Nigerian gospel minister known for anointed songs like “More Than Gold” and “Capable God”."
+ },
+ {
+  "a": "PEAKMILK",
+  "c": "Naija",
+  "clue": "Popular tin milk brand",
+  "fact": "Peak Milk has been a household name in Nigeria for decades and is often called the “milk of champions”."
+ },
+ {
+  "a": "REMINISCE",
+  "c": "Naija",
+  "clue": "Baba Hafusa, local rapper",
+  "fact": "Reminisce is a veteran Nigerian rapper popularly called “Baba Hafusa” and known for his strong use of Yoruba in rap."
+ },
+ {
+  "a": "CHINKOEKUN",
+  "c": "Naija",
+  "clue": "\"Able God” rapper",
+  "fact": "Chinko Ekun became famous with the hit song “Able God” which celebrated God’s blessings and success."
+ },
+ {
+  "a": "OLAMIDE",
+  "c": "Naija",
+  "clue": "Baddo, YBNL boss",
+  "fact": "Olamide, also known as Baddo, is one of the most influential artists in Nigerian music and founder of YBNL Nation."
+ },
+ {
+  "a": "OMAHLAY",
+  "c": "Naija",
+  "clue": "“Damn” and “Godly” singer",
+  "fact": "Omah Lay is a talented Afrobeats singer-songwriter known for emotional and melodic songs like “Damn”, “Godly” and “soso”."
+ },
+ {
+  "a": "TIMIDAKOLO",
+  "c": "Naija",
+  "clue": "iyawo mi",
+  "fact": "Timi Dakolo won the first season of Nigerian Idol and is loved for his smooth, soulful voice."
+ },
+ {
+  "a": "AIRTEL",
+  "c": "Naija",
+  "clue": "Red network provider",
+  "fact": "Airtel is one of Nigeria’s biggest telecom companies and is easily recognised by its bright red colour."
+ },
+ {
+  "a": "AFRO",
+  "c": "Naija",
+  "clue": "Natural curly hairstyle",
+  "fact": "The Afro is a proud natural hairstyle that became a global symbol of Black beauty and identity."
+ },
+ {
+  "a": "DSTV",
+  "c": "Naija",
+  "clue": "Satellite TV decoder",
+  "fact": "DStv is the most popular satellite television service in Nigeria and across Africa."
+ },
+ {
+  "a": "ADEBOYE",
+  "c": "Naija",
+  "clue": "RCCG General Overseer",
+  "fact": "Pastor E.A. Adeboye is the General Overseer of RCCG and one of the most respected church leaders in the world."
+ },
+ {
+  "a": "USHBEBE",
+  "c": "Naija",
+  "clue": "NO CLUE",
+  "fact": "Ushbebe is a popular Nigerian comedy character known for his funny expressions and street-style humour."
+ },
+ {
+  "a": "KENNYBLAQ",
+  "c": "Naija",
+  "clue": "Singing comedian",
+  "fact": "Kenny Blaq is a unique Nigerian comedian who mixes stand-up comedy with singing and music."
+ },
+ {
+  "a": "TENI",
+  "c": "Naija",
+  "clue": "“Case” and “Askamaya” singer",
+  "fact": "Teni (Teniola Apata) is a vibrant Afrobeats artist known for fun, energetic songs and her bubbly personality."
+ },
+ {
+  "a": "TIMGODFREY",
+  "c": "Naija",
+  "clue": "“Nara” gospel artiste",
+  "fact": "Tim Godfrey is a renowned Nigerian gospel artist and music director, famous for the global hit “Nara”."
+ },
+ {
+  "a": "DJCUPPY",
+  "c": "Naija",
+  "clue": "Billionaire’s DJ daughter",
+  "fact": "DJ Cuppy is a popular Nigerian DJ and producer, and the daughter of billionaire Femi Otedola."
+ },
+ {
+  "a": "EGUSI",
+  "c": "Naija",
+  "clue": "Melon seed soup",
+  "fact": "Egusi soup, made from ground melon seeds, is one of the most popular and beloved soups in Nigeria."
+ },
+ {
+  "a": "TIMAYA",
+  "c": "Naija",
+  "clue": "Dem mama soldier",
+  "fact": "Timaya is a popular Nigerian artist known for his energetic dancehall and Afrobeats style, often called “Dem Mama Soldier”."
+ },
+ {
+  "a": "MERCYCHINWO",
+  "c": "Naija",
+  "clue": "\"Excess Love” gospel singer",
+  "fact": "Mercy Chinwo is a multi-award-winning Nigerian gospel singer famous for powerful songs like “Excess Love” and “Onyedikagi”."
+ },
+ {
+  "a": "AKPORORO",
+  "c": "Naija",
+  "clue": "Warri comedian, high energy",
+  "fact": "His real name is Bowoto Jephthah. He started as a gospel singer before becoming one of Nigeria’s top stand-up comedians."
+ },
+ {
+  "a": "BENIN",
+  "c": "Naija",
+  "clue": "NO CLUE",
+  "fact": "The Benin Kingdom was famous for its advanced bronze art and organised monarchy long before colonial times."
+ },
+ {
+  "a": "IGODYE",
+  "c": "Naija",
+  "clue": "Pidgin king, Delta comedian",
+  "fact": "Real name is Francis Agoda. He is known for mixing sharp social commentary with pure Warri-style comedy."
+ },
+ {
+  "a": "YEMIOSINBAJO",
+  "c": "Naija",
+  "clue": "Former Vice President, professor",
+  "fact": "He is a Senior Advocate of Nigeria (SAN) and was a law professor before entering politics."
+ },
+ {
+  "a": "JOSHUASELMAN",
+  "c": "Naija",
+  "clue": "NO CLUE",
+  "fact": "Apostle Joshua Selman is the founder of Eternity Network International, widely known for his deep teaching style."
+ },
+ {
+  "a": "BUHARI",
+  "c": "Naija",
+  "clue": "NO CLUE",
+  "fact": "Muhammadu Buhari served as military Head of State in the 1980s and later as civilian President from 2015 to 2023."
+ },
+ {
+  "a": "OBASANJO",
+  "c": "Naija",
+  "clue": "NO CLUE",
+  "fact": "Olusegun Obasanjo is one of the few people in the world to have ruled his country both as a military leader and later as a democratically elected president."
+ },
+ {
+  "a": "EXPRESIDENT",
+  "c": "Naija",
+  "clue": "NO CLUE",
+  "fact": "Nigeria has had both military and civilian presidents since independence in 1960."
+ },
+ {
+  "a": "HUSHPUPPI",
+  "c": "Naija",
+  "clue": "NO CLUE",
+  "fact": "Ramon Abbas (Hushpuppi) was known for flaunting luxury on Instagram."
+ },
+ {
+  "a": "FRSC",
+  "c": "Naija",
+  "clue": "Road safety agency",
+  "fact": "FRSC stands for Federal Road Safety Corps. They are responsible for making Nigerian roads safer and issuing driver’s licences."
+ },
+ {
+  "a": "EYOFESTIVAL",
+  "c": "Naija",
+  "clue": "White masquerades, Lagos",
+  "fact": "The Eyo Festival (also called Adamu Orisha Play) is unique to Lagos Island. The white-clad masquerades represent ancestral spirits."
+ },
+ {
+  "a": "MONIQUE",
+  "c": "Naija",
+  "clue": "NO CLUE",
+  "fact": "Temitope Monique Lawal is a popular gospel artist known for powerful worship songs and a beautiful voice."
+ },
+ {
+  "a": "ADEKUNLEGOLD",
+  "c": "Naija",
+  "clue": "Urban highlife king",
+  "fact": "Before fame, he was a graphic designer nicknamed “King of Photoshop.” He is a real Lagos prince from the Kosoko royal family and is married to singer Simi."
+ },
+ {
+  "a": "MRMACARONI",
+  "c": "Naija",
+  "clue": "Ooin! You’re doing well",
+  "fact": "Real name is Debo Adedayo. He became famous for his “Daddy Wa” sugar-daddy skits and was actively involved in the 2020 #EndSARS protests."
+ },
+ {
+  "a": "OKEYBAKASSI",
+  "c": "Naija",
+  "clue": "Veteran stand-up king",
+  "fact": "He studied Agricultural Engineering before comedy. He helped start the famous “Night of a Thousand Laughs” comedy show in the 1990s."
+ },
+ {
+  "a": "SIMI",
+  "c": "Naija",
+  "clue": "Soft Queen / Duduke",
+  "fact": "She taught herself music production on YouTube and still engineers a lot of her own songs. She is married to Adekunle Gold."
+ },
+ {
+  "a": "DAVIDOYEDEPO",
+  "c": "Naija",
+  "clue": "Winners’ Chapel Bishop",
+  "fact": "He founded one of the world’s largest church auditoriums (Faith Tabernacle, 50,000 seats) and is the Chancellor of Covenant University."
+ },
+ {
+  "a": "TOYINABRAHAM",
+  "c": "Naija",
+  "clue": "Alakada / Oversabi Aunty",
+  "fact": "Her movie *Oversabi Aunty* crossed ₦1 billion at the box office. She is also a successful film producer and director."
+ },
+ {
+  "a": "KEHINDE",
+  "c": "Naija",
+  "clue": "Twin sister actress",
+  "fact": "Kehinde Bankole has a twin sister named Taiwo. She started as a beauty queen before acting and was once a Lux ambassador."
+ },
+ {
+  "a": "JIDEKOSOKO",
+  "c": "Naija",
+  "clue": "Nollywood royal veteran",
+  "fact": "He is a real prince from the Kosoko royal family of Lagos and started acting at the age of 10 in 1964."
+ },
+ {
+  "a": "MAKANAKI",
+  "c": "Naija",
+  "clue": "NO CLUE",
+  "fact": "Bolanle Ninalowo is trained as an accountant in the US and worked as a banker before becoming a full-time actor and producer."
+ },
+ {
+  "a": "TINAMBA",
+  "c": "Naija",
+  "clue": "Versatile Nollywood mother",
+  "fact": "She is highly respected for her powerful mother and strong female roles and has been acting for decades."
+ },
+ {
+  "a": "PHYNO",
+  "c": "Naija",
+  "clue": "Igbo rap king / No Guts No Glory",
+  "fact": "He is one of the biggest Igbo rappers in Nigeria and is also a successful businessman and label owner (Penthauze)."
+ },
+ {
+  "a": "ADESUAETOMI",
+  "c": "Naija",
+  "clue": "NO CLUE",
+  "fact": "She won Best Actress at the AMVCA for *Knockout Blessing* and is married to singer Banky W."
+ },
+ {
+  "a": "BISOLA",
+  "c": "Naija",
+  "clue": "NO CLUE",
+  "fact": "She finished as first runner-up on Big Brother Naija 2017 and later became the first African host of *Family Feud Nigeria*."
+ },
+ {
+  "a": "BIMBOADEMOYE",
+  "c": "Naija",
+  "clue": "NO CLUE",
+  "fact": "She is friend with Bisola Aiyeola and is known for her excellent comic timing and expressive face."
+ },
+ {
+  "a": "BANKYW",
+  "c": "Naija",
+  "clue": "NO CLUE",
+  "fact": "He founded EME Records and gave Wizkid his first major platform. He is also an actor, former political aspirant, and is now a pastor in the US."
+ },
+ {
+  "a": "TOKEMAKINWA",
+  "c": "Naija",
+  "clue": "NO CLUE",
+  "fact": "She lost both parents in a gas explosion at age 8 and later wrote the bestselling memoir *On Becoming*."
+ },
+ {
+  "a": "TOBIBAKRE",
+  "c": "Naija",
+  "clue": "NO CLUE",
+  "fact": "He left a banking career to join Big Brother Naija (Season 3) and later became one of Nollywood’s highest-grossing actors."
+ },
+ {
+  "a": "ADEDIMEJI",
+  "c": "Naija",
+  "clue": "Crying Machine Yoruba star",
+  "fact": "Fans nicknamed him “Crying Machine” because of how emotional and tearful his performances often are."
+ },
+ {
+  "a": "UZORARUKWE",
+  "c": "Naija",
+  "clue": "Odogwu versatile actor",
+  "fact": "He studied Economics and holds an MBA, yet became one of Nollywood’s most versatile actors (drama, comedy, and action)."
+ },
+ {
+  "a": "IYABOOJO",
+  "c": "Naija",
+  "clue": "Veteran actress producer",
+  "fact": "She has acted in over 150 movies and founded the Pinkies Foundation to support children with special needs"
+ },
+ {
+  "a": "TIMINI",
+  "c": "Naija",
+  "clue": "NO CLUE",
+  "fact": "He is the younger brother of actress Dakore Egbuson-Akande and is known for his calm and charming screen presence."
+ },
+ {
+  "a": "FEMIJACOBS",
+  "c": "Naija",
+  "clue": "NO CLUE",
+  "fact": "He is famous for playing convincing pastor/church roles, especially in movies like *The Wedding Party*."
+ },
+ {
+  "a": "KUNLEREMI",
+  "c": "Naija",
+  "clue": "NO CLUE",
+  "fact": "Before fully focusing on acting, he worked as a model and is often praised for his striking looks and intense performances."
+ },
+ {
+  "a": "ADUNNIADE",
+  "c": "Naija",
+  "clue": "US-based Nollywood beauty",
+  "fact": "She is a Nigerian-American actress and model who successfully balances careers in both the US and Nollywood."
+ },
+ {
+  "a": "MCLIVELY",
+  "c": "Naija",
+  "clue": "NO CLUE",
+  "fact": "He started as a stand-up comedian and later successfully crossed into acting, known for his energetic and humorous style."
+ },
+ {
+  "a": "AKINLEWIS",
+  "c": "Naija",
+  "clue": "Veteran stage and screen",
+  "fact": "He is one of the most respected veteran actors in Nigeria with a long career in both stage plays and films."
+ },
+ {
+  "a": "SOPHIE",
+  "c": "Naija",
+  "clue": "NO CLUE",
+  "fact": "She is known for her elegance and has worked as both a model and actress in several romantic and dramatic roles."
+ },
+ {
+  "a": "SHAFFYBELLO",
+  "c": "Naija",
+  "clue": "NO CLUE",
+  "fact": "She began her career as a singer before becoming a highly respected actress known for graceful and strong roles."
+ },
+ {
+  "a": "DAKORE",
+  "c": "Naija",
+  "clue": "Timeless Nollywood beauty",
+  "fact": "She is Timini Egbuson’s elder sister and has been one of Nollywood’s leading actresses for over two decades."
+ },
+ {
+  "a": "RMD",
+  "c": "Naija",
+  "clue": "Legendary actor",
+  "fact": "RICHARD MOFE DAMIJO, Popularly called RMD is a Nollywood legend and once served as a Commissioner in Delta State."
+ },
+ {
+  "a": "RITADOMINIC",
+  "c": "Naija",
+  "clue": "Award-winning graceful actress",
+  "fact": "She is one of the most critically acclaimed actresses in Nollywood and has won multiple Best Actress awards."
+ },
+ {
+  "a": "MOFEDUNCAN",
+  "c": "Naija",
+  "clue": "NO CLUE",
+  "fact": "He rose to fame after starring in several romantic dramas and is also known for his sharp fashion sense off-screen."
+ },
+ {
+  "a": "OBAFEMI",
+  "c": "Naija",
+  "clue": "Nigerian football striker",
+  "fact": "Obafemi Martins is famous for his spectacular bicycle-kick goal celebrations during his time in Europe and the Super Eagles."
+ },
+ {
+  "a": "SAIDIBALOGUN",
+  "c": "Naija",
+  "clue": "NO CLUE",
+  "fact": "Saidi Balogun has been acting for decades and is respected as one of the strong fatherr-figure actor in Yoruba and English films."
+ },
+ {
+  "a": "ALINUHU",
+  "c": "Naija",
+  "clue": "NO CLUE",
+  "fact": "He is one of the most successful actors in Northern Nigeria and has also crossed over into mainstream Nollywood."
+ },
+ {
+  "a": "UCHEJOMBO",
+  "c": "Naija",
+  "clue": "Actress & film producer",
+  "fact": "She is not only a popular actress but also writes and produces many of her own movies. Full of energy and action."
+ },
+ {
+  "a": "PETEROKOYE",
+  "c": "Naija",
+  "clue": "P-Square twin",
+  "fact": "One half of the legendary P-Square duo that dominated African music for years with hits like “Do Me” and “Chop My Money”."
+ },
+ {
+  "a": "PAULOKOYE",
+  "c": "Naija",
+  "clue": "P-Square twin",
+  "fact": "Known as Rudeboy, he later launched a successful solo career after the P-Square split."
+ },
+ {
+  "a": "REMOTE",
+  "c": "Naija",
+  "clue": "Popular Nigerian comedian",
+  "fact": "He became famous for his street-style comedy skits and unique way of storytelling."
+ },
+ {
+  "a": "WOLIAROLE",
+  "c": "Naija",
+  "clue": "NO CLUE",
+  "fact": "Started as a comedian with gospel messages and is now an ordained minister."
+ },
+ {
+  "a": "WOLIAGBA",
+  "c": "Naija",
+  "clue": "Yoruba comedian & actor",
+  "fact": "His real name is Ayoub Afolabi Abdul Balogun and he is one of the biggest comedy voices in the Southwest."
+ },
+ {
+  "a": "ADEBIMPE",
+  "c": "Naija",
+  "clue": "NO CLUE",
+  "fact": "Oyebade Adebimpe is known for playing strong emotional roles in many Yoruba and English films."
+ },
+ {
+  "a": "JOHNBOYEGA",
+  "c": "Naija",
+  "clue": "British-Nigerian Star Wars actor",
+  "fact": "He played Finn in the Star Wars sequel trilogy and is proud of his Nigerian roots."
+ },
+ {
+  "a": "AKAHNNANI",
+  "c": "Naija",
+  "clue": "Actor, host & TV personality",
+  "fact": "He is a popular host and actor who has also appeared in several big Nollywood productions."
+ },
+ {
+  "a": "MARAJI",
+  "c": "Naija",
+  "clue": "Female comedian & skit maker",
+  "fact": "She gained massive fame for her hilarious character-driven comedy videos on social media."
+ },
+ {
+  "a": "TAAOOMA",
+  "c": "Naija",
+  "clue": "Comedy queen & skit maker",
+  "fact": "She is famous for playing multiple characters in one video, especially the overbearing mother roles."
+ },
+ {
+  "a": "ISBAEU",
+  "c": "Naija",
+  "clue": "Content creator & comedian",
+  "fact": "Known for his relatable and soft-spoken comedy style that appeals to young audiences. One of Nigeria Biggest Youtuber."
+ }
+]

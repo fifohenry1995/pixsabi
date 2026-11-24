@@ -1,0 +1,33 @@
+<h1>Delete your account</h1>
+<p class="doc-meta">You can delete your PixSabi account and the information in it at any time.</p>
+
+<h2>If you can log in</h2>
+<p>Open the game, go to <strong>Me</strong>, scroll to <strong>Delete my account</strong>, type your password and the word DELETE. Your account is then <strong>deleted 3 days later</strong>. During those 3 days you can tap <strong>Cancel deletion</strong> if you change your mind. We also email you when you ask and when it is done.</p>
+
+<h2>If you cannot log in</h2>
+<p>Type your username or the email you registered with. If the account has an email address, we send a confirmation link to it; opening the link starts the same 3-day countdown. If it has no email address, we will contact you to check that the account is yours.</p>
+<form id="del-form" class="doc-form" novalidate>
+  <label for="del-who">Your username or email</label>
+  <input id="del-who" type="text" maxlength="120" autocomplete="username" autocapitalize="none">
+  <button type="submit" class="btn">Ask for my account to be deleted</button>
+  <p id="del-msg" role="status"></p>
+</form>
+<p>You can also write to <a href="mailto:{{CONTACT_EMAIL}}">{{CONTACT_EMAIL}}</a> from the email address on your account.</p>
+
+<h2>What is deleted</h2>
+<ul>
+  <li>Your profile, username, email address, picture, description, recovery question and password.</li>
+  <li>Your coins, points, levels and Premium time. These cannot be brought back or moved to another account.</li>
+  <li>Your chat messages (public and private), alerts and quiz results.</li>
+  <li>Races you played stay in other players' history, but your name shows as "Deleted player".</li>
+</ul>
+
+<h2>What we keep, and why</h2>
+<p>Payment records for coin and Premium purchases (amount, date and payment reference) are kept for as long as the law or our accounting requires. We remove your email and name from them. We may also keep limited information where the law requires it or where it is needed to prevent fraud, and we will tell you if that applies.</p>
+
+<h2>Good to know</h2>
+<ul>
+  <li>If you are in a race that has not finished, your account is deleted as soon as the race ends (a race ends within 3 days at most).</li>
+  <li>After deletion your username becomes free for anyone to take.</li>
+</ul>
+<script src="/js/delete-account.js" defer></script>

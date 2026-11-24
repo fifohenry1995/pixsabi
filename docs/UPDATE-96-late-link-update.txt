@@ -1,0 +1,6 @@
+UPDATE 96 - v2.50.3 - Late clickers on a race link see the race
+
+- Opening a race JOIN link after the race has started, finished or been cancelled no longer ends in "Could not join". The player is taken to the watch page: live progress while the race runs, and the final positions (with coins won) once it is over.
+- Players who were in the race still go to their own results; old-style challenges are unchanged.
+
+FILES: public/js/app.js, public/sw.js (cache v81), package.json (2.50.3).

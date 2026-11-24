@@ -1,0 +1,29 @@
+UPDATE 61 (v2.31.0): Sponsored races, step 2
+
+1. START TIME AND COUNTDOWN
+- When you create a sponsored race you can pick a start time (optional). The home card, the join page and the lobby show "Starts in 2h 5m (Sat, 8 Nov, 20:00)" and count down live.
+- At that time the race starts by itself, as long as at least one player has joined. If nobody has joined yet, it starts the moment the first player joins after the time. Leave the start time empty to press Start race yourself, as before.
+- A start time must be in the future and within 90 days.
+
+2. ANNOUNCEMENT
+- Create form: "Tell everybody" (ticked by default) posts an announcement ("Sponsored race: win N5,000 airtime"), the same line in the chat, and an alert to every player, including the start time if you set one. Untick it for a quiet race.
+
+3. WINNER CHECKING
+- When a sponsored race ends, the prize is NOT shown as paid. It starts as "being checked". You also get an alert to check the winner.
+- Admin page > Sponsored race > Sponsor report > the finished race shows: the winner's name and email, how old the account is, points, races played, seconds per level, and warning signs:
+  * account created after the race was announced, or less than a day old
+  * very fast finish (under about 6 seconds a level for pictures, 10 for slide, 20 for word search)
+  * other accounts using the same email
+  * no email on file
+  Warnings are hints, not proof. You decide.
+- Buttons: Approve (the winner is told it is approved), Mark as paid (the winner is told the prize is sent), Reject (the prize passes to the next player who finished the race; if nobody else finished, there is no prize winner and nobody is named).
+- A paid prize cannot be changed any more.
+- Players see: the winner "We are checking your entry" then "Approved, the prize is being sent" then "Your prize has been sent". Other players see "[Name] won the prize. The winner is being checked / the prize is being sent / the prize has been sent."
+- You still send the prize yourself (airtime, data, voucher or cash). The app tracks the status only.
+
+4. SPONSOR REPORT LINK
+- Every sponsored race has its own private link: Sponsor report > "Copy sponsor report link". Send it to the sponsor on WhatsApp or email. It needs no login, shows the logo, prize, status, start time, how many players saw the race, tapped the sponsor link, joined and finished, and the winner's username once the winner is approved or paid. It never shows emails.
+
+NOTHING TO SET UP. Races made with v2.30.0 keep working (they have a report link too).
+
+Files: src/routes/challenges.js, src/app.js; public/js/app.js, admin.js, sponsor-report.js (new); public/sponsor-report.html (new); public/css/style.css, admin.css, dashboard.css; public/sw.js (cache v49); scripts/sponsor-test.js (11 checks); package.json; docs.

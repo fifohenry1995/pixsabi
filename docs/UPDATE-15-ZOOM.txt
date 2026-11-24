@@ -1,0 +1,8 @@
+ZOOM THE PUZZLE PICTURE (v1.9.1)
+
+Copy these files over your naija-sabi folder (replace the old ones):
+  public/js/game.js  public/css/style.css
+  package.json  README.md  docs/CHANGELOG.md
+
+Then press Ctrl+F5 once in the browser (phones: close and reopen the page). No restart needed for these files.
+Tap the puzzle picture to zoom: pinch, double-tap, wheel or + / - buttons. Drag to move. Tap outside, press Esc or tap X to close.

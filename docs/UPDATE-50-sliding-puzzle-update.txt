@@ -1,0 +1,30 @@
+UPDATE 50 (v2.24.0): Sliding Puzzle, the 4th game
+
+THE GAME
+- A picture is cut into 3x3, 4x4 or 5x5 pieces with one gap. Players tap (or swipe) a piece next to the gap to slide it, until the picture is rebuilt. Arrow keys work too.
+- Boards are always solvable (they are made by shuffling the finished picture with real slides). The server checks every slide, so nobody can skip ahead.
+- Levels go in order, like the other games. Points: 60 (3x3), 100 (4x4) or 160 (5x5), 10 off for every peek (never below 40%), and a bonus of 20% for finishing within 30/80/160 slides (10% within double that).
+- "Peek at the picture" shows the finished picture for a moment and costs 5 coins. Finishing a level gives 10 coins and a chest every 10 levels, like Word Search.
+
+YOU UPLOAD THE PICTURES (Admin page > Sliding puzzle)
+- Choose a picture, write a title (e.g. "Zuma Rock"), pick the grid size, add an optional fun fact. Pictures are cropped to a square from the middle and shrunk by the page.
+- Add, edit (change title, size, fact or the picture) and delete. New ones go to the end. A deleted picture is skipped for players, and levels after it move up one.
+- Start with a few 3x3 pictures so the first levels are easy, then add 4x4 and 5x5.
+- Pictures are saved in content/slide/ and the list in content/slide.json. On Railway, keep them on your volume: set SLIDE_DIR (for example /data/slide) and SLIDE_FILE (for example /data/slide.json), the same way as your other content.
+- Game card photo: the admin "Game card photos" section now also has Slide Puzzle (otherwise a drawn tile scene is shown).
+
+POINTS AND RANKS
+- Slide Puzzle has its own points board in Ranks, and its points also count toward your overall points, title and the weekly prizes.
+- The Ranks tabs and the game tabs now have smaller text so all four names (Naija, Universal, Word Search, Slide Puzzle) sit on one line.
+
+RACES
+- Challenge > Create race > category "Slide Puzzle" (needs at least 3 pictures; the race has 3 or more puzzles, 5 by default, up to 20 players, stakes and the top-3 split work like the other races).
+- Everybody gets the same pictures in the same order with the same shuffle. No hints, no skipping. First to rebuild all of them wins and the race ends on the spot. Points per level in a race are the grid-size points.
+- Watch links, the "N watching" counter, invites and rematch all work for sliding puzzle races. In races, "Peek at the picture" is free for everybody.
+
+DASHBOARD
+- The dashboard counts sliding puzzles done per day and all time, and lists how many pictures there are.
+
+NOTHING TO SET UP except your pictures. No new environment variable is required (SLIDE_DIR and SLIDE_FILE are only for keeping the pictures on your Railway volume). Existing players keep everything.
+
+Files: src/slide.js, src/routes/slide.js (new); src/routes/challenges.js, admin.js, leaderboard.js, src/app.js, db.js, points.js, stats.js, worldbg.js; public/js/app.js, admin.js, dash.js; public/css/style.css, admin.css; public/sw.js (cache v39); scripts/slide-test.js (7 checks); package.json; README.md.

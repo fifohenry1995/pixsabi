@@ -1,0 +1,11 @@
+UPDATE 97 - v2.51.0 - Income tracker (owner dashboard)
+
+WHERE: the owner dashboard page (Admin page > Dashboard), new "Income" section under the report. Admin only. It is NOT in the investor or advertiser links.
+
+- Coin sales and Premium sales are filled in by themselves from the paid payment records, by month (Nigeria time).
+- AdSense, Sponsored races and Other are typed in: month, where from, amount, naira or dollars (for dollars, type the naira rate for $1; both are kept), and an optional note. Entries can be deleted.
+- Monthly table with a total for each month and a "% compared with last month" line. Amounts are in naira.
+- The game cannot read your AdSense account, so copy the figure from AdSense yourself.
+- Entries are kept in data/income.json on the Railway volume (back it up with the rest of the data folder).
+
+FILES: src/income.js (new), src/db.js, src/routes/dashboard.js, public/js/dashboard.js, scripts/income-test.js (new, in npm test), package.json (2.51.0).

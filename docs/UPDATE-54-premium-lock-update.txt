@@ -1,0 +1,18 @@
+UPDATE 54 (v2.27.0): Premium is locked until you open it
+
+You asked to keep Premium switched off until the game has many players. Premium is now LOCKED by default.
+
+WHAT LOCKED MEANS
+- Nobody can buy Premium. The "Go Premium" bar on My profile is hidden, the Premium page says it is not open yet, and the Premium paragraph is left out of the rules page.
+- Fun facts show for EVERYBODY again (nothing is hidden behind a lock), so players are not annoyed before Premium exists.
+- Pop-up adverts show to everybody except players who already have Premium. Anyone you gave Premium by hand (or who paid before) keeps their crown and their days. Payments already in progress still finish.
+
+HOW TO OPEN IT LATER
+- Admin page > "Premium members" > tick "Premium is open to players". The note under it tells you whether it is OPEN or LOCKED and how many members there are. Untick it to lock again.
+- When open: players can buy it for N1,000 per 30 days, fun facts are only for members, and the Go Premium bar and rules text appear.
+- The choice is saved in DATA_DIR/premium.json (on Railway that is your volume), so it survives restarts and updates.
+- Paystack still has to be set up (PAYSTACK_SECRET_KEY, PUBLIC_URL) before anyone can pay.
+
+You can still give Premium to people by hand while it is locked.
+
+Files: src/premium.js, src/routes/coins.js, admin.js, auth.js; public/js/app.js, admin.js; public/sw.js (cache v43); scripts/premium-test.js (8 checks); package.json; docs.

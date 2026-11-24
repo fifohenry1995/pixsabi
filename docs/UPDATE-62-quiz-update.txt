@@ -1,0 +1,26 @@
+UPDATE 62 (v2.32.0): Quiz (the fifth section) - LOCKED until you open it
+
+WHAT IT IS
+A place where schools, groups and churches test their members. A host types questions, gets a 6-letter code and a link, shares it on WhatsApp, and members race through the questions. There is a leaderboard. No AI question maker yet (that comes later).
+
+LOCKED BY DEFAULT
+- Admin page > Quiz > tick "Quiz is open to players" when you are ready. Until then players see nothing; only you (the admin) see a "Quiz" card on the home carousel marked "Locked: only you see this" so you can try it.
+- Who can host: only you, plus players you approve by username (Admin > Quiz > Approve host). Or tick "Let every player host quizzes". Everybody can JOIN with a code.
+- "List" (admin) puts a quiz on the public list on the Quiz page. Otherwise players need the code or link.
+
+HOSTING
+- Make a quiz: title, optional topic, seconds per question (8-90, default 20), optional closing time, 3 to 50 questions, 2 to 4 answers each, right answer marked, optional short explanation.
+- "Paste many questions at once": one block per question, answers as A) B) C) or -, put * (or "(correct)") after the right answer.
+- Host controls: Edit, Results, Close/Reopen, Delete. Questions and timing freeze once the first player starts (title and closing time can still change).
+- Results page: every player, score, correct answers, time, how each question went, and a CSV download for a spreadsheet. No emails are shown.
+- Limits: 30 quizzes kept per host, 10 new quizzes a day (admin is not limited).
+
+PLAYING
+- Enter the code on the Quiz page or open the link. One question at a time with a timer bar; right and wrong answers show with the explanation.
+- 100 points for a right answer plus up to 50 for answering fast. Ranked by score, then total time.
+- Fair play: the right answers are never sent to the phone before answering, each player sees the answers in a different order, the timer is kept by the server (reloading does not reset it), and a late answer counts as wrong.
+- Quiz scores do NOT change global points, ranks, titles or coins.
+
+NOTHING TO SET UP. Settings are saved in DATA_DIR/quiz.json (keep your data volume). New tables are created automatically.
+
+Files: src/quiz.js (new), src/routes/quiz.js (new), src/routes/auth.js, src/app.js; public/js/app.js, admin.js; public/css/style.css; public/sw.js (cache v50); scripts/quiz-test.js (18 checks); package.json; docs.

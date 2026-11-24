@@ -1,0 +1,15 @@
+UPDATE 57 (v2.28.1): Word Search and Sliding Puzzle timer no longer restarts
+
+WHY IT HAPPENED
+The clock on these two games only ran on the player's phone. It started at 0:00 every time the level screen opened, and the server never knew how long the player had already spent, so leaving and coming back started it from the beginning (the found words and the slide positions were saved, the time was not).
+
+FIXED
+- The time spent on a level is now saved on the server. It is sent with every word found / slide, and also when the player leaves the page or switches to another app, so the time is kept even if they leave between moves.
+- When the player comes back to the same level, the clock carries on from where it stopped.
+- The clock now pauses while the page is hidden (phone locked or another app open), so time away is not counted.
+- The time is only a display; it does not change points, so nothing about scoring changed. A saved time can never go backwards.
+- Races: the race screens still show their own clock from the start of each level (race results use the server's race time, as before).
+
+NOTHING TO SET UP. Levels already in progress start from 0:00 once and are saved from then on.
+
+Files: src/routes/wordsearch.js, slide.js; public/js/app.js; public/sw.js (cache v46); scripts/wordsearch-test.js, slide-test.js; package.json; docs.

@@ -1,0 +1,8 @@
+UPDATE 55 (v2.27.1): Word Search and Sliding Puzzle levels now show on profiles
+
+FIXED
+- A player's profile (their own My profile page and the page other players open from chat or Ranks) only showed Points, Naija level, Universal level and Best streak. It now also shows the Word Search level and the Slide Puzzle level, so all four games are there. The six numbers sit three to a row.
+
+NOTHING TO SET UP. Existing players' levels were already saved; they simply show now.
+
+Files: src/routes/solo.js, auth.js, profile.js; public/js/app.js, style.css, sw.js (cache v44); scripts/slide-test.js; package.json; docs.

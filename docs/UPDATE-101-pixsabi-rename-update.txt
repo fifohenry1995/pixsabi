@@ -1,0 +1,10 @@
+UPDATE 101 - v2.53.0 - The game is now called PixSabi
+
+- Every player-facing "Sabi Naija" is now "PixSabi": page titles, the logo text (PIXSABI), the install name and "Install PixSabi" bar, emails (confirm email, reset password, delete account), share messages, push notification title, the chat results sender, legal pages (about, disclaimer, privacy, delete account), reports, admin and dashboard pages, offline page, README.
+- New app icon (PS with the green-white-green bar) in all four sizes. Phones that already installed the old app keep the old icon and name until they remove and re-install it.
+- NOT changed on purpose (so nothing breaks): the data file name (naija-sabi.db), the folder name, saved settings on the volume, and the "Naija" game category.
+- The picture watermark you already saved keeps its text until you change it on Admin > Watermark (new installs default to "PixSabi").
+- Still to do by you: update the name in Railway MAIL_FROM (for example PixSabi <hello@yourdomain.com>), the PUBLIC_URL if you get a new domain, your Google AdSense / Search Console site name, social account names, and the contact lines in content/site.json if they mention the old name.
+- Check the name "PixSabi" is free before you promote it: domain, social handles, app stores, trademark registry.
+
+FILES: 38 text files with the name, public/icons/*.png (new), public/sw.js (cache v85), package.json (2.53.0, description only).

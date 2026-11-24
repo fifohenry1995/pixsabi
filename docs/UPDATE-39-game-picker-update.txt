@@ -1,0 +1,22 @@
+UPDATE 39 (v2.16.0): swipe between Naija, Universal and Word Search on the home screen; photo backgrounds from the admin page
+
+HOME SCREEN
+- Under the welcome line there are now three big game cards (Naija, Universal, Word Search) in a row. Swipe sideways to move between them;
+  the next card peeks in from the side. Each card shows a background scene, the player's level, a progress bar and a big Play button.
+- The cards slide by themselves, slowly: 3 seconds after the player stops touching the screen, the next card glides in over about 1.5 seconds
+  (and after the last card it goes back to the first). The moment a player touches or scrolls the cards, the auto-slide waits 8 seconds.
+  It never slides for players who have "reduce motion" switched on in their phone, or while the page is hidden.
+- The card in the middle is the chosen game: the level map and chest counter below it change to match, and the Play button opens that game.
+  The old Naija / Universal / Word Search tab row is gone from the home screen (the Play screen and the other screens keep their tabs).
+- The old separate "Play level N" button is now inside each card.
+
+BACKGROUND PHOTOS (admin page)
+- New folding section "Game card photos" with one slot per game. Upload a photo and it replaces the drawn scene on that card; "Use the drawn scene"
+  brings the drawing back. Tall or square photos (about 1000 pixels) work best. Saved straight away.
+- The three drawn scenes: Naija (danfo bus, Lagos skyline, green-white flags), Universal (globe and orbit), Word Search (letter tiles, LAGOS, magnifier).
+
+ON RAILWAY
+- Add the variable WORLDBG_DIR = /data/content/worldbg (see DEPLOY-RAILWAY.md) so uploaded card photos survive redeploys.
+
+Files: src/worldbg.js (new), src/app.js, src/routes/admin.js, public/js/app.js, public/js/admin.js, public/css/style.css,
+public/sw.js (cache v28), scripts/admin-test.js, scripts/seed-volume.js, docs/DEPLOY-RAILWAY.md.

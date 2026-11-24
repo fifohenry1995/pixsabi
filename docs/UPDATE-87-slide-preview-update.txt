@@ -1,0 +1,9 @@
+UPDATE 87 - v2.46.0 - Sliding puzzle: memorise the picture first
+
+1. When a player opens a new sliding puzzle level, the finished picture shows for 10 seconds with a countdown. Then the picture is covered and the screen says "Ready?" with a Start button. The board, the timer and the slide count begin only when they press Start (the memorising time does not count).
+2. If a player leaves and comes back, the countdown is not shown again: they go straight to the board. This also stops a player from refreshing the page again and again to look at the picture for free.
+3. A player who was already part-way through a puzzle before this update goes straight to the board too.
+4. Sliding puzzle RACES are unchanged (no countdown), so every racer starts at the same moment.
+5. "Peek at the picture" (costs coins) still works after Start.
+
+Files: public/js/app.js; public/css/style.css; public/sw.js (cache v74); package.json; docs.

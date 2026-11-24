@@ -1,0 +1,20 @@
+UPDATE 42 (v2.18.0): edit and delete your messages, private messages, @mentions; slide restarts from the first game
+
+CHAT
+- Edit and Delete: every player now sees Edit and Delete under their OWN messages (in the group chat and in private chats).
+  Edit changes the text in place and shows "(edited)"; other people who have the chat open see the new text within a few seconds.
+  Edited text follows the same rules as a new message (no links, 300 letters). Admins can still delete anybody's group-chat message and mute, as before.
+- Private messages: the Chat page has two tabs, Everyone and Private. In Private you see your conversations (last message, a red number for unread)
+  and can start one by typing a username. You can also tap Message under anybody's name in the group chat, or the new Message button on a player's profile.
+  Only the two players can read a private chat. Admins cannot read or delete private messages. The same no-links, speed and mute rules apply.
+  The other player gets an alert in the bell (and a phone notification if switched on). Private messages older than 90 days are cleaned up automatically.
+- @mentions: type @ and a few letters in the group chat and name suggestions appear; tap one. A real player's @name is highlighted in the message,
+  that player gets an alert ("Ada mentioned you in chat") and the message is marked with a gold edge for them. Up to 3 players are alerted per message.
+  Each message under a name also has a Reply button that puts @name in your box.
+
+HOME SCREEN
+- When the sliding game cards reach the last game (Word Search) they now fade out and start again from the first (Naija), instead of sliding all the way back.
+  The right button does the same on the last card.
+
+Files: src/db.js (chat gets to_id and edited_at columns, added automatically), src/routes/chat.js, public/js/app.js, public/css/style.css,
+public/sw.js (cache v31), scripts/chat-test.js (10 checks).

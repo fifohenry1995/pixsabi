@@ -1,0 +1,11 @@
+SOLO SKIP COSTS COINS (v1.8.3)
+
+Copy these files over your naija-sabi folder (replace the old ones):
+  src/routes/solo.js
+  public/js/app.js  public/js/game.js
+  scripts/smoke-test.js
+  package.json  README.md  docs/CHANGELOG.md
+
+Then run: npm test and npm start. Press Ctrl+F5 once in the browser.
+Solo Skip now costs 20 coins (players start with 100 and earn 10 per solved puzzle).
+To change the price, edit SKIP_COST in src/routes/solo.js and skipCost in public/js/app.js.

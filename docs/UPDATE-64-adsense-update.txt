@@ -1,0 +1,31 @@
+UPDATE 64 (v2.34.0): Google AdSense on the side screens and pop-ups
+
+You can now paste AdSense ad code on the Admin page, the same way you upload pictures.
+
+HOW TO USE (after you apply to AdSense and the game is live on your own web address)
+1. Admin > "Google AdSense": type your publisher ID (ca-pub-...; AdSense > Account > Account information). Leave "Show Google ads" OFF and save.
+   The game then adds Google's verification tag to the home page and serves /ads.txt (both are what Google checks when you add the site).
+2. When Google approves the site, in AdSense create display ad units (Ads > By ad unit) and copy each code box.
+3. Admin > "Adverts": every one of the six slots (Left 1-3, Right 1-3) has a new box "Or paste AdSense code here". Paste, press "Save AdSense code". (Pasting just the ad slot number also works.)
+   Pop-ups: Admin > "Pop-up adverts" > "Add an advert" > paste code > "Add AdSense pop-up".
+4. Admin > "Google AdSense": tick "Show Google ads" and save. Switch it off any time to go back to your own pictures.
+
+WHAT HAPPENS
+- A slot with AdSense code shows the Google ad (while AdSense is ON) instead of its picture; other slots keep their pictures. Picture adverts and Google ads can sit side by side.
+- A small "Advertisement" label sits above each Google ad, never on top of it.
+- Premium members still get no pop-ups (that includes Google pop-ups).
+- Only the checked publisher ID, ad slot number and size are taken from what you paste. Nothing else from the pasted text is ever put on the page.
+- While AdSense is ON the game lets the browser load Google's scripts (nothing else is loosened; the game still cannot be put inside another website). While OFF nothing changes.
+- The Privacy Policy page mentions Google AdSense and cookies by itself while AdSense is ON (and says "no advertising trackers" while it is OFF).
+- Google ads are measured by Google, not by the Dashboard report. Your own picture/pop-up numbers are unchanged.
+
+GOOGLE'S RULES TO KNOW
+- Never ask players to tap ads and never tap them yourself. Do not put Google ads right beside buttons players tap a lot.
+- Google does not allow its ads in pop-ups that open without a tap, and may disable ads. The pop-up that shows after a level is a grey area: test with the side slots first. The Admin page says this too.
+- Most of the game is behind login. Google can only check public pages, so approval may ask for more public content (About us, Privacy, Disclaimer pages already exist). If Google refuses, you can keep selling your own picture adverts.
+- Visitors from Europe/UK need a consent message: in AdSense go to Privacy & messaging and switch on the consent message.
+
+NOTHING TO SET UP ON RAILWAY. Settings are kept in content/ads/adsense.json (ADS_DIR if you moved adverts to the volume).
+I could not show a real Google ad from here (no Google account); the ad boxes, headers and tags were checked on a test server. After you switch it on, open the game once and look for any red message in the browser console (F12) if an ad box stays empty.
+
+Files: src/adsense.js, src/adsPath.js (new); src/ads.js, src/popups.js, src/pages.js, src/app.js, src/routes/admin.js; pages/privacy.html; public/js/ads.js, popup.js, admin.js; public/css/ads.css, popup.css, admin.css; public/sw.js (cache v52); scripts/adsense-test.js (11 checks); package.json; docs.

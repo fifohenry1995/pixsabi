@@ -1,0 +1,12 @@
+UPDATE 47 (v2.22.0): the Naija Sabi theme song (afro rap beat)
+
+- An original instrumental afro rap beat, about 94 BPM, that loops forever: log-drum bass, kick, clap, shaker, hi-hats with a small roll, a clave pattern and a kalimba-style
+  hook with echo. The melody and rhythm are our own, so there is nothing to license. It is made by the phone with Web Audio: no audio file, works offline, adds almost no size.
+- It is OFF until the player turns it on: tap the 🎵 / 🔇 button at the top of any screen, or Me > Sound > "Theme song (afro rap beat)". The choice is remembered on that phone.
+  A remembered "on" starts at the first tap (phones do not allow sound before a tap). It fades in and out, and stops when the app is hidden or the screen is locked.
+- Sound effects have their own switch, so players can keep taps and wins but turn the music off, or the other way round.
+- To make it start ON for new players, change `DEFAULT_ON = false` to `true` at the top of public/js/music.js.
+- To change the feel: BPM, SWING and VOLUME at the top of the same file. The hook, bass and drum patterns are the small lists in the middle.
+- A real song with vocals cannot be made here. If you make one (for example with Suno or Udio), tell me and I will add it as the theme with the same on/off button.
+
+Files: public/js/music.js (new), public/js/app.js, public/index.html, public/sw.js (cache v36), scripts/music-test.js (3 checks), package.json, README.md.

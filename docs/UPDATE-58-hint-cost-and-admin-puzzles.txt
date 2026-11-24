@@ -1,0 +1,14 @@
+UPDATE 58 (v2.29.0): Word Search letter hint costs 10, Naija and Universal puzzles split on the admin page
+
+WORD SEARCH
+- "Reveal a letter" (mark the first letter of a word) now costs 10 coins instead of 15. Revealing a whole word still costs 30. The button text in the game shows the new price by itself.
+- Solo Naija / Universal "Reveal" is unchanged (15 coins).
+
+ADMIN PAGE
+- The single "Puzzles" section is now two separate foldable sections like the others: "Naija puzzles" and "Universal puzzles".
+- Each has its own search box, its own count ("104 Naija puzzles, 104 without a picture") and its own "Add Naija puzzle" / "Add Universal puzzle" button, which opens the form with that category already chosen. Edit and Delete work as before.
+- Both start folded, and the page remembers which ones you left open. "Open all" and "Close all" include them.
+
+NOTHING TO SET UP.
+
+Files: src/routes/wordsearch.js, public/js/admin.js, scripts/wordsearch-test.js, package.json, docs.

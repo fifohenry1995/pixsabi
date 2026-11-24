@@ -1,0 +1,14 @@
+UPDATE 29 (v2.10.0): 18+ tick, email, forgot password, About / Privacy / Disclaimer pages
+
+1. SIGN-UP NOW ASKS FOR AN EMAIL AND AN 18+ TICK. "Create account" has an email box and a box to tick: "I confirm that I am 18 years or older and I accept the Privacy Policy and Disclaimer". Both are required. One email can belong to only one account.
+   Players who joined before this update see a "Before you continue" box once: they tick 18+ and can add an email. Players who say they are under 18 are logged out.
+2. FORGOT PASSWORD (the best way to help players). Log in page > "Forgot your password?" > the player types their username or email > they get an email with a link that works once and expires in 1 hour > they choose a new password and are logged in. Every old session is logged out when a password changes.
+   Safety: the page gives the same answer whether or not the account exists, only a hash of the link is stored, and the same player can only ask once every 5 minutes.
+   TO MAKE EMAILS SEND: make a free account at https://resend.com, verify your domain, then set RESEND_API_KEY and MAIL_FROM (e.g. Naija Sabi <hello@yourdomain.com>) and PUBLIC_URL (https://yourdomain.com) on your host. Without these the game still works; the reset email just is not sent.
+3. LAST RESORT: Admin page > "Help a player". Type the username, see their email and joined date, tap "Give a temporary password" and send it to them (only after you are sure they own the account). Their old password stops working at once.
+4. ME PAGE: players can add or change their email and change their password (both ask for the current password). Links to About us, Privacy Policy and Disclaimer are on the Me page and the login page.
+5. THREE NEW PAGES, written as DRAFTS: /about, /privacy, /disclaimer. Their wording is in pages/*.html. Your details go in ONE small file: content/site.json (businessName, contactEmail, address, website, effectiveDate). Until you fill it in, each page shows a yellow reminder at the top. Restart is not needed after editing site.json.
+   IMPORTANT: these are drafts, not legal advice. Have a Nigerian lawyer read them (data protection under the NDPA, coin purchases, staking races) before you launch. Staking purchasable coins in races can count as betting in some places, so keep coins non-withdrawable and non-transferable.
+
+Technical: new src/mailer.js, src/pages.js, pages/, content/site.json, public/css/pages.css, scripts/account-test.js (9 checks); users table gets an email column, new reset_tokens table (added automatically). Env vars: RESEND_API_KEY, MAIL_FROM, PUBLIC_URL, AUTH_LIMIT (optional, default 25 per 10 minutes).
+Next steps worth doing: email verification at sign-up, a Terms of Use page, a "delete my account" button (NDPA gives players that right).

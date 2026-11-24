@@ -1,0 +1,26 @@
+/* Pop-up advert shown after every Nth level. */
+.popup-overlay { z-index: 40; }
+.popup-card {
+  width: 100%; max-width: min(92vw, 460px); max-height: 94vh; overflow: auto; border-radius: 22px; padding: 12px;
+  background: linear-gradient(180deg, #2f1470, #1d0b45); border: 1.5px solid var(--gold-deep, #b9861a);
+  box-shadow: 0 0 22px rgba(138, 84, 255, 0.55);
+}
+.popup-frame { position: relative; display: block; border-radius: 16px; overflow: hidden; background: rgba(0, 0, 0, 0.35); line-height: 0; }
+.popup-media { display: block; width: 100%; height: auto; max-height: 62vh; object-fit: contain; margin: 0 auto; }
+.popup-tag {
+  position: absolute; top: 8px; left: 8px; font: 700 0.62rem/1 system-ui, sans-serif; letter-spacing: 0.08em; text-transform: uppercase;
+  padding: 4px 7px; border-radius: 6px; background: rgba(12, 4, 32, 0.75); color: #cdb8ff;
+}
+.popup-title { margin: 8px 2px 0; font-weight: 700; color: #f6f1ff; text-align: center; }
+.popup-bar { display: flex; gap: 8px; margin-top: 10px; flex-wrap: wrap; }
+.popup-bar .btn { flex: 1 1 110px; min-height: 44px; }
+.popup-close[disabled] { opacity: 0.55; }
+@media (max-height: 560px) { .popup-media { max-height: 48vh; } }
+
+.popup-prem { margin: 10px 2px 0; text-align: center; font-size: 0.8rem; color: #d9cffa; line-height: 1.35; }
+.popup-prem-link { color: #ffe08a; font-weight: 800; text-decoration: underline; }
+
+/* AdSense inside a pop-up: let the ad choose its size */
+.popup-adsense { max-height: none; min-width: 280px; line-height: normal; background: rgba(255, 255, 255, 0.06); border-radius: 16px; overflow: hidden; }
+.popup-adsense-box { width: 100%; min-height: 250px; }
+.popup-adsense-box ins.adsbygoogle { width: 100%; min-height: 250px; }

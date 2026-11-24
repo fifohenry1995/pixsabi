@@ -1,0 +1,10 @@
+UPDATE 86 - v2.45.0 - Safer AdSense (no Google ads in pop-ups or beside the chat)
+
+Google's AdSense rules do not allow its ads in pop-ups, or on screens centred on private communication such as live chat. To protect the account:
+1. Pop-ups carry your own adverts only. The "paste AdSense code" box for pop-ups is removed, the server refuses it, any AdSense pop-up saved earlier is ignored, and the player's phone never shows one.
+2. The side advert panels (laptops) are hidden while a player is on the chat screens, so no AdSense ad appears beside the chat.
+3. Hint text on the Admin AdSense section updated.
+
+Also do (in your AdSense account, not in the game): keep "Auto ads" switched OFF, because Auto ads can place ads anywhere, including pop-ups and chat. Use only the manual ad boxes in the Admin page. Never tap your own ads or ask players to tap them. Re-read https://support.google.com/adsense/answer/1346295 after Google approves the site.
+
+Files: src/popups.js; src/routes/admin.js; public/js/admin.js, popup.js, app.js; public/css/style.css; public/sw.js (cache v73); scripts/adsense-test.js; package.json; docs.

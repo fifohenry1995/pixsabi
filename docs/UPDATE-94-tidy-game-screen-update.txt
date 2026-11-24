@@ -1,0 +1,7 @@
+UPDATE 94 - v2.50.1 - Tidier home and bigger puzzle pictures
+
+- Home: the profile picture beside "Welcome back" is smaller (56px, was 92px) and the space above it is reduced.
+- Puzzle screen: the extra game name above the picture (for example NAIJA) is removed, because the name already shows next to the level.
+- The puzzle picture is bigger on phones, tablets and laptops (about 30% more height allowed), using the space the title left.
+
+FILES: public/js/game.js, public/css/style.css, public/sw.js (cache v79), package.json (2.50.1).

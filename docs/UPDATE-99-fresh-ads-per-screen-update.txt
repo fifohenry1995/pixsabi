@@ -1,0 +1,8 @@
+UPDATE 99 - v2.52.1 - Fresh AdSense ad on a new screen (no page reload)
+
+- When a player moves to a new page, or presses Next after finishing a level, each visible AdSense ad (phone header, laptop side units) is replaced by a fresh ad request. The game is NOT reloaded: music, chat, timers and progress are untouched and no extra data is downloaded.
+- Never more than once every 60 seconds, never while the tab is hidden, never with Data Saver on. It only happens when the player really moves to something new, so it is not a timed refresh.
+- Direct adverts (pictures you sell yourself) are left as they are. The race-results banner is made fresh with its page.
+- Auto ads stay OFF (chat cannot be excluded). A reload after every level was NOT built: it risks counting as inflated impressions, costs players data and loses their place.
+
+FILES: public/js/ads.js, public/js/app.js, public/sw.js (cache v83), package.json (2.52.1).

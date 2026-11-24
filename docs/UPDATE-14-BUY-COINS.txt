@@ -1,0 +1,17 @@
+BUY COINS WITH PAYSTACK (v1.9.0)
+
+Copy these files over your naija-sabi folder (replace the old ones, add the new ones):
+  NEW: src/paystack.js  src/routes/coins.js  scripts/pay-test.js  scripts/orders.js
+  src/db.js  src/app.js
+  public/js/app.js  public/js/game.js  public/css/style.css  public/sw.js
+  package.json  README.md  docs/CHANGELOG.md
+
+Then run: npm test and npm start. Press Ctrl+F5 once in the browser.
+
+Turn it on (see "Buy coins with Paystack" in README.md):
+  PAYSTACK_SECRET_KEY = your Paystack secret key (sk_test_... first)
+  PUBLIC_URL = your https website address
+  and put https://YOUR-SITE/api/paystack/webhook as the Webhook URL in the Paystack dashboard.
+Without the key the Buy button says "not open yet" and nothing is charged.
+See purchases with: npm run orders
+Prices and packs: PACKS at the top of src/routes/coins.js

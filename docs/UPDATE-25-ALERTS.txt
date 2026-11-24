@@ -1,0 +1,27 @@
+UPDATE 25 (v2.6.0): alerts (in-game and phone/browser notifications)
+
+What players get
+- A bell in the top bar with a red number for unread alerts, and an Alerts page (#/alerts).
+- A banner slides in when an alert arrives while the game is open (checked every 20 seconds, and straight away when the player comes back to the tab).
+- Optional phone/browser notifications that work even when the game is closed. Tapping one opens the challenge.
+- Alerts are sent when: a friend challenges you by name; a race you joined is started by the host; someone else wins a race you were in.
+  Challenges shared by code alert nobody (the game cannot know who will use the code).
+- Alerts page: turn notifications on or off for this device, switch all alerts off, and see the last 30 alerts.
+- A small "Know when someone challenges you" card on the Challenge page, with Turn on / Not now.
+
+Setup (nothing to buy or install)
+- Push needs the site on HTTPS (localhost also works for testing).
+- The server makes its alert keys automatically and saves them in data/.vapid.json. Back that file up with the rest of data/.
+  If it is lost, players just turn notifications on again.
+- Set VAPID_SUBJECT to something like mailto:you@yourdomain.com in production (the push services use it to contact you if something goes wrong).
+- No packages added: it uses Node's built-in crypto and https. Messages are encrypted the standard way (RFC 8291) and signed with VAPID (RFC 8292).
+
+Limits and safety
+- iPhone: notifications only work after Share > Add to Home Screen (iOS 16.4 or newer), then opening the game from the Home Screen. The game says so on the Alerts page.
+- The server only sends to real push services (Google, Mozilla, Microsoft, Apple). Anything else is refused, so nobody can make the server call other addresses.
+- Spam limits: the same player can alert the same friend about the same kind of event once a minute; nobody gets more than 30 alerts an hour; the inbox keeps 30; at most 5 devices per player.
+- A phone that the push service reports as gone is forgotten automatically.
+- If the game is open and in front, the page shows its own banner instead of a second system notification.
+
+Files: src/push.js, src/notify.js, src/routes/alerts.js (new); src/db.js (tables notifications, push_subs); src/routes/challenges.js (3 alert events); public/js/app.js, public/css/style.css, public/sw.js (cache v13); scripts/alerts-test.js (8 checks).
+Not built (ideas): alert when someone joins your lobby; email or WhatsApp alerts.

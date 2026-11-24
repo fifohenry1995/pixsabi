@@ -1,0 +1,8 @@
+UPDATE 40 (v2.16.1): the side adverts can be animated GIFs
+
+- On the admin page, Adverts section, each of the six slots now accepts an animated GIF as well as a JPG or PNG. A GIF keeps moving on the laptop side panels.
+- GIF limit: 1.5 MB. A GIF is NOT cropped or resized (that would stop it moving), so make it square (about 600 x 600) before uploading; it is shown cropped to fill the square slot.
+- A JPG or PNG is still cropped to a square and shrunk, as before. Uploading a new file to a slot replaces the old one (a GIF replaced by a JPG, or the other way round, is fine). Remove still clears the slot.
+- Files saved as content/ads/N.gif (or N.jpg). Nothing to change on Railway: the existing ADS_DIR volume is used.
+
+Files: src/ads.js, src/app.js, src/routes/admin.js, public/js/admin.js, public/sw.js (cache v29), scripts/admin-test.js.

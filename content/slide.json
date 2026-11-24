@@ -1,0 +1,574 @@
+[
+  {
+    "id": "s7a3d3937",
+    "title": "Naija Coat of Arm",
+    "size": 3
+  },
+  {
+    "id": "sfcf5b6a1",
+    "title": "Obasanjo",
+    "size": 3,
+    "from": "obasanjo",
+    "fact": "Olusegun Obasanjo is one of the few people in the world to have ruled his country both as a military leader and later as a democratically elected president."
+  },
+  {
+    "id": "s519db26b",
+    "title": "Judikay",
+    "size": 3,
+    "from": "judikay",
+    "fact": "Judikay is a powerful Nigerian gospel minister known for anointed songs like “More Than Gold” and “Capable God”."
+  },
+  {
+    "id": "sd14c4992",
+    "title": "Okocha",
+    "size": 3,
+    "from": "okocha",
+    "fact": "Jay-Jay Okocha dazzled at Paris Saint-Germain and Bolton Wanderers and is a Super Eagles legend."
+  },
+  {
+    "id": "sc24baf6f",
+    "title": "Adeboye",
+    "size": 3,
+    "from": "adeboye",
+    "fact": "Pastor E.A. Adeboye is the General Overseer of RCCG and one of the most respected church leaders in the world."
+  },
+  {
+    "id": "s6de8131c",
+    "title": "Buhari",
+    "size": 3,
+    "from": "buhari",
+    "fact": "Muhammadu Buhari served as military Head of State in the 1980s and later as civilian President from 2015 to 2023."
+  },
+  {
+    "id": "s2855561a",
+    "title": "mamaput",
+    "size": 3
+  },
+  {
+    "id": "s9cb760ef",
+    "title": "lagos hustle",
+    "size": 3
+  },
+  {
+    "id": "sc636c9ef",
+    "title": "Broda Shaggi",
+    "size": 4
+  },
+  {
+    "id": "s7c2e05bc",
+    "title": "Maruwa",
+    "size": 3
+  },
+  {
+    "id": "se709635e",
+    "title": "Lagos Traffic",
+    "size": 3
+  },
+  {
+    "id": "s0e786f7c",
+    "title": "National Theatre",
+    "size": 3
+  },
+  {
+    "id": "s8d3b6953",
+    "title": "Suya Night",
+    "size": 3
+  },
+  {
+    "id": "sffb7d9a0",
+    "title": "Aradugbo vs Nepa",
+    "size": 3
+  },
+  {
+    "id": "s533ee600",
+    "title": "Agbero",
+    "size": 3
+  },
+  {
+    "id": "sb4228219",
+    "title": "Danfo",
+    "size": 4
+  },
+  {
+    "id": "s4d429ba9",
+    "title": "Davido",
+    "size": 3,
+    "from": "davido",
+    "fact": "Davido's full name is David Adedeji Adeleke."
+  },
+  {
+    "id": "s29e7cca4",
+    "title": "Sabinus",
+    "size": 4,
+    "from": "sabinus",
+    "fact": "Oga Sabinus is one of Nigeria’s most loved skit makers, famous for his hilarious village-boy characters and viral comedy videos."
+  },
+  {
+    "id": "sf0011ca7",
+    "title": "Sharonooja",
+    "size": 3,
+    "from": "sharonooja",
+    "fact": "Sharon Ooja Nwoke, known as Sharon Ooja is a Nigerian actress born in 1991."
+  },
+  {
+    "id": "s1af33e8d",
+    "title": "Lagbaja",
+    "size": 4,
+    "from": "lagbaja",
+    "fact": "Lagbaja whose birth name is Bisade Ologunde is a graduate of Obafemi Awolowo University."
+  },
+  {
+    "id": "sb419946b",
+    "title": "Fela",
+    "size": 4,
+    "from": "fela",
+    "fact": "Fela Kuti blended jazz, funk and highlife into Afrobeat and set up the Kalakuta Republic."
+  },
+  {
+    "id": "s8ab0fb3d",
+    "title": "Timidakolo",
+    "size": 3,
+    "from": "timidakolo",
+    "fact": "Timi Dakolo won the first season of Nigerian Idol and is loved for his smooth, soulful voice."
+  },
+  {
+    "id": "sba9b32e7",
+    "title": "Wizkid",
+    "size": 3,
+    "from": "wizkid",
+    "fact": "Wizkid released his album Made in Lagos in 2020, and it carried the global hit Essence."
+  },
+  {
+    "id": "scb67ef02",
+    "title": "Akpororo",
+    "size": 3,
+    "from": "akpororo",
+    "fact": "His real name is Bowoto Jephthah. He started as a gospel singer before becoming one of Nigeria’s top stand-up comedians."
+  },
+  {
+    "id": "s431b7436",
+    "title": "Falz",
+    "size": 4,
+    "from": "falz",
+    "fact": "Falz is a trained lawyer and is known for sharp, funny songs about Nigerian life."
+  },
+  {
+    "id": "s8547327c",
+    "title": "Djcuppy",
+    "size": 3,
+    "from": "djcuppy",
+    "fact": "DJ Cuppy is a popular Nigerian DJ and producer, and the daughter of billionaire Femi Otedola."
+  },
+  {
+    "id": "sa07eb518",
+    "title": "Kanu",
+    "size": 3,
+    "from": "kanu",
+    "fact": "Nwankwo Kanu won Olympic gold with Nigeria at Atlanta 1996 and later starred for Arsenal."
+  },
+  {
+    "id": "s7fd32af3",
+    "title": "Kizzdaniel",
+    "size": 3,
+    "from": "kizzdaniel",
+    "fact": "Daniel Oluwatobiloba Anidugbe, professionally known as KIZZ DANIEL is a Nigerian Singer and Songwriter born in 1994."
+  },
+  {
+    "id": "s006da144",
+    "title": "Ushbebe",
+    "size": 3,
+    "from": "ushbebe",
+    "fact": "Ushbebe is a popular Nigerian comedy character known for his funny expressions and street-style humour."
+  },
+  {
+    "id": "s54b8be59",
+    "title": "Maruwa",
+    "size": 4,
+    "from": "maruwa",
+    "fact": "Keke (the Keke NAPEP tricycle) became popular in the early 2000s as cheap local transport."
+  },
+  {
+    "id": "scf91cd4e",
+    "title": "Eben",
+    "size": 3,
+    "from": "eben",
+    "fact": "Emmanuel Benjamin is a Gospel Singer, Vocalist and Songwriter."
+  },
+  {
+    "id": "sd7965ce2",
+    "title": "Mercychinwo",
+    "size": 3,
+    "from": "mercychinwo",
+    "fact": "Mercy Chinwo is a multi-award-winning Nigerian gospel singer famous for powerful songs like “Excess Love” and “Onyedikagi”."
+  },
+  {
+    "id": "se137eb8f",
+    "title": "Lawrenceoyor",
+    "size": 3,
+    "from": "lawrenceoyor",
+    "fact": "Lawrence Oyor is a Gospel Music Minister and Evangelist."
+  },
+  {
+    "id": "s815af0e8",
+    "title": "Kennyblaq",
+    "size": 3,
+    "from": "kennyblaq",
+    "fact": "Kenny Blaq is a unique Nigerian comedian who mixes stand-up comedy with singing and music."
+  },
+  {
+    "id": "sf0fa95d8",
+    "title": "Basketmouth",
+    "size": 3,
+    "from": "basketmouth",
+    "fact": "Basketmouth's real name is Bright Okpocha, and he is one of Nigeria's best-known stand-up comedians."
+  },
+  {
+    "id": "sb59528b7",
+    "title": "Yemiosinbajo",
+    "size": 3,
+    "from": "yemiosinbajo",
+    "fact": "He is a Senior Advocate of Nigeria (SAN) and was a law professor before entering politics."
+  },
+  {
+    "id": "sffe59108",
+    "title": "Burnaboy",
+    "size": 4,
+    "from": "burnaboy",
+    "fact": "Burna Boy won a Grammy for Best Global Music Album with Twice as Tall."
+  },
+  {
+    "id": "sa7fe6c2b",
+    "title": "Osimhen",
+    "size": 4,
+    "from": "osimhen",
+    "fact": "Victor Osimhen won the Serie A title with Napoli in 2023 and was named African Footballer of the Year."
+  },
+  {
+    "id": "sad33168d",
+    "title": "Teni",
+    "size": 3,
+    "from": "teni",
+    "fact": "Teni (Teniola Apata) is a vibrant Afrobeats artist known for fun, energetic songs and her bubbly personality."
+  },
+  {
+    "id": "s0f5306a8",
+    "title": "OMELE",
+    "size": 3
+  },
+  {
+    "id": "sed8c01e5",
+    "title": "ONILU",
+    "size": 3
+  },
+  {
+    "id": "s380c9f23",
+    "title": "SEKERE",
+    "size": 3
+  },
+  {
+    "id": "s4426331d",
+    "title": "TALKING DRUM (GANGAN)",
+    "size": 3
+  },
+  {
+    "id": "sec7246e9",
+    "title": "Jidekosoko",
+    "size": 3,
+    "from": "jidekosoko",
+    "fact": "He is a real prince from the Kosoko royal family of Lagos and started acting at the age of 10 in 1964."
+  },
+  {
+    "id": "scec7d7d1",
+    "title": "Danfo",
+    "size": 3,
+    "from": "danfo",
+    "fact": "Danfo buses are painted yellow with a black stripe and often carry funny slogans on the back."
+  },
+  {
+    "id": "sf6aeb205",
+    "title": "Isbaeu",
+    "size": 3,
+    "from": "isbaeu",
+    "fact": "Known for his relatable and soft-spoken comedy style that appeals to young audiences. One of Nigeria Biggest Youtuber."
+  },
+  {
+    "id": "s0ed85472",
+    "title": "Taaooma",
+    "size": 3,
+    "from": "taaooma",
+    "fact": "She is famous for playing multiple characters in one video, especially the overbearing mother roles."
+  },
+  {
+    "id": "see43c25b",
+    "title": "Maraji",
+    "size": 3,
+    "from": "maraji",
+    "fact": "She gained massive fame for her hilarious character-driven comedy videos on social media."
+  },
+  {
+    "id": "s2842c121",
+    "title": "Akahnnani",
+    "size": 3,
+    "from": "akahnnani",
+    "fact": "He is a popular host and actor who has also appeared in several big Nollywood productions."
+  },
+  {
+    "id": "se8c1300c",
+    "title": "Johnboyega",
+    "size": 3,
+    "from": "johnboyega",
+    "fact": "He played Finn in the Star Wars sequel trilogy and is proud of his Nigerian roots."
+  },
+  {
+    "id": "s1598f005",
+    "title": "Adebimpe",
+    "size": 3,
+    "from": "adebimpe",
+    "fact": "Oyebade Adebimpe is known for playing strong emotional roles in many Yoruba and English films."
+  },
+  {
+    "id": "s9abe4b81",
+    "title": "Woliagba",
+    "size": 3,
+    "from": "woliagba",
+    "fact": "His real name is Ayoub Afolabi Abdul Balogun and he is one of the biggest comedy voices in the Southwest."
+  },
+  {
+    "id": "s47ffca3f",
+    "title": "Woliarole",
+    "size": 4,
+    "from": "woliarole",
+    "fact": "Started as a comedian with gospel messages and is now an ordained minister."
+  },
+  {
+    "id": "s81c96ad6",
+    "title": "Remote",
+    "size": 3,
+    "from": "remote",
+    "fact": "He became famous for his street-style comedy skits and unique way of storytelling."
+  },
+  {
+    "id": "sa1d79fe2",
+    "title": "Paulokoye",
+    "size": 3,
+    "from": "paulokoye",
+    "fact": "Known as Rudeboy, he later launched a successful solo career after the P-Square split."
+  },
+  {
+    "id": "sfce87826",
+    "title": "Peterokoye",
+    "size": 3,
+    "from": "peterokoye",
+    "fact": "One half of the legendary P-Square duo that dominated African music for years with hits like “Do Me” and “Chop My Money”."
+  },
+  {
+    "id": "s66f20629",
+    "title": "Uchejombo",
+    "size": 3,
+    "from": "uchejombo",
+    "fact": "She is not only a popular actress but also writes and produces many of her own movies. Full of energy and action."
+  },
+  {
+    "id": "sf6221865",
+    "title": "Alinuhu",
+    "size": 3,
+    "from": "alinuhu",
+    "fact": "He is one of the most successful actors in Northern Nigeria and has also crossed over into mainstream Nollywood."
+  },
+  {
+    "id": "sd96675bd",
+    "title": "Saidibalogun",
+    "size": 3,
+    "from": "saidibalogun",
+    "fact": "Saidi Balogun has been acting for decades and is respected as one of the strong fatherr-figure actor in Yoruba and English films."
+  },
+  {
+    "id": "s967bbc28",
+    "title": "Obafemi",
+    "size": 3,
+    "from": "obafemi",
+    "fact": "Obafemi Martins is famous for his spectacular bicycle-kick goal celebrations during his time in Europe and the Super Eagles."
+  },
+  {
+    "id": "se8a90ffb",
+    "title": "Ritadominic",
+    "size": 4,
+    "from": "ritadominic",
+    "fact": "She is one of the most critically acclaimed actresses in Nollywood and has won multiple Best Actress awards."
+  },
+  {
+    "id": "sdf574972",
+    "title": "Rmd",
+    "size": 3,
+    "from": "rmd",
+    "fact": "RICHARD MOFE DAMIJO, Popularly called RMD is a Nollywood legend and once served as a Commissioner in Delta State."
+  },
+  {
+    "id": "s7d8af418",
+    "title": "Dakore",
+    "size": 3,
+    "from": "dakore",
+    "fact": "She is Timini Egbuson’s elder sister and has been one of Nollywood’s leading actresses for over two decades."
+  },
+  {
+    "id": "sf99a4776",
+    "title": "Shaffybello",
+    "size": 4,
+    "from": "shaffybello",
+    "fact": "She began her career as a singer before becoming a highly respected actress known for graceful and strong roles."
+  },
+  {
+    "id": "s51458531",
+    "title": "Sophie",
+    "size": 3,
+    "from": "sophie",
+    "fact": "She is known for her elegance and has worked as both a model and actress in several romantic and dramatic roles."
+  },
+  {
+    "id": "s4bf5ec3e",
+    "title": "Adunniade",
+    "size": 3,
+    "from": "adunniade",
+    "fact": "She is a Nigerian-American actress and model who successfully balances careers in both the US and Nollywood."
+  },
+  {
+    "id": "s6c266fda",
+    "title": "Kunleremi",
+    "size": 3,
+    "from": "kunleremi",
+    "fact": "Before fully focusing on acting, he worked as a model and is often praised for his striking looks and intense performances."
+  },
+  {
+    "id": "s913d5377",
+    "title": "Timini",
+    "size": 3,
+    "from": "timini",
+    "fact": "He is the younger brother of actress Dakore Egbuson-Akande and is known for his calm and charming screen presence."
+  },
+  {
+    "id": "s53d58fea",
+    "title": "Iyaboojo",
+    "size": 3,
+    "from": "iyaboojo",
+    "fact": "She has acted in over 150 movies and founded the Pinkies Foundation to support children with special needs"
+  },
+  {
+    "id": "s89fa284e",
+    "title": "Uzorarukwe",
+    "size": 3,
+    "from": "uzorarukwe",
+    "fact": "He studied Economics and holds an MBA, yet became one of Nollywood’s most versatile actors (drama, comedy, and action)."
+  },
+  {
+    "id": "s8d916dd7",
+    "title": "Adedimeji",
+    "size": 4,
+    "from": "adedimeji",
+    "fact": "Fans nicknamed him “Crying Machine” because of how emotional and tearful his performances often are."
+  },
+  {
+    "id": "sd2ef576a",
+    "title": "Tobibakre",
+    "size": 3,
+    "from": "tobibakre",
+    "fact": "He left a banking career to join Big Brother Naija (Season 3) and later became one of Nollywood’s highest-grossing actors."
+  },
+  {
+    "id": "s87ee344e",
+    "title": "Tokemakinwa",
+    "size": 3,
+    "from": "tokemakinwa",
+    "fact": "She lost both parents in a gas explosion at age 8 and later wrote the bestselling memoir *On Becoming*."
+  },
+  {
+    "id": "s42d0345c",
+    "title": "Bankyw",
+    "size": 3,
+    "from": "bankyw",
+    "fact": "He founded EME Records and gave Wizkid his first major platform. He is also an actor, former political aspirant, and is now a pastor in the US."
+  },
+  {
+    "id": "s38f9d8d8",
+    "title": "Bimboademoye",
+    "size": 4,
+    "from": "bimboademoye",
+    "fact": "She is friend with Bisola Aiyeola and is known for her excellent comic timing and expressive face."
+  },
+  {
+    "id": "s567f91b2",
+    "title": "Bisola",
+    "size": 3,
+    "from": "bisola",
+    "fact": "She finished as first runner-up on Big Brother Naija 2017 and later became the first African host of *Family Feud Nigeria*."
+  },
+  {
+    "id": "s13775834",
+    "title": "Phyno",
+    "size": 3,
+    "from": "phyno",
+    "fact": "He is one of the biggest Igbo rappers in Nigeria and is also a successful businessman and label owner (Penthauze)."
+  },
+  {
+    "id": "se6e92735",
+    "title": "Adesuaetomi",
+    "size": 3,
+    "from": "adesuaetomi",
+    "fact": "She won Best Actress at the AMVCA for *Knockout Blessing* and is married to singer Banky W."
+  },
+  {
+    "id": "s56b2bcdd",
+    "title": "Adekunlegold",
+    "size": 3,
+    "from": "adekunlegold",
+    "fact": "Before fame, he was a graphic designer nicknamed “King of Photoshop.” He is a real Lagos prince from the Kosoko royal family and is married to singer Simi."
+  },
+  {
+    "id": "s0140c92c",
+    "title": "Toyinabraham",
+    "size": 3,
+    "from": "toyinabraham",
+    "fact": "Her movie *Oversabi Aunty* crossed ₦1 billion at the box office. She is also a successful film producer and director."
+  },
+  {
+    "id": "sf66654c8",
+    "title": "Tinamba",
+    "size": 3,
+    "from": "tinamba",
+    "fact": "She is highly respected for her powerful mother and strong female roles and has been acting for decades."
+  },
+  {
+    "id": "sfa728451",
+    "title": "Makanaki",
+    "size": 3,
+    "from": "makanaki",
+    "fact": "Bolanle Ninalowo is trained as an accountant in the US and worked as a banker before becoming a full-time actor and producer."
+  },
+  {
+    "id": "sc9aa3cdf",
+    "title": "Kehinde",
+    "size": 3,
+    "from": "kehinde",
+    "fact": "Kehinde Bankole has a twin sister named Taiwo. She started as a beauty queen before acting and was once a Lux ambassador."
+  },
+  {
+    "id": "s403d36d3",
+    "title": "Mrmacaroni",
+    "size": 4,
+    "from": "mrmacaroni",
+    "fact": "Real name is Debo Adedayo. He became famous for his “Daddy Wa” sugar-daddy skits and was actively involved in the 2020 #EndSARS protests."
+  },
+  {
+    "id": "s40cde259",
+    "title": "Simi",
+    "size": 3,
+    "from": "simi",
+    "fact": "She taught herself music production on YouTube and still engineers a lot of her own songs. She is married to Adekunle Gold."
+  },
+  {
+    "id": "s83f1f015",
+    "title": "Davidoyedepo",
+    "size": 3,
+    "from": "davidoyedepo",
+    "fact": "He founded one of the world’s largest church auditoriums (Faith Tabernacle, 50,000 seats) and is the Chancellor of Covenant University."
+  }
+]

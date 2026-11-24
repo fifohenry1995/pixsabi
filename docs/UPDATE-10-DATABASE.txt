@@ -1,0 +1,19 @@
+SQLITE DATABASE UPDATE (v1.8.0)
+
+You need Node.js 22.13 or newer. Check with:  node -v
+(If it is older, install the LTS version from https://nodejs.org, then reopen your terminal.)
+
+If you start afresh (no players yet): use the complete zip, nothing else to do.
+
+If you copy these files over an existing naija-sabi folder (replace the old ones):
+  src/db.js
+  src/routes/auth.js  src/routes/profile.js  src/routes/leaderboard.js
+  src/routes/challenges.js  src/routes/admin.js
+  scripts/db-test.js (new)  scripts/backup.js (new)
+  package.json  .gitignore  README.md  docs/CHANGELOG.md
+
+Then:  npm test   and   npm start
+Your old data/db.json (if any) is imported automatically on first start and renamed
+db.json.imported-<time>. The database is the new file data/naija-sabi.db.
+
+Back up with:  npm run backup   (also keep data/avatars and content/)

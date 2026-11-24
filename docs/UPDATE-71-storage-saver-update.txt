@@ -1,0 +1,7 @@
+UPDATE 71 (v2.38.0): Storage saver
+
+1. Old races are cleaned up. Every hour the server deletes finished and cancelled races that ended more than 5 days ago (set RACE_KEEP_DAYS to change it). Wins, points and stats are on each player, so they are not lost. Races still running, and sponsored races (used by advertiser and investor reports), are never deleted. An old race link or alert now opens as "race not found".
+2. Smaller profile photos: new photos are 160x160 (about 5 to 12 KB instead of 15 to 40 KB), and the server limit is 40 KB. Photos already uploaded keep working.
+3. Smaller level pictures: when you upload a picture puzzle or a sliding-puzzle picture on the admin page, it is now saved at a lighter size (collage 600 px, up to 250 KB; sliding picture 720 px, up to 380 KB).
+
+Files: src/db.js; src/routes/challenges.js; src/routes/profile.js; public/js/app.js; public/js/admin.js; public/sw.js (cache v59); scripts/raceclean-test.js (new); scripts/profile-test.js; package.json; docs.

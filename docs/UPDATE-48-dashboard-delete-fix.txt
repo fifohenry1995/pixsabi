@@ -1,0 +1,6 @@
+UPDATE 48 (v2.22.1): fix, dashboard links could not be deleted ("Send JSON" error)
+
+- The Delete button for investor/advertiser links on /dashboard.html sent the request without the JSON header the server insists on. Fixed: every change from that page now sends it.
+- Checked in a real browser: make a link, switch it off, delete it.
+
+Files: public/js/dashboard.js, public/sw.js (cache v37), package.json.

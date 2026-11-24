@@ -1,0 +1,3 @@
+UPDATE 30 (v2.10.1): fixed the word "null" on other players' profiles
+Cause: players with no badges made the page add an empty slot that printed as the text "null". Fixed in public/js/app.js.
+Files: public/js/app.js, public/sw.js, package.json, docs/CHANGELOG.md. Copy them over your naija-sabi folder (or use the full zip) and refresh the page (once or twice, so the app updates).

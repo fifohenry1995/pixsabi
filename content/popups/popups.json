@@ -1,0 +1,8 @@
+{
+ "settings": {
+  "enabled": true,
+  "every": 1,
+  "closeAfter": 4
+ },
+ "items": []
+}

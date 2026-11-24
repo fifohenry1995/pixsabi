@@ -1,0 +1,15 @@
+UPDATE 49 (v2.23.0): the game is now called "Sabi Naija", and a new watch-link message
+
+NEW NAME
+- Every place a player or visitor can see the name now says "Sabi Naija": the top bar and login screen, page titles, the About, Privacy and Disclaimer pages, emails and
+  alerts, the installed-app name, the offline page, the admin page, the dashboard and the investor/advertiser reports, and the WhatsApp invite messages.
+- The app icon was redrawn: "NS" is now "SN" (same colours and green-white-green bar).
+- Players who installed the app on their home screen may keep the old icon and name until they remove it and add it again (phones cache them).
+- Kept on purpose, so nothing breaks: the folder name "naija-sabi", the database file and your data folder, saved settings on players' phones, the Railway service,
+  and the zip file names. Nothing to migrate, and nobody is logged out.
+- The "Naija" puzzle category is not renamed (it still means Nigerian puzzles).
+
+WATCH LINK MESSAGE
+- "Share watch link" now sends: "I am in a live Contest in Sabi Naija. Come watch the Match and show support." followed by the link.
+
+Files: most files in public/, pages/ and src/ (name text only), public/icons/*, public/sw.js (cache v38), package.json, README.md, docs/DEPLOY-RAILWAY.md.

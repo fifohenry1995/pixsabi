@@ -1,0 +1,8 @@
+UPDATE 98 - v2.52.0 - AdSense banner on the race results page
+
+- New box on the Admin page > Google AdSense: "Race results page ad". Paste a Display ad code and save.
+- It shows ONE banner on the full page players see when a race has finished (below the standings, with clear space around it, away from the buttons). It is never in a pop-up or on the level-complete box, never in chat, and is hidden when the player has Data Saver on. It shows only while AdSense is switched on.
+- Between-level full-screen and rewarded ads are NOT built. On the web they are only possible through Google's separate "H5 Games Ads" (Ad Placement API), which you must apply for after your AdSense account is approved: https://developers.google.com/ad-placement/docs/signup . Google decides approval. If you are approved, send me the code Google gives you and I will add it.
+- Keep AdSense Auto ads OFF (the game is one page, so chat cannot be excluded from Auto ads).
+
+FILES: src/adsense.js, src/routes/admin.js, public/js/ads.js, public/js/admin.js, public/js/app.js, public/css/ads.css, public/sw.js (cache v82), scripts/adsense-test.js (13 checks), package.json (2.52.0).

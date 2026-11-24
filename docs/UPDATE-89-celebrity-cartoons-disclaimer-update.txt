@@ -1,0 +1,6 @@
+UPDATE 89 - v2.47.1 - Disclaimer: AI cartoons of public figures
+
+Disclaimer > Pictures and copyright: new paragraph "Cartoons of public figures" (AI-made cartoons or illustrations based on well-known people; drawings not photographs; shown only so players can guess the puzzle; not approved by, supported by or connected to the people shown). The removal paragraph now also covers a cartoon of a person or someone they represent: they can ask for removal without proving copyright, just by saying who they are and which puzzle it is.
+Reminder: this reduces risk, it does not remove it. Likeness / personality-rights rules can apply even to cartoons, especially in a game that earns from ads or Premium. Keep cartoons tasteful and clearly drawings, avoid anything embarrassing, sexual or political, answer any complaint quickly, and have a Nigerian lawyer read the page.
+
+Files: pages/disclaimer.html; package.json; docs.
