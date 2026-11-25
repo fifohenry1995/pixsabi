@@ -5,8 +5,8 @@
      answer are NEVER stored: they always come fresh from the server, so nothing about the answers is kept.
    - Files are fetched from the network first, so players always get your latest update.
      The saved copy is only used when the phone has no connection. */
-const CACHE = 'naija-sabi-shell-v85';
-const PICS = 'naija-sabi-pics-v1';
+const CACHE = 'pixsabi-shell-v85';
+const PICS = 'pixsabi-pics-v1';
 const MAX_PICS = 80;
 const SHELL = ['/', '/offline.html', '/css/style.css', '/css/pwa.css', '/css/ads.css', '/css/popup.css', '/js/ads.js', '/js/track.js', '/js/popup.js', '/js/sound.js', '/js/music.js', '/js/game.js', '/js/avatars.js', '/js/app.js', '/js/pwa.js', '/js/offline.js', '/manifest.webmanifest', '/icons/icon-192.png', '/icons/icon-512.png', '/icons/apple-touch-icon.png'];
 
@@ -68,7 +68,7 @@ self.addEventListener('push', (event) => {
     const wins = await self.clients.matchAll({ type: 'window', includeUncontrolled: true });
     if (wins.some((w) => w.visibilityState === 'visible')) { wins.forEach((w) => w.postMessage({ type: 'alerts' })); return; }
     await self.registration.showNotification(d.title || 'PixSabi', {
-      body: d.body || '', tag: d.tag || 'naija-sabi', renotify: true,
+      body: d.body || '', tag: d.tag || 'pixsabi', renotify: true,
       icon: '/icons/icon-192.png', badge: '/icons/icon-192.png',
       data: { url: typeof d.url === 'string' && d.url.startsWith('#/') ? d.url : '#/alerts' },
     });

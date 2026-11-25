@@ -7,7 +7,7 @@ const os = require('os');
 const path = require('path');
 const { spawnSync } = require('child_process');
 
-const tmp = fs.mkdtempSync(path.join(os.tmpdir(), 'naija-sabi-dbtest-'));
+const tmp = fs.mkdtempSync(path.join(os.tmpdir(), 'pixsabi-dbtest-'));
 const root = path.join(__dirname, '..');
 
 // Runs a snippet in a fresh Node process (a "server restart") against the same data folder.

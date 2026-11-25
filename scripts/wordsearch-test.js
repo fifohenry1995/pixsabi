@@ -6,7 +6,7 @@ const os = require('os');
 const path = require('path');
 const assert = require('assert');
 
-const tmp = fs.mkdtempSync(path.join(os.tmpdir(), 'naija-sabi-ws-'));
+const tmp = fs.mkdtempSync(path.join(os.tmpdir(), 'pixsabi-ws-'));
 process.env.DATA_DIR = path.join(tmp, 'data');
 process.env.WORDSEARCH_FILE = path.join(tmp, 'wordsearch.json');
 process.env.ADMIN_USER = 'boss';

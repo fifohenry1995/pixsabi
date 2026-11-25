@@ -6,7 +6,7 @@ const fs = require('fs');
 const os = require('os');
 const path = require('path');
 const assert = require('assert');
-const tmp = fs.mkdtempSync(path.join(os.tmpdir(), 'naija-sabi-music-'));
+const tmp = fs.mkdtempSync(path.join(os.tmpdir(), 'pixsabi-music-'));
 fs.mkdirSync(path.join(tmp, 'images'), { recursive: true });
 fs.copyFileSync(path.join(__dirname, '..', 'content', 'puzzles.json'), path.join(tmp, 'puzzles.json'));
 Object.assign(process.env, { DATA_DIR: tmp + '/data', PUZZLES_FILE: tmp + '/puzzles.json', IMAGE_DIR: tmp + '/images', ADS_DIR: tmp + '/a', LOGINBG_DIR: tmp + '/l', WORLDBG_DIR: tmp + '/w', POPUPS_DIR: tmp + '/p' });

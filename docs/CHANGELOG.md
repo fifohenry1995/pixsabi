@@ -1548,3 +1548,11 @@ UPDATE 101 - v2.53.0 - The game is now called PixSabi
 - Check the name "PixSabi" is free before you promote it: domain, social handles, app stores, trademark registry.
 
 FILES: 38 text files with the name, public/icons/*.png (new), public/sw.js (cache v85), package.json (2.53.0, description only).
+UPDATE 102 - v2.53.1 - Folder, package and database file renamed to pixsabi
+
+- The project folder is now "pixsabi" (the zips now unpack into your own folder name, so rename yours too). package name, README, backup and orders scripts, report download file names, service worker cache names and test folders now say pixsabi.
+- The database file is now data/pixsabi.db. On the first start after the update, an existing data/naija-sabi.db (with its -wal and -shm files) is RENAMED to pixsabi.db, so no player, coin, race or chat is lost. Nothing is copied or deleted. scripts/rename-test.js (in npm test) checks this. Backups made earlier keep their old file names.
+- On purpose NOT changed: the seed text inside the daily puzzle choice stays 'naija-sabi:', so each day keeps the same puzzle as before.
+- Before deploying to Railway: take a backup of the volume first (npm run backup), as with any update.
+
+FILES: src/db.js, src/routes/daily.js, scripts (backup, orders, tests, new rename-test), public/sw.js (cache v86), public/js/report.js, dashboard.js, dash.js, README.md, package.json (2.53.1).

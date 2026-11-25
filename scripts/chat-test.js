@@ -7,7 +7,7 @@ const os = require('os');
 const path = require('path');
 const assert = require('assert');
 
-process.env.DATA_DIR = fs.mkdtempSync(path.join(os.tmpdir(), 'naija-sabi-chat-'));
+process.env.DATA_DIR = fs.mkdtempSync(path.join(os.tmpdir(), 'pixsabi-chat-'));
 process.env.ADMIN_USER = 'boss';
 process.env.CHAT_MIN_GAP_MS = '0'; // the test sends fast; the gap rule has its own check below
 const dbm = require('../src/db');

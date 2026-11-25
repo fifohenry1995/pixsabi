@@ -8,7 +8,7 @@ const path = require('path');
 const assert = require('assert');
 const crypto = require('crypto');
 
-process.env.DATA_DIR = fs.mkdtempSync(path.join(os.tmpdir(), 'naija-sabi-alerts-'));
+process.env.DATA_DIR = fs.mkdtempSync(path.join(os.tmpdir(), 'pixsabi-alerts-'));
 const dbm = require('../src/db');
 const { db, newUser, pushSubs } = dbm;
 const Push = require('../src/push');

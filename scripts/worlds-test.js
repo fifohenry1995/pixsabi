@@ -6,7 +6,7 @@ const os = require('os');
 const path = require('path');
 const assert = require('assert');
 
-const tmp = fs.mkdtempSync(path.join(os.tmpdir(), 'naija-sabi-worlds-'));
+const tmp = fs.mkdtempSync(path.join(os.tmpdir(), 'pixsabi-worlds-'));
 process.env.DATA_DIR = path.join(tmp, 'data');
 process.env.PUZZLES_FILE = path.join(tmp, 'puzzles.json');
 fs.copyFileSync(path.join(__dirname, '..', 'content', 'puzzles.json'), process.env.PUZZLES_FILE);

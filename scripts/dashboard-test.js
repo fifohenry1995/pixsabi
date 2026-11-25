@@ -6,7 +6,7 @@ const os = require('os');
 const path = require('path');
 const assert = require('assert');
 
-const tmp = fs.mkdtempSync(path.join(os.tmpdir(), 'naija-sabi-dash-'));
+const tmp = fs.mkdtempSync(path.join(os.tmpdir(), 'pixsabi-dash-'));
 fs.mkdirSync(path.join(tmp, 'images'), { recursive: true });
 fs.copyFileSync(path.join(__dirname, '..', 'content', 'puzzles.json'), path.join(tmp, 'puzzles.json'));
 process.env.DATA_DIR = path.join(tmp, 'data');

@@ -106,7 +106,7 @@
   var reportBox = h('div'), incomeBox = h('section', { class: 'dash-sec dash-income' }), linksBox = h('section', { class: 'dash-sec dash-links' });
   function load() {
     return api('/admin/dash?days=' + days).then(function (d) {
-      DASH.renderOverview(reportBox, d, { title: 'PixSabi dashboard', fileName: 'naija-sabi-report-' + d.to, reload: function (n) { days = n; load(); } });
+      DASH.renderOverview(reportBox, d, { title: 'PixSabi dashboard', fileName: 'pixsabi-report-' + d.to, reload: function (n) { days = n; load(); } });
     }).catch(fail);
   }
   function fail(e) {

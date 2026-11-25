@@ -7,7 +7,7 @@ const os = require('os');
 const path = require('path');
 const assert = require('assert');
 
-process.env.DATA_DIR = fs.mkdtempSync(path.join(os.tmpdir(), 'naija-sabi-group-'));
+process.env.DATA_DIR = fs.mkdtempSync(path.join(os.tmpdir(), 'pixsabi-group-'));
 const dbm = require('../src/db');
 const { db, newUser } = dbm;
 const P = require('../src/puzzles');

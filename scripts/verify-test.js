@@ -7,7 +7,7 @@ const os = require('os');
 const path = require('path');
 const assert = require('assert');
 
-const tmp = fs.mkdtempSync(path.join(os.tmpdir(), 'naija-sabi-verify-'));
+const tmp = fs.mkdtempSync(path.join(os.tmpdir(), 'pixsabi-verify-'));
 process.env.DATA_DIR = path.join(tmp, 'data');
 process.env.ADMIN_USER = 'boss';
 process.env.AUTH_LIMIT = '1000';

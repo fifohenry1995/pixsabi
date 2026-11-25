@@ -7,7 +7,7 @@ const http = require('http');
 const crypto = require('crypto');
 const assert = require('assert');
 
-const tmp = fs.mkdtempSync(path.join(os.tmpdir(), 'naija-sabi-pay-'));
+const tmp = fs.mkdtempSync(path.join(os.tmpdir(), 'pixsabi-pay-'));
 process.env.DATA_DIR = tmp;
 process.env.PAYSTACK_SECRET_KEY = 'sk_test_fake_key';
 

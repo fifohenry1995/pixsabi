@@ -84,7 +84,7 @@
     var sel = h('select', { 'aria-label': 'Time range' }, [[7, 'Last 7 days'], [30, 'Last 30 days'], [90, 'Last 90 days'], [365, 'Last year']].map(function (x) { return h('option', { value: String(x[0]), selected: x[0] === d.days ? 'selected' : null }, x[1]); }));
     sel.addEventListener('change', function () { o.reload(Number(sel.value)); });
     return h('div', { class: 'dash-tools' }, sel,
-      h('button', { class: 'dash-btn', type: 'button', onclick: function () { D.download(o.fileName || 'naija-sabi', D.csv(d)); } }, 'Download spreadsheet (CSV)'),
+      h('button', { class: 'dash-btn', type: 'button', onclick: function () { D.download(o.fileName || 'pixsabi', D.csv(d)); } }, 'Download spreadsheet (CSV)'),
       h('button', { class: 'dash-btn', type: 'button', onclick: function () { window.print(); } }, 'Print or save as PDF'));
   }
 

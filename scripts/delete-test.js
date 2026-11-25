@@ -6,7 +6,7 @@ const os = require('os');
 const path = require('path');
 const assert = require('assert');
 
-const tmp = fs.mkdtempSync(path.join(os.tmpdir(), 'naija-sabi-delete-'));
+const tmp = fs.mkdtempSync(path.join(os.tmpdir(), 'pixsabi-delete-'));
 process.env.DATA_DIR = path.join(tmp, 'data');
 process.env.AVATAR_DIR = path.join(tmp, 'avatars');
 process.env.ADMIN_USER = 'boss';

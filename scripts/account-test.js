@@ -6,7 +6,7 @@ const os = require('os');
 const path = require('path');
 const assert = require('assert');
 
-const tmp = fs.mkdtempSync(path.join(os.tmpdir(), 'naija-sabi-account-'));
+const tmp = fs.mkdtempSync(path.join(os.tmpdir(), 'pixsabi-account-'));
 process.env.DATA_DIR = path.join(tmp, 'data');
 process.env.ADMIN_USER = 'boss';
 process.env.AUTH_LIMIT = '1000'; // the test makes many sign-in style calls from one address
@@ -76,7 +76,7 @@ const reg = (c, o, expect) => c.call('POST', '/api/auth/register', { username: '
   await wait(30);
   assert.strictEqual(sent.length, 1, 'only one email every 5 minutes per player');
   await anon.call('POST', '/api/auth/forgot', { who: '' }, 400);
-  assert.ok(!fs.readFileSync(path.join(process.env.DATA_DIR, 'naija-sabi.db')).includes(link[1]), 'the link itself is never stored');
+  assert.ok(!fs.readFileSync(path.join(process.env.DATA_DIR, 'pixsabi.db')).includes(link[1]), 'the link itself is never stored');
   ok('forgot password: emails a link, tells nobody which accounts exist, limits repeats');
 
   // ---- reset ----

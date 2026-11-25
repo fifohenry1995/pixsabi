@@ -3,7 +3,7 @@
 const path = require('path');
 const { DatabaseSync } = require('node:sqlite');
 const DATA_DIR = process.env.DATA_DIR || path.join(__dirname, '..', 'data');
-const sql = new DatabaseSync(path.join(DATA_DIR, 'naija-sabi.db'), { readOnly: true });
+const sql = new DatabaseSync(path.join(DATA_DIR, 'pixsabi.db'), { readOnly: true });
 let rows;
 try { rows = sql.prepare('SELECT * FROM orders ORDER BY created_at DESC LIMIT 50').all(); }
 catch { console.log('No purchases yet.'); process.exit(0); }

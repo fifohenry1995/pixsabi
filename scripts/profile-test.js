@@ -7,7 +7,7 @@ const os = require('os');
 const path = require('path');
 const assert = require('assert');
 
-process.env.DATA_DIR = fs.mkdtempSync(path.join(os.tmpdir(), 'naija-sabi-profile-'));
+process.env.DATA_DIR = fs.mkdtempSync(path.join(os.tmpdir(), 'pixsabi-profile-'));
 const server = require('../src/app');
 const { flush } = require('../src/db');
 

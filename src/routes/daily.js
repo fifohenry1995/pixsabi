@@ -24,6 +24,7 @@ function weekOf(u, today, solved) {
   }
   return days.map((ymd) => ({ label: dayLabel(ymd), done: done.has(ymd), today: ymd === today }));
 }
+// The seed text is deliberately still 'naija-sabi:' so each day keeps the same puzzle it had before the rename.
 const puzzleFor = (ymd) => P.puzzles[hashStr('naija-sabi:' + ymd) % P.puzzles.length];
 
 module.exports = ({ route }) => {

@@ -7,7 +7,7 @@ const os = require('os');
 const path = require('path');
 const assert = require('assert');
 
-process.env.DATA_DIR = fs.mkdtempSync(path.join(os.tmpdir(), 'naija-sabi-social-'));
+process.env.DATA_DIR = fs.mkdtempSync(path.join(os.tmpdir(), 'pixsabi-social-'));
 process.env.ADMIN_USER = 'boss';
 const { db, newUser } = require('../src/db');
 const Social = require('../src/social');

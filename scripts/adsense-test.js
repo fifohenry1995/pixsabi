@@ -8,7 +8,7 @@ const os = require('os');
 const path = require('path');
 const assert = require('assert');
 
-const tmp = fs.mkdtempSync(path.join(os.tmpdir(), 'naija-sabi-adsense-'));
+const tmp = fs.mkdtempSync(path.join(os.tmpdir(), 'pixsabi-adsense-'));
 process.env.DATA_DIR = tmp;
 process.env.ADS_DIR = path.join(tmp, 'ads');
 process.env.POPUPS_DIR = path.join(tmp, 'popups');

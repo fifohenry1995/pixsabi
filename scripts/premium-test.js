@@ -7,7 +7,7 @@ const path = require('path');
 const http = require('http');
 const assert = require('assert');
 
-const tmp = fs.mkdtempSync(path.join(os.tmpdir(), 'naija-sabi-prem-'));
+const tmp = fs.mkdtempSync(path.join(os.tmpdir(), 'pixsabi-prem-'));
 process.env.DATA_DIR = path.join(tmp, 'data');
 process.env.POPUPS_DIR = path.join(tmp, 'popups');
 process.env.ADMIN_USER = 'boss';

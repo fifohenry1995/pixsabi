@@ -3,7 +3,7 @@
 // Needs Node 22.13 or newer.
 //
 // How it works, in plain words:
-//  * Each player and each challenge is one row in the database file (data/naija-sabi.db).
+//  * Each player and each challenge is one row in the database file (data/pixsabi.db).
 //  * The app still talks to `db.users[id]` and `db.challenges[code]` like before, but those
 //    now load ONE row on demand (and keep recently used rows in memory).
 //  * When a route calls save(), only the rows that actually changed are written (a few
@@ -25,12 +25,18 @@ try {
 
 const DATA_DIR = process.env.DATA_DIR || path.join(__dirname, '..', 'data');
 const AVATAR_DIR = path.join(DATA_DIR, 'avatars');
-const DB_FILE = path.join(DATA_DIR, 'naija-sabi.db');
+const DB_FILE = path.join(DATA_DIR, 'pixsabi.db');
+const OLD_DB_FILE = path.join(DATA_DIR, 'naija-sabi.db');   // the file's name before the game was renamed PixSabi
 const OLD_JSON = path.join(DATA_DIR, 'db.json');
 const CACHE_MAX = Number(process.env.DB_CACHE_ROWS) || 5000; // rows kept in memory per table
 
 fs.mkdirSync(DATA_DIR, { recursive: true });
 fs.mkdirSync(AVATAR_DIR, { recursive: true });
+// An existing game keeps all its players: the old database file (and its WAL side files) is renamed, not copied or replaced.
+if (!fs.existsSync(DB_FILE) && fs.existsSync(OLD_DB_FILE)) {
+  for (const ext of ['', '-wal', '-shm']) { if (fs.existsSync(OLD_DB_FILE + ext)) fs.renameSync(OLD_DB_FILE + ext, DB_FILE + ext); }
+  console.log('[db] renamed naija-sabi.db to pixsabi.db');
+}
 
 const sql = new DatabaseSync(DB_FILE);
 sql.exec(`

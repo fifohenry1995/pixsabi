@@ -8,9 +8,9 @@ const os = require('os');
 const path = require('path');
 const assert = require('assert');
 
-const dir = fs.mkdtempSync(path.join(os.tmpdir(), 'naija-sabi-images-'));
+const dir = fs.mkdtempSync(path.join(os.tmpdir(), 'pixsabi-images-'));
 process.env.IMAGE_DIR = dir;
-process.env.DATA_DIR = fs.mkdtempSync(path.join(os.tmpdir(), 'naija-sabi-imgdata-'));
+process.env.DATA_DIR = fs.mkdtempSync(path.join(os.tmpdir(), 'pixsabi-imgdata-'));
 const P = require('../src/puzzles');
 
 const [a, b, c, d, e, f] = P.puzzles.slice(0, 6);

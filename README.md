@@ -10,7 +10,7 @@ to `npm install`.
 You need Node.js 22.13 or newer (check with `node -v`; get the LTS version from nodejs.org).
 
 ```bash
-cd naija-sabi
+cd pixsabi
 npm start
 ```
 
@@ -96,7 +96,7 @@ Any host that runs Node.js works (Render, Railway, Fly.io, a VPS).
 | `AUTH_LIMIT` | Optional. Sign-in/sign-up tries allowed per 10 minutes per visitor (default 25). |
 | `ADMIN_USER` | Admin usernames, separated by commas (an alternative to `content/admin.txt`). |
 
-3. **Persistent storage matters.** Keep `data/` (it holds `naija-sabi.db`) AND `content/` on a disk that survives deploys (players, profile photos, your puzzles, pictures, adverts and backups live there).
+3. **Persistent storage matters.** Keep `data/` (it holds `pixsabi.db`) AND `content/` on a disk that survives deploys (players, profile photos, your puzzles, pictures, adverts and backups live there).
 4. **Use https.** Phones only allow "Install app" on https sites (or localhost on the same computer).
 
 ## About, Privacy and Disclaimer pages
@@ -117,7 +117,7 @@ How it stays safe: the price list lives on the server (`PACKS` in `src/routes/co
 ## Project layout
 
 ```
-naija-sabi/
+pixsabi/
   content/
     puzzles.json         all puzzles (the Admin page edits this)
     images/              one collage picture per puzzle
@@ -125,7 +125,7 @@ naija-sabi/
     ads/ popups/ backups/   created by the Admin page
   src/
     server.js app.js     start-up, routing, security headers, file serving
-    db.js                SQLite database (data/naija-sabi.db) and profile photos (data/avatars)
+    db.js                SQLite database (data/pixsabi.db) and profile photos (data/avatars)
     puzzles.js           loads puzzles, hidden ids, picture links, letter pools
     paystack.js          talks to Paystack (start a payment, check it, check webhook signatures)
     ads.js popups.js     advert storage

@@ -7,7 +7,7 @@
     fetch('/api/report/' + encodeURIComponent(token) + '?days=' + days, { credentials: 'omit' })
       .then(function (r) { return r.json().then(function (j) { if (!r.ok) throw new Error(j.error || 'This report is not available.'); return j; }); })
       .then(function (d) {
-        var o = { reload: function (n) { days = n; load(); }, fileName: 'naija-sabi-' + (d.kind === 'advertiser' ? 'advertising' : 'report') + '-' + d.to };
+        var o = { reload: function (n) { days = n; load(); }, fileName: 'pixsabi-' + (d.kind === 'advertiser' ? 'advertising' : 'report') + '-' + d.to };
         if (d.kind === 'advertiser') DASH.renderAdvertiser(root, d, o); else DASH.renderOverview(root, d, Object.assign(o, { title: 'PixSabi: player and advert report' }));
       })
       .catch(function (e) {

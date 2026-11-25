@@ -6,7 +6,7 @@ const os = require('os');
 const path = require('path');
 const assert = require('assert');
 
-const tmp = fs.mkdtempSync(path.join(os.tmpdir(), 'naija-sabi-home-'));
+const tmp = fs.mkdtempSync(path.join(os.tmpdir(), 'pixsabi-home-'));
 process.env.DATA_DIR = path.join(tmp, 'data');
 
 const { db, newUser } = require('../src/db');

@@ -7,7 +7,7 @@ const os = require('os');
 const path = require('path');
 const assert = require('assert');
 
-process.env.DATA_DIR = fs.mkdtempSync(path.join(os.tmpdir(), 'naija-sabi-quiz-'));
+process.env.DATA_DIR = fs.mkdtempSync(path.join(os.tmpdir(), 'pixsabi-quiz-'));
 process.env.ADMIN_USER = 'boss';
 const { db, newUser, sql } = require('../src/db');
 const Quiz = require('../src/quiz');
