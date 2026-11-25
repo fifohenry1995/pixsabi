@@ -1556,3 +1556,14 @@ UPDATE 102 - v2.53.1 - Folder, package and database file renamed to pixsabi
 - Before deploying to Railway: take a backup of the volume first (npm run backup), as with any update.
 
 FILES: src/db.js, src/routes/daily.js, scripts (backup, orders, tests, new rename-test), public/sw.js (cache v86), public/js/report.js, dashboard.js, dash.js, README.md, package.json (2.53.1).
+
+UPDATE 103 - v2.54.0 - One volume keeps users AND admin content across Railway redeploys
+
+- Problem: each redeploy on Railway started with a fresh disk, so the user database (and anything added on the admin page: puzzles, pictures, adverts, pop-ups, slide, site texts, admin list) was lost.
+- Fix: set DATA_DIR to a Railway Volume (mount path /data, DATA_DIR=/data). Now ALL admin-managed content is kept in /data/content automatically, no extra variables. New src/paths.js decides the folder (CONTENT_DIR, else DATA_DIR/content, else content/ as before).
+- On start the starter files from the code's content/ are copied into the volume ONCE; existing files are never overwritten, so later admin changes survive every redeploy. (Edits you make to the starter files in GitHub later do NOT replace what is already on the volume.)
+- admin.txt can also be set with ADMIN_FILE; ADMIN_USER env still works. Older specific variables (PUZZLES_FILE, IMAGE_DIR, ADS_DIR...) still win if set.
+- Without DATA_DIR nothing changes. New scripts/persist-test.js. README updated (volume steps; PUBLIC_URL example fixed).
+- Accounts already lost cannot be recovered. Take a backup (npm run backup) before updates.
+
+FILES: src/paths.js (new), src/adsPath.js, loginbg.js, pages.js, popups.js, puzzles.js, slide.js, wordsearch.js, worldbg.js, src/routes/admin.js, scripts/seed-volume.js, scripts/persist-test.js, package.json (2.54.0), README.md.

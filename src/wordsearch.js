@@ -6,7 +6,7 @@ const fs = require('fs');
 const path = require('path');
 const crypto = require('crypto');
 
-const FILE = process.env.WORDSEARCH_FILE || path.join(__dirname, '..', 'content', 'wordsearch.json');
+const FILE = process.env.WORDSEARCH_FILE || path.join(require('./paths').CONTENT_DIR, 'wordsearch.json');
 const MIN_WORDS = 4, MAX_WORDS = 14, MIN_LEN = 3, MAX_LEN = 12;
 
 let list = [];

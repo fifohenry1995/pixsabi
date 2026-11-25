@@ -10,14 +10,14 @@ const { hashStr, mulberry32, shuffle } = require('./util');
 // server never serves that folder.)
 const IMAGE_DIRS = process.env.IMAGE_DIR
   ? [process.env.IMAGE_DIR]
-  : [path.join(__dirname, '..', 'content', 'images'), path.join(__dirname, '..', 'public', 'images')];
+  : [path.join(require('./paths').CONTENT_DIR, 'images'), path.join(__dirname, '..', 'public', 'images')];
 const IMAGE_DIR = IMAGE_DIRS[0];
 const IMAGE_EXTS = ['.jpg', '.jpeg', '.png', '.webp'];
 
 // The puzzle list lives in content/puzzles.json. The admin page edits that file and calls
 // reload(), so changes show up without restarting the server. `puzzles` and `byId` are
 // refilled IN PLACE, so every other file that already holds them keeps seeing the new list.
-const PUZZLES_FILE = process.env.PUZZLES_FILE || path.join(__dirname, '..', 'content', 'puzzles.json');
+const PUZZLES_FILE = process.env.PUZZLES_FILE || path.join(require('./paths').CONTENT_DIR, 'puzzles.json');
 const BACKUP_DIR = path.join(path.dirname(PUZZLES_FILE), 'backups');
 
 // The game has exactly two categories ("worlds"). Anything else in puzzles.json counts as Naija.

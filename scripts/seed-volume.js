@@ -1,35 +1,25 @@
 'use strict';
-// Runs before the server starts (npm start). On a host with a persistent disk (Railway volume, Render disk...)
-// you point DATA_DIR, PUZZLES_FILE, WORDSEARCH_FILE, IMAGE_DIR, ADS_DIR, POPUPS_DIR, LOGINBG_DIR and WORLDBG_DIR at that disk.
-// The disk starts empty, so this copies your starter puzzles and pictures onto it ONCE (it never overwrites
-// anything, so puzzles and pictures you add later on the admin page are safe). With no such variables it does nothing.
+// Runs before the server starts (npm start). On a host with a persistent disk (Railway volume...) set DATA_DIR=/data
+// (or CONTENT_DIR). The game then keeps users AND all admin-managed content (puzzles, pictures, ads, pop-ups, slide,
+// site texts, admin list) on that disk. The disk starts empty, so this copies the starter content from the code's
+// content/ folder ONCE. It NEVER overwrites a file that already exists, so everything you add or change later
+// (on the admin page) survives every redeploy. Specific variables (PUZZLES_FILE, IMAGE_DIR, ADS_DIR...) still work too.
 const fs = require('fs');
 const path = require('path');
-
-const content = path.join(__dirname, '..', 'content');
+const { CONTENT_DIR, REPO_CONTENT, copyMissing } = require('../src/paths');   // requiring it already copies the starter content
 const env = process.env;
 
-for (const d of [env.DATA_DIR, env.ADS_DIR, env.POPUPS_DIR, env.LOGINBG_DIR, env.WORLDBG_DIR]) if (d) fs.mkdirSync(d, { recursive: true });
+for (const d of [env.DATA_DIR, CONTENT_DIR, env.ADS_DIR, env.POPUPS_DIR, env.LOGINBG_DIR, env.WORLDBG_DIR]) if (d) fs.mkdirSync(d, { recursive: true });
 
-if (env.PUZZLES_FILE && !fs.existsSync(env.PUZZLES_FILE)) {
-  fs.mkdirSync(path.dirname(env.PUZZLES_FILE), { recursive: true });
-  fs.copyFileSync(path.join(content, 'puzzles.json'), env.PUZZLES_FILE);
-  console.log('[seed] created', env.PUZZLES_FILE);
-}
-if (env.WORDSEARCH_FILE && !fs.existsSync(env.WORDSEARCH_FILE)) {
-  fs.mkdirSync(path.dirname(env.WORDSEARCH_FILE), { recursive: true });
-  fs.copyFileSync(path.join(content, 'wordsearch.json'), env.WORDSEARCH_FILE);
-  console.log('[seed] created', env.WORDSEARCH_FILE);
-}
-if (env.IMAGE_DIR) {
-  fs.mkdirSync(env.IMAGE_DIR, { recursive: true });
-  const src = path.join(content, 'images');
-  let n = 0;
-  if (fs.existsSync(src)) {
-    for (const f of fs.readdirSync(src)) {
-      const to = path.join(env.IMAGE_DIR, f);
-      if (!fs.existsSync(to) && fs.statSync(path.join(src, f)).isFile()) { fs.copyFileSync(path.join(src, f), to); n++; }
-    }
+function seedFile(file, name) {
+  if (file && !fs.existsSync(file) && fs.existsSync(path.join(REPO_CONTENT, name))) {
+    fs.mkdirSync(path.dirname(file), { recursive: true });
+    fs.copyFileSync(path.join(REPO_CONTENT, name), file);
+    console.log('[seed] created', file);
   }
-  if (n) console.log(`[seed] copied ${n} starter pictures to`, env.IMAGE_DIR);
 }
+
+// Specific overrides (older setups)
+seedFile(env.PUZZLES_FILE, 'puzzles.json');
+seedFile(env.WORDSEARCH_FILE, 'wordsearch.json');
+if (env.IMAGE_DIR) { const n = copyMissing(path.join(REPO_CONTENT, 'images'), env.IMAGE_DIR); if (n) console.log(`[seed] copied ${n} starter pictures to`, env.IMAGE_DIR); }

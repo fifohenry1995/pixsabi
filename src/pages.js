@@ -6,7 +6,7 @@ const fs = require('fs');
 const path = require('path');
 
 const PAGES_DIR = path.join(__dirname, '..', 'pages');
-const SITE_FILE = process.env.SITE_FILE || path.join(__dirname, '..', 'content', 'site.json');
+const SITE_FILE = process.env.SITE_FILE || path.join(require('./paths').CONTENT_DIR, 'site.json');
 const PAGES = {
   about: 'About us',
   privacy: 'Privacy Policy',

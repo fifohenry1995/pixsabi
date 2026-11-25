@@ -85,18 +85,19 @@ Any host that runs Node.js works (Render, Railway, Fly.io, a VPS).
 | `SESSION_SECRET` | A long random string that signs login cookies. Set it in production. |
 | `COOKIE_SECURE` | Set to `true` once your site uses HTTPS. |
 | `TRUST_PROXY` | Set to `1` behind a proxy or load balancer so rate limits see the real visitor IP. |
-| `DATA_DIR` | Folder for the database. Point it at a persistent disk. |
+| `DATA_DIR` | Folder for the database. Point it at a persistent disk (Railway: add a Volume mounted at `/data`, then set `DATA_DIR=/data`). All admin-managed content (puzzles, pictures, adverts, pop-ups, slide, site texts, admin list) is then kept in `DATA_DIR/content` too, and the starter files are copied there once. |
+| `CONTENT_DIR` | Optional. Put the content folder somewhere else than `DATA_DIR/content`. |
 | `DB_CACHE_ROWS` | Optional. Players and challenges kept in memory (default 5000 each). |
 | `PAYSTACK_SECRET_KEY` | Turns on Buy coins. `sk_test_...` to try it with fake money, `sk_live_...` for real money. Without it the Buy button says "not open yet". |
 | `PREMIUM_NAIRA` | Optional. Premium price for 30 days in naira (default 1000). |
-| `PUBLIC_URL` | Your website address, e.g. `https://naijasabi.com`. Used to send players back after paying. |
+| `PUBLIC_URL` | Your website address, e.g. `https://www.yourdomain.com`. Used to send players back after paying. |
 | `TURNSTILE_SITE_KEY`, `TURNSTILE_SECRET_KEY` | Turns on the Cloudflare "I am human" check on sign-up (free at dash.cloudflare.com, Turnstile). Both keys needed; blank = off. |
 | `EMAIL_VERIFY` | Email confirmation of new accounts is on whenever `RESEND_API_KEY` and `MAIL_FROM` are set. Set `EMAIL_VERIFY=off` to switch it off. |
 | `RESEND_API_KEY`, `MAIL_FROM` | Turns on forgot-password and email-confirmation emails (free account at resend.com, verify your domain). `MAIL_FROM` looks like `PixSabi <hello@yourdomain.com>`. Needs `PUBLIC_URL` too. |
 | `AUTH_LIMIT` | Optional. Sign-in/sign-up tries allowed per 10 minutes per visitor (default 25). |
 | `ADMIN_USER` | Admin usernames, separated by commas (an alternative to `content/admin.txt`). |
 
-3. **Persistent storage matters.** Keep `data/` (it holds `pixsabi.db`) AND `content/` on a disk that survives deploys (players, profile photos, your puzzles, pictures, adverts and backups live there).
+3. **Persistent storage matters.** On Railway or Render, attach a disk/volume and set `DATA_DIR` to it: that single setting now keeps the database AND `content/` safe through redeploys (starter files are copied over once and never overwritten). Without `DATA_DIR`, keep `data/` and `content/` on a disk that survives deploys (players, profile photos, your puzzles, pictures, adverts and backups live there).
 4. **Use https.** Phones only allow "Install app" on https sites (or localhost on the same computer).
 
 ## About, Privacy and Disclaimer pages

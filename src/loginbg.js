@@ -5,7 +5,7 @@
 const fs = require('fs');
 const path = require('path');
 
-const DIR = process.env.LOGINBG_DIR || path.join(__dirname, '..', 'content', 'loginbg');
+const DIR = process.env.LOGINBG_DIR || path.join(require('./paths').CONTENT_DIR, 'loginbg');
 const SLOTS = [1, 2, 3, 4, 5, 6, 7, 8];
 const fileOf = (slot) => path.join(DIR, `${slot}.jpg`);
 

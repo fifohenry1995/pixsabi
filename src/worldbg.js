@@ -4,7 +4,7 @@
 const fs = require('fs');
 const path = require('path');
 
-const DIR = process.env.WORLDBG_DIR || path.join(__dirname, '..', 'content', 'worldbg');
+const DIR = process.env.WORLDBG_DIR || path.join(require('./paths').CONTENT_DIR, 'worldbg');
 const KEYS = ['naija', 'universal', 'wordsearch', 'slide'];
 const fileOf = (key) => path.join(DIR, `${key}.jpg`);
 

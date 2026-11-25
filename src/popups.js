@@ -5,7 +5,7 @@ const fs = require('fs');
 const path = require('path');
 const crypto = require('crypto');
 
-const DIR = process.env.POPUPS_DIR || path.join(__dirname, '..', 'content', 'popups');
+const DIR = process.env.POPUPS_DIR || path.join(require('./paths').CONTENT_DIR, 'popups');
 const META = path.join(DIR, 'popups.json');
 const MAX_ITEMS = 10;
 

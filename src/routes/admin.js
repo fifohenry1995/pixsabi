@@ -23,7 +23,7 @@ const { hashPassword } = require('../util');
 
 // Who is an admin? Either the ADMIN_USER environment variable (several names separated by
 // commas) or the file content/admin.txt (one username per line). Names are not case sensitive.
-const ADMIN_FILE = path.join(__dirname, '..', '..', 'content', 'admin.txt');
+const ADMIN_FILE = (process.env.ADMIN_FILE || path.join(require('../paths').CONTENT_DIR, 'admin.txt'));
 function adminNames() {
   const names = new Set();
   for (const n of String(process.env.ADMIN_USER || '').split(',')) if (n.trim()) names.add(n.trim().toLowerCase());

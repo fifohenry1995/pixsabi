@@ -7,8 +7,8 @@ const path = require('path');
 const crypto = require('crypto');
 const P = require('./puzzles');
 
-const FILE = process.env.SLIDE_FILE || path.join(__dirname, '..', 'content', 'slide.json');
-const DIR = process.env.SLIDE_DIR || path.join(__dirname, '..', 'content', 'slide');
+const FILE = process.env.SLIDE_FILE || path.join(require('./paths').CONTENT_DIR, 'slide.json');
+const DIR = process.env.SLIDE_DIR || path.join(require('./paths').CONTENT_DIR, 'slide');
 const SIZES = [3, 4, 5];
 const BASE = { 3: 60, 4: 100, 5: 160 };   // points for finishing a level of that grid size
 const PAR = { 3: 30, 4: 80, 5: 160 };     // finishing within this many slides earns a bonus
