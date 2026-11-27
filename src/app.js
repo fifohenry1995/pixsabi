@@ -16,6 +16,8 @@ const WorldBg = require('./worldbg');
 const Slide = require('./slide');
 const Pages = require('./pages');
 const Pop = require('./popups');
+const Commentary = require('./commentary');
+const Radio = require('./radio');
 const Presence = require('./presence');
 const Stats = require('./stats');
 
@@ -28,11 +30,11 @@ const SECURE_COOKIE = process.env.COOKIE_SECURE === 'true';
 const DEFAULT_BODY_LIMIT = 10_000;
 
 const routes = [];
-// opts: auth (login required), strict (tight rate limit), maxBody (bytes, for uploads)
+// opts: auth (login required), strict (tight rate limit), maxBody (bytes, for uploads), raw (the handler reads the request itself; a binary upload, not JSON)
 function route(method, pattern, handler, opts = {}) {
   const keys = [];
   const re = new RegExp('^' + pattern.replace(/:(\w+)/g, (_, k) => { keys.push(k); return '([^/]+)'; }) + '/?$');
-  routes.push({ method, re, keys, handler, auth: !!opts.auth, strict: !!opts.strict, maxBody: opts.maxBody || DEFAULT_BODY_LIMIT });
+  routes.push({ method, re, keys, handler, auth: !!opts.auth, strict: !!opts.strict, raw: !!opts.raw, maxBody: opts.maxBody || DEFAULT_BODY_LIMIT });
 }
 
 const apiLimit = createLimiter({ windowMs: 60_000, max: 300 });
@@ -135,7 +137,10 @@ async function handleApi(req, res, url) {
   }
 
   let body = {};
-  if (req.method !== 'GET') {
+  if (match.raw) {
+    // A binary upload (admin restore). A cross-site page cannot send this content type without a permission check by the browser.
+    if (req.method !== 'GET' && !String(req.headers['content-type'] || '').includes('application/octet-stream')) throw new HttpError(415, 'Send the backup file.');
+  } else if (req.method !== 'GET') {
     // Requiring JSON blocks cross-site form posts (a simple CSRF defence).
     if (!String(req.headers['content-type'] || '').includes('application/json')) {
       throw new HttpError(415, 'Send JSON.');
@@ -153,6 +158,7 @@ async function handleApi(req, res, url) {
 
   const ctx = { req, res, ip, rawBody: req.rawBody, params, query: Object.fromEntries(url.searchParams), body, user, headers: {} };
   const result = await match.handler(ctx);
+  if (ctx.handled) return;   // the handler already wrote the reply (a file download or a restore)
   sendJson(res, 200, result === undefined ? { ok: true } : result, ctx.headers);
 }
 
@@ -266,12 +272,32 @@ function servePopup(req, res, id) {
   const item = Pop.find(id);
   const file = item && Pop.fileOf(item);
   if (!file) { res.writeHead(404, SECURITY_HEADERS); return res.end('Not found'); }
+  serveMedia(req, res, file, Pop.MIME_BY_EXT[item.ext]);
+}
+
+// The audio adverts played in the contest commentary's commercial break.
+function serveAudioAd(req, res, id) {
+  if (req.method !== 'GET' && req.method !== 'HEAD') { res.writeHead(405, SECURITY_HEADERS); return res.end(); }
+  const ad = Commentary.find(id);
+  if (!ad || !ad.active) { res.writeHead(404, SECURITY_HEADERS); return res.end('Not found'); }
+  serveMedia(req, res, Commentary.fileOf(ad), Commentary.MIME_BY_EXT[ad.ext]);
+}
+
+// The PixSabi Radio audio. Public (it plays on the first screen), and only the one on air is served.
+function serveRadio(req, res, id) {
+  if (req.method !== 'GET' && req.method !== 'HEAD') { res.writeHead(405, SECURITY_HEADERS); return res.end(); }
+  const r = Radio.find(id);
+  if (!r || !r.active) { res.writeHead(404, SECURITY_HEADERS); return res.end('Not found'); }
+  serveMedia(req, res, Radio.fileOf(r), Radio.MIME_BY_EXT[r.ext]);
+}
+
+// A media file with Range support (phones need it to play video and audio). Every upload gets a new id, so a cached copy is never stale.
+function serveMedia(req, res, file, type) {
   fs.stat(file, (err, st) => {
     if (err || !st.isFile()) { res.writeHead(404, SECURITY_HEADERS); return res.end('Not found'); }
-    const type = Pop.MIME_BY_EXT[item.ext];
     const headers = {
       'Content-Type': type, 'Accept-Ranges': 'bytes',
-      'Cache-Control': 'public, max-age=31536000, immutable', // every upload gets a new id, so a cached copy is never stale
+      'Cache-Control': 'public, max-age=31536000, immutable',
       ...SECURITY_HEADERS,
     };
     let start = 0; let end = st.size - 1; let status = 200;
@@ -402,6 +428,10 @@ const server = http.createServer(async (req, res) => {
     if (slp) return serveSlide(req, res, slp[1]);
     const pop = url.pathname.match(/^\/popup\/([0-9a-f]{10})$/);
     if (pop) return servePopup(req, res, pop[1]);
+    const rad = url.pathname.match(/^\/radio\/([0-9a-f]{10})$/);
+    if (rad) return serveRadio(req, res, rad[1]);
+    const aad = url.pathname.match(/^\/audioad\/([0-9a-f]{10})$/);
+    if (aad) return serveAudioAd(req, res, aad[1]);
     const pic = url.pathname.match(/^\/pic\/([0-9a-f]{16})$/);
     if (pic) return servePicture(req, res, pic[1]);
     return serveStatic(req, res, url);
@@ -411,5 +441,8 @@ const server = http.createServer(async (req, res) => {
     if (!res.headersSent) sendJson(res, 500, { error: 'Something went wrong on our side. Try again.' });
   }
 });
+
+// Big uploads (a long radio audio, a backup restore) on a slow phone connection may take a while: allow 20 minutes to receive a request.
+server.requestTimeout = 20 * 60 * 1000;
 
 module.exports = server;

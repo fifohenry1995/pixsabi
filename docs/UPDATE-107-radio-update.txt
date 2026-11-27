@@ -1,0 +1,12 @@
+UPDATE 107 - v2.58.0 - PixSabi Radio (live audio that replaces the theme song)
+
+- New admin section "PixSabi Radio": upload a news bulletin, music or podcast (MP3, M4A, OGG or WAV, up to 8 MB; a 64 kbps MP3 is about 0.5 MB a minute, so around 16 minutes). It goes on air the moment it is added and repeats until you replace it. Upload a new one each day.
+- It replaces the built-in theme song for every player whose sound is on (the speaker button at the top, or Me > Settings). The button and the Settings label now say "PixSabi Radio" (and the title you gave it) while something is on air.
+- It plays like a live radio: everybody hears the same moment, worked out from the server's clock. Someone who closes the game and comes back later (or locks the phone and unlocks it) joins where the broadcast is now, not from the start. A phone with a wrong clock still gets the right place.
+- Players who already have sound on hear it as soon as they open the game (browsers still wait for the first tap). New players still start with sound off, as before.
+- Admin extras: title, switch off (players hear the theme song again), "Start again from the beginning" for everyone, delete, preview, and the place the broadcast has reached right now.
+- A new upload replaces the old one (the old file is deleted). The audio is in content/radio/ on the volume, so it is included in backups.
+- New and changed: every minute a listener's device re-checks, so new audio or a switch-off is picked up within a minute.
+- New scripts/radio-test.js (real server and real browser: upload, refusals, live position, replace, restart, switch off, theme beat returns).
+
+FILES: src/radio.js (new), src/app.js, src/routes/admin.js, public/js/music.js, public/js/app.js, public/js/admin.js, public/sw.js (cache v89, radio and audio adverts never cached), scripts/radio-test.js (new), package.json (2.58.0).

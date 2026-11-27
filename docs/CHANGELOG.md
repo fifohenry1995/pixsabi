@@ -1567,3 +1567,72 @@ UPDATE 103 - v2.54.0 - One volume keeps users AND admin content across Railway r
 - Accounts already lost cannot be recovered. Take a backup (npm run backup) before updates.
 
 FILES: src/paths.js (new), src/adsPath.js, loginbg.js, pages.js, popups.js, puzzles.js, slide.js, wordsearch.js, worldbg.js, src/routes/admin.js, scripts/seed-volume.js, scripts/persist-test.js, package.json (2.54.0), README.md.
+
+UPDATE 104 - v2.55.0 - Admin backup download and restore
+
+- New "Backup and restore" section at the top of the Admin page.
+- Download backup: ONE file (.pxbackup) with the player database (a safe snapshot: accounts, coins, levels, chat, orders), everything else in the data folder (profile photos, premium and income records, secret keys) and the whole content folder (puzzles, pictures, Word Search, slide, adverts, AdSense codes, pop-ups, login backgrounds, site texts, admin list). The page shows when you last downloaded one and turns red after 7 days.
+- Restore a backup: choose the file, type RESTORE, confirm. The file is checked first (wrong, cut-off, damaged or unsafe files are refused and nothing changes); then the game restarts by itself and swaps the files in. What was there before is kept in DATA_DIR/before-restore.
+- Size limit: 300 MB per backup file (BACKUP_MAX_MB changes it). Larger games: raise BACKUP_MAX_MB.
+- If the Railway volume is ever lost: redeploy with a new volume (DATA_DIR=/data), register your ADMIN_USER account, then restore the file.
+- Only the backup file's own time is saved: players who joined after your last download are not in it. Download one every week.
+- Security: admin only (others get 404), the download link is one-use and lasts 60 seconds, restore needs the typed word and cannot be sent from another website.
+- New scripts/backup-test.js (real server: download, refusals, restore, restart). npm run backup (database only) still works.
+
+FILES: src/backup.js (new), src/restoreApply.js (new), src/db.js, src/app.js, src/routes/admin.js, public/js/admin.js, public/css/admin.css, public/sw.js (cache v86), scripts/backup-test.js (new), package.json (2.55.0), README.md.
+
+UPDATE 105 - v2.56.0 - Futuristic sign-in page (Hologram Frame)
+
+- New look for the sign-in / create-account screen (design B, chosen from four mock-ups): a floating hologram picture frame (four glowing picture tiles, a question mark, scan lines, a cyan light beam), the PS mark, "You think say / you sabi?" in glowing cyan, and a dark glass form with cyan edges, underline tabs and a cyan-to-violet button.
+- Same form, same behaviour: username, email and recovery question on sign-up, the 18+ box, the padlock show-password button, Forgot password, and the sliding background pictures you upload (they now sit behind a dark violet tint).
+- Phones: centred. Small/short phones: the frame shrinks so the form stays in view. Laptops: frame, title and slogan on the left, form on the right. Reduced-motion setting: the frame stops moving.
+- The green-white-green flag stripe stays at the bottom. No new files, fonts or libraries.
+
+FILES: public/css/style.css (login section, two new colour variables), public/js/app.js (login markup), public/sw.js (cache v87), package.json (2.56.0).
+
+UPDATE 106 - v2.57.0 - Live contest commentary
+
+- Races now have an announcer. On the watch page (/#/watch/CODE) and on the race screen there is a "Live commentary" card with a Start / Mute button, a Test voice button and a voice picker.
+- The script follows your example: "It's a beautiful day today and this match is between ...", who is leading, a quick bio of each player, "We will be going on a commercial break", an audio advert, "Welcome back! It's a tough contest between ...", the leader and levels cleared, and "If you haven't signed up already, sign up, start playing, or take on your friends in a contest of your own. Time to show your Sabi Power!"
+- During the race: lead changes, finishers, a scoreboard update about every 50 seconds, another commercial break every few minutes, and a final result (winner, second, third) with the call to action.
+- The voice is the listener's own phone or computer voice (nothing downloaded, no cost). A male voice is chosen when the device has one and the pitch is lowered; listeners can pick another voice. It says "levels" instead of "points" because races count levels cleared.
+- Browsers only speak after a tap, so the card shows "Start commentary" first. Default: on for watchers, off for racers (they can switch it on).
+- Admin page > Contest commentary: switch on/off, break every 1-15 minutes, read profile descriptions aloud or not, and up to 8 audio adverts (MP3, M4A, OGG or WAV, up to 0.9 MB each) with label, advertiser, play count, preview, on/off and delete. Audio adverts are included in backups.
+- Premium players do not hear the commercial break. Links, symbols and emoji in profile descriptions are never read aloud.
+- Race data now carries each player's title, race wins and profile description (shown nowhere new, only used by the announcer).
+- New scripts/commentary-test.js.
+
+FILES: src/commentary.js (new), src/app.js, src/routes/admin.js, src/routes/challenges.js, public/js/commentary.js (new), public/js/app.js, public/js/admin.js, public/css/style.css, public/index.html, public/sw.js (cache v88), scripts/commentary-test.js (new), package.json (2.57.0).
+
+UPDATE 107 - v2.58.0 - PixSabi Radio (live audio that replaces the theme song)
+
+- New admin section "PixSabi Radio": upload a news bulletin, music or podcast (MP3, M4A, OGG or WAV, up to 8 MB; a 64 kbps MP3 is about 0.5 MB a minute, so around 16 minutes). It goes on air the moment it is added and repeats until you replace it. Upload a new one each day.
+- It replaces the built-in theme song for every player whose sound is on (the speaker button at the top, or Me > Settings). The button and the Settings label now say "PixSabi Radio" (and the title you gave it) while something is on air.
+- It plays like a live radio: everybody hears the same moment, worked out from the server's clock. Someone who closes the game and comes back later (or locks the phone and unlocks it) joins where the broadcast is now, not from the start. A phone with a wrong clock still gets the right place.
+- Players who already have sound on hear it as soon as they open the game (browsers still wait for the first tap). New players still start with sound off, as before.
+- Admin extras: title, switch off (players hear the theme song again), "Start again from the beginning" for everyone, delete, preview, and the place the broadcast has reached right now.
+- A new upload replaces the old one (the old file is deleted). The audio is in content/radio/ on the volume, so it is included in backups.
+- New and changed: every minute a listener's device re-checks, so new audio or a switch-off is picked up within a minute.
+- New scripts/radio-test.js (real server and real browser: upload, refusals, live position, replace, restart, switch off, theme beat returns).
+
+FILES: src/radio.js (new), src/app.js, src/routes/admin.js, public/js/music.js, public/js/app.js, public/js/admin.js, public/sw.js (cache v89, radio and audio adverts never cached), scripts/radio-test.js (new), package.json (2.58.0).
+
+UPDATE 108 - v2.59.0 - Radio and commentary no longer clash; longer radio audio
+
+- When the contest announcer speaks (or a commercial-break advert plays), PixSabi Radio pauses. When the announcer has finished, the radio comes back at the live place in the broadcast (so the listener only misses what was broadcast meanwhile, like a real radio). If the theme beat is on instead of the radio, it goes quiet while the announcer speaks and comes back after. The "Test voice" button does the same. Leaving the race screen or muting commentary releases the radio at once.
+- Radio audio can now be up to 40 MB (before: 8 MB). That is about 83 minutes at 64 kbps, or about 2 hours 45 minutes at 32 kbps mono (plenty for speech). Maximum length 3 hours.
+- The audio is now sent as the file itself (not wrapped in text), with a percentage shown while it uploads, so long audio does not fill the server's memory. The server allows up to 20 minutes to receive an upload (slow phone connections). Only one radio upload runs at a time.
+- Tip: for a news bulletin, export the MP3 at 32 or 64 kbps mono. It sounds fine for speech and the file is small, which also saves players' data.
+- scripts/radio-test.js now checks the raw upload (refusals, a 12 MB file, byte ranges) and the pause/resume at the live place.
+
+FILES: src/radio.js, src/routes/admin.js, src/app.js, public/js/music.js, public/js/commentary.js, public/js/admin.js, public/sw.js (cache v90), scripts/radio-test.js, package.json (2.59.0).
+
+UPDATE 109 - v2.59.1 - Smaller text in four places
+
+- "Welcome back, <name>" on the home page is smaller (1.1 to 0.92 rem).
+- Profile and bio pages (yours and other players'): the picture is smaller (92 to 64 px) and the user name is smaller (about 1.1 rem).
+- Chat room: the Everyone / Private tabs are shorter with smaller text (0.9 to 0.78 rem).
+- Chat room: the Send button is smaller (shorter, narrower, smaller text).
+- Only CSS changed. The home page "welcome" picture was already small and is unchanged.
+
+FILES: public/css/style.css, public/sw.js (cache v91), package.json (2.59.1).

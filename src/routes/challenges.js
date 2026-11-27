@@ -405,11 +405,19 @@ function roundsView(ch, player) {
 }
 
 // Live progress of everyone, used by the race header. Safe to show: it is only counts.
+// What the contest announcer may say about a player: rank title, race wins and the short profile description (the same text anyone can see on the profile).
+function announcerInfo(id) {
+  const u = db.users[id];
+  if (!u) return { title: '', wins: 0, bio: '' };
+  return { title: tagOf(u.points).title, wins: (u.stats && u.stats.won) || 0, bio: String(u.bio || '').slice(0, 160) };
+}
+
 function playersView(ch, u, order, meDone) {
   return order.map((id) => {
     const p = ch.players[id];
     return {
       username: p.username, avatar: avatarUrl(db.users[id]), tier: db.users[id] ? tagOf(db.users[id].points).tier : 1, idx: p.idx, solved: solvedOf(p),
+      ...(isRace(ch) ? announcerInfo(id) : {}),
       done: p.finishedAt != null,
       score: isRace(ch) || meDone || id === u.id ? p.score : null, you: id === u.id,
     };
@@ -935,7 +943,7 @@ module.exports = ({ route }) => {
       const p = ch.players[id];
       return {
         username: p.username, avatar: avatarUrl(db.users[id]), tier: db.users[id] ? tagOf(db.users[id].points).tier : 1,
-        solved: solvedOf(p), done: p.finishedAt != null, score: finished ? p.score : null,
+        solved: solvedOf(p), done: p.finishedAt != null, score: finished ? p.score : null, ...announcerInfo(id),
         prize: finished && ch.prizes ? (ch.prizes[id] || 0) : 0,
       };
     });

@@ -80,3 +80,5 @@
 .btn.danger { background: #b3261e; color: #fff; }
 
 .wm-prev { width: 100%; max-width: 320px; border-radius: 10px; display: block; }
+
+.adm-warn { color: #ff9a8a; font-weight: 700; }

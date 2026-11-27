@@ -86,6 +86,7 @@ Any host that runs Node.js works (Render, Railway, Fly.io, a VPS).
 | `COOKIE_SECURE` | Set to `true` once your site uses HTTPS. |
 | `TRUST_PROXY` | Set to `1` behind a proxy or load balancer so rate limits see the real visitor IP. |
 | `DATA_DIR` | Folder for the database. Point it at a persistent disk (Railway: add a Volume mounted at `/data`, then set `DATA_DIR=/data`). All admin-managed content (puzzles, pictures, adverts, pop-ups, slide, site texts, admin list) is then kept in `DATA_DIR/content` too, and the starter files are copied there once. |
+| `BACKUP_MAX_MB` | Optional. Biggest backup file the Admin page will restore (default 300). |
 | `CONTENT_DIR` | Optional. Put the content folder somewhere else than `DATA_DIR/content`. |
 | `DB_CACHE_ROWS` | Optional. Players and challenges kept in memory (default 5000 each). |
 | `PAYSTACK_SECRET_KEY` | Turns on Buy coins. `sk_test_...` to try it with fake money, `sk_live_...` for real money. Without it the Buy button says "not open yet". |
@@ -98,6 +99,7 @@ Any host that runs Node.js works (Render, Railway, Fly.io, a VPS).
 | `ADMIN_USER` | Admin usernames, separated by commas (an alternative to `content/admin.txt`). |
 
 3. **Persistent storage matters.** On Railway or Render, attach a disk/volume and set `DATA_DIR` to it: that single setting now keeps the database AND `content/` safe through redeploys (starter files are copied over once and never overwritten). Without `DATA_DIR`, keep `data/` and `content/` on a disk that survives deploys (players, profile photos, your puzzles, pictures, adverts and backups live there).
+3b. **Backups.** The Admin page has a Backup and restore section: download one file with all players and uploads every week. If the disk is lost, bring the game back online, register your admin account, and restore that file.
 4. **Use https.** Phones only allow "Install app" on https sites (or localhost on the same computer).
 
 ## About, Privacy and Disclaimer pages

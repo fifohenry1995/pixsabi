@@ -104,19 +104,77 @@
     }
   }
 
-  function start() {
-    if (running) return;
-    var c = audio();
-    if (!c) return;
-    running = true; step = 0; nextAt = c.currentTime + 0.08;
+  // ---------- PixSabi Radio ----------
+  // When the admin has put audio on air, it replaces the beat. Everyone hears the same moment of it (like a live radio):
+  // the place in the audio is worked out from the server's clock, so a listener who leaves and comes back joins where the broadcast is now.
+  var radio = { on: false }, radioLoaded = false, radioAudio = null, playingId = null, skew = 0, resyncTimer = null, radioOn = false, run = 0, everStarted = false, held = false, radioSeek = null;
+  function loadRadio() {
+    return fetch('/api/radio', { credentials: 'same-origin' }).then(function (r) { return r.ok ? r.json() : { on: false }; }).then(function (r) {
+      radio = r && r.on ? r : { on: false };
+      skew = r && r.now ? r.now - Date.now() : 0;
+      radioLoaded = true;
+      paint();
+      return radio;
+    }).catch(function () { return radio; });
+  }
+  function livePosition(dur) { return (((Date.now() + skew - radio.startedAt) / 1000) % dur + dur) % dur; }
+  function stopRadio() {
+    clearInterval(resyncTimer); resyncTimer = null; radioOn = false; playingId = null;
+    if (radioAudio) { try { radioAudio.pause(); } catch (e) { /* ignore */ } radioAudio = null; }
+  }
+  function playRadio() {
+    stopRadio();
+    var a = new Audio(radio.url);
+    radioAudio = a; radioOn = true; playingId = radio.id;
+    a.loop = true; a.volume = 0.9; a.preload = 'auto';
+    var seek = function () {
+      var dur = isFinite(a.duration) && a.duration > 1 ? a.duration : radio.duration;
+      if (!dur) return;
+      try { a.currentTime = livePosition(dur); } catch (e) { /* not seekable yet */ }
+    };
+    a.addEventListener('loadedmetadata', seek);
+    radioSeek = seek;
+    if (!held) {
+      var p = a.play();                                // called straight away, while the tap that started it still counts
+      if (p && p.catch) p.catch(function () { /* waits for the next tap */ });
+    }
+    // every minute: stay in step with the broadcast, and notice when new audio has been put on air or taken off
+    resyncTimer = setInterval(function () {
+      if (a !== radioAudio || held) return;
+      loadRadio().then(function (r) {
+        if (a !== radioAudio || held) return;
+        if (!r.on || r.id !== playingId) { if (running) { stopAll(); running = true; begin(); } return; }
+        var dur = isFinite(a.duration) && a.duration > 1 ? a.duration : r.duration;
+        var off = Math.abs(a.currentTime - livePosition(dur));
+        if (dur && off > 3 && off < dur - 3) seek();
+      });
+    }, 60000);
+  }
+
+  function startBeat(c) {
+    step = 0; nextAt = c.currentTime + 0.08;
     master.gain.cancelScheduledValues(c.currentTime);
     master.gain.setValueAtTime(Math.max(master.gain.value, 0.0001), c.currentTime);
-    master.gain.exponentialRampToValueAtTime(VOLUME, c.currentTime + 0.6);
+    master.gain.exponentialRampToValueAtTime(held ? VOLUME * 0.12 : VOLUME, c.currentTime + 0.6);
     tick(); timer = setInterval(tick, 40);
   }
-  function stop() {
-    if (!running) return;
-    running = false;
+  function begin() {
+    var my = ++run;
+    var go = function () {
+      if (!running || my !== run) return;
+      if (radio.on) { playRadio(); return; }
+      var c = audio();
+      if (!c) { running = false; return; }
+      startBeat(c);
+    };
+    if (radioLoaded) {                                  // already known: start in the same tap (phones insist), then double-check with the server
+      go();
+      loadRadio().then(function (r) { if (running && my === run && (r.on ? r.id !== playingId : (radioOn || !timer))) { stopAll(); running = true; begin(); } });
+    } else loadRadio().then(go);
+  }
+  function stopAll() {
+    running = false; run++;
+    stopRadio();
     clearInterval(timer); timer = null;
     if (ctx) {
       master.gain.cancelScheduledValues(ctx.currentTime);
@@ -124,9 +182,27 @@
       master.gain.exponentialRampToValueAtTime(0.0001, ctx.currentTime + 0.35);
     }
   }
+  // The announcer (or a commercial) is talking: the radio pauses and the beat goes quiet. When it ends the radio comes back
+  // at the live place, so the listener only misses what was broadcast meanwhile (just like a real radio).
+  function hold(on) {
+    on = !!on;
+    if (on === held) return;
+    held = on;
+    if (!running) return;
+    if (radioAudio) {
+      if (on) { try { radioAudio.pause(); } catch (e) { /* ignore */ } }
+      else { if (radioSeek) radioSeek(); var p = radioAudio.play(); if (p && p.catch) p.catch(function () { /* waits for a tap */ }); }
+    } else if (ctx && master) {
+      master.gain.cancelScheduledValues(ctx.currentTime);
+      master.gain.setValueAtTime(Math.max(master.gain.value, 0.0001), ctx.currentTime);
+      master.gain.exponentialRampToValueAtTime(on ? VOLUME * 0.12 : VOLUME, ctx.currentTime + 0.4);
+    }
+  }
+  function start() { if (running) return; running = true; everStarted = true; begin(); }
+  function stop() { if (!running) return; stopAll(); }
 
   var buttons = [];
-  function paintOne(b) { b.textContent = pref() ? '🎵' : '🔇'; b.setAttribute('aria-pressed', pref() ? 'true' : 'false'); b.title = pref() ? 'Turn the theme song off' : 'Play the theme song'; }
+  function paintOne(b) { b.textContent = pref() ? '🎵' : '🔇'; b.setAttribute('aria-pressed', pref() ? 'true' : 'false'); var nm = radio.on ? 'PixSabi Radio' : 'the theme song'; b.title = pref() ? 'Turn ' + nm + ' off' : 'Play ' + nm; }
   function paint() { buttons.forEach(paintOne); }
   function setOn(on) { save(on); if (on) start(); else stop(); paint(); var box = document.getElementById('mus'); if (box) box.checked = on; }
   function toggle() { setOn(!pref()); }
@@ -140,9 +216,10 @@
 
   // Browsers only allow sound after a tap, so a remembered "on" starts at the first tap.
   function firstTap() { if (pref()) start(); }
+  loadRadio();
   document.addEventListener('pointerdown', firstTap, { once: true, capture: true });
   document.addEventListener('visibilitychange', function () {
-    if (document.hidden) { stop(); } else if (pref() && ctx) { start(); }
+    if (document.hidden) { stop(); } else if (pref() && everStarted) { start(); }
   });
 
   // Writes the beat into a sound file in memory (used to make a sample .wav; the game never calls this).
@@ -156,5 +233,5 @@
     return c.startRendering().then(function (b) { ctx = saved.ctx; master = saved.master; echo = saved.echo; noise = saved.noise; return b; });
   }
 
-  NS.music = { render: render, isOn: pref, setOn: setOn, toggle: toggle, button: button, stats: function () { return { running: running, scheduled: scheduled }; } };
+  NS.music = { hold: hold, name: function () { return radio.on ? 'PixSabi Radio' + (radio.title ? ': ' + radio.title : '') : 'Theme song (afro rap beat)'; }, radioInfo: function () { return radio; }, render: render, isOn: pref, setOn: setOn, toggle: toggle, button: button, stats: function () { return { running: running, scheduled: scheduled, radio: radioOn, radioTime: radioAudio ? radioAudio.currentTime : null, radioPaused: radioAudio ? radioAudio.paused : null, held: held }; } };
 })();

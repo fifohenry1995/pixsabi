@@ -1,0 +1,9 @@
+UPDATE 109 - v2.59.1 - Smaller text in four places
+
+- "Welcome back, <name>" on the home page is smaller (1.1 to 0.92 rem).
+- Profile and bio pages (yours and other players'): the picture is smaller (92 to 64 px) and the user name is smaller (about 1.1 rem).
+- Chat room: the Everyone / Private tabs are shorter with smaller text (0.9 to 0.78 rem).
+- Chat room: the Send button is smaller (shorter, narrower, smaller text).
+- Only CSS changed. The home page "welcome" picture was already small and is unchanged.
+
+FILES: public/css/style.css, public/sw.js (cache v91), package.json (2.59.1).

@@ -5,10 +5,10 @@
      answer are NEVER stored: they always come fresh from the server, so nothing about the answers is kept.
    - Files are fetched from the network first, so players always get your latest update.
      The saved copy is only used when the phone has no connection. */
-const CACHE = 'pixsabi-shell-v85';
+const CACHE = 'pixsabi-shell-v91';
 const PICS = 'pixsabi-pics-v1';
 const MAX_PICS = 80;
-const SHELL = ['/', '/offline.html', '/css/style.css', '/css/pwa.css', '/css/ads.css', '/css/popup.css', '/js/ads.js', '/js/track.js', '/js/popup.js', '/js/sound.js', '/js/music.js', '/js/game.js', '/js/avatars.js', '/js/app.js', '/js/pwa.js', '/js/offline.js', '/manifest.webmanifest', '/icons/icon-192.png', '/icons/icon-512.png', '/icons/apple-touch-icon.png'];
+const SHELL = ['/', '/offline.html', '/css/style.css', '/css/pwa.css', '/css/ads.css', '/css/popup.css', '/js/ads.js', '/js/track.js', '/js/popup.js', '/js/sound.js', '/js/music.js', '/js/game.js', '/js/avatars.js', '/js/commentary.js', '/js/app.js', '/js/pwa.js', '/js/offline.js', '/manifest.webmanifest', '/icons/icon-192.png', '/icons/icon-512.png', '/icons/apple-touch-icon.png'];
 
 self.addEventListener('install', (event) => {
   event.waitUntil(caches.open(CACHE).then((c) => Promise.all(SHELL.map((u) => c.add(u).catch(() => {})))).then(() => self.skipWaiting()));
@@ -19,7 +19,7 @@ self.addEventListener('activate', (event) => {
 });
 
 const PIC_PATH = /^\/(pic|sl)\/[0-9a-z]+$/;
-const NEVER_CACHE = /^\/(api|ad|popup|wbg|bg|avatars|admin|health|pay)(\/|\.|$)/;
+const NEVER_CACHE = /^\/(api|ad|popup|radio|audioad|wbg|bg|avatars|admin|health|pay)(\/|\.|$)/;
 
 self.addEventListener('fetch', (event) => {
   const req = event.request;

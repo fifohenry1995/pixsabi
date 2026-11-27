@@ -1,0 +1,9 @@
+UPDATE 108 - v2.59.0 - Radio and commentary no longer clash; longer radio audio
+
+- When the contest announcer speaks (or a commercial-break advert plays), PixSabi Radio pauses. When the announcer has finished, the radio comes back at the live place in the broadcast (so the listener only misses what was broadcast meanwhile, like a real radio). If the theme beat is on instead of the radio, it goes quiet while the announcer speaks and comes back after. The "Test voice" button does the same. Leaving the race screen or muting commentary releases the radio at once.
+- Radio audio can now be up to 40 MB (before: 8 MB). That is about 83 minutes at 64 kbps, or about 2 hours 45 minutes at 32 kbps mono (plenty for speech). Maximum length 3 hours.
+- The audio is now sent as the file itself (not wrapped in text), with a percentage shown while it uploads, so long audio does not fill the server's memory. The server allows up to 20 minutes to receive an upload (slow phone connections). Only one radio upload runs at a time.
+- Tip: for a news bulletin, export the MP3 at 32 or 64 kbps mono. It sounds fine for speech and the file is small, which also saves players' data.
+- scripts/radio-test.js now checks the raw upload (refusals, a 12 MB file, byte ranges) and the pause/resume at the live place.
+
+FILES: src/radio.js, src/routes/admin.js, src/app.js, public/js/music.js, public/js/commentary.js, public/js/admin.js, public/sw.js (cache v90), scripts/radio-test.js, package.json (2.59.0).

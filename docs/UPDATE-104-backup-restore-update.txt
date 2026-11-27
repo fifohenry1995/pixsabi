@@ -1,0 +1,12 @@
+UPDATE 104 - v2.55.0 - Admin backup download and restore
+
+- New "Backup and restore" section at the top of the Admin page.
+- Download backup: ONE file (.pxbackup) with the player database (a safe snapshot: accounts, coins, levels, chat, orders), everything else in the data folder (profile photos, premium and income records, secret keys) and the whole content folder (puzzles, pictures, Word Search, slide, adverts, AdSense codes, pop-ups, login backgrounds, site texts, admin list). The page shows when you last downloaded one and turns red after 7 days.
+- Restore a backup: choose the file, type RESTORE, confirm. The file is checked first (wrong, cut-off, damaged or unsafe files are refused and nothing changes); then the game restarts by itself and swaps the files in. What was there before is kept in DATA_DIR/before-restore.
+- Size limit: 300 MB per backup file (BACKUP_MAX_MB changes it). Larger games: raise BACKUP_MAX_MB.
+- If the Railway volume is ever lost: redeploy with a new volume (DATA_DIR=/data), register your ADMIN_USER account, then restore the file.
+- Only the backup file's own time is saved: players who joined after your last download are not in it. Download one every week.
+- Security: admin only (others get 404), the download link is one-use and lasts 60 seconds, restore needs the typed word and cannot be sent from another website.
+- New scripts/backup-test.js (real server: download, refusals, restore, restart). npm run backup (database only) still works.
+
+FILES: src/backup.js (new), src/restoreApply.js (new), src/db.js, src/app.js, src/routes/admin.js, public/js/admin.js, public/css/admin.css, public/sw.js (cache v86), scripts/backup-test.js (new), package.json (2.55.0), README.md.

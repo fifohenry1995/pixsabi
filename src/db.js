@@ -23,6 +23,7 @@ try {
   throw new Error(`PixSabi needs Node.js 22.13 or newer (you have ${process.version}). Install the LTS version from nodejs.org and try again.`);
 }
 
+require('./restoreApply').apply();   // finishes a 'Restore backup' that the admin started (does nothing otherwise)
 const DATA_DIR = process.env.DATA_DIR || path.join(__dirname, '..', 'data');
 const AVATAR_DIR = path.join(DATA_DIR, 'avatars');
 const DB_FILE = path.join(DATA_DIR, 'pixsabi.db');

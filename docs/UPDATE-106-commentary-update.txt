@@ -1,0 +1,13 @@
+UPDATE 106 - v2.57.0 - Live contest commentary
+
+- Races now have an announcer. On the watch page (/#/watch/CODE) and on the race screen there is a "Live commentary" card with a Start / Mute button, a Test voice button and a voice picker.
+- The script follows your example: "It's a beautiful day today and this match is between ...", who is leading, a quick bio of each player, "We will be going on a commercial break", an audio advert, "Welcome back! It's a tough contest between ...", the leader and levels cleared, and "If you haven't signed up already, sign up, start playing, or take on your friends in a contest of your own. Time to show your Sabi Power!"
+- During the race: lead changes, finishers, a scoreboard update about every 50 seconds, another commercial break every few minutes, and a final result (winner, second, third) with the call to action.
+- The voice is the listener's own phone or computer voice (nothing downloaded, no cost). A male voice is chosen when the device has one and the pitch is lowered; listeners can pick another voice. It says "levels" instead of "points" because races count levels cleared.
+- Browsers only speak after a tap, so the card shows "Start commentary" first. Default: on for watchers, off for racers (they can switch it on).
+- Admin page > Contest commentary: switch on/off, break every 1-15 minutes, read profile descriptions aloud or not, and up to 8 audio adverts (MP3, M4A, OGG or WAV, up to 0.9 MB each) with label, advertiser, play count, preview, on/off and delete. Audio adverts are included in backups.
+- Premium players do not hear the commercial break. Links, symbols and emoji in profile descriptions are never read aloud.
+- Race data now carries each player's title, race wins and profile description (shown nowhere new, only used by the announcer).
+- New scripts/commentary-test.js.
+
+FILES: src/commentary.js (new), src/app.js, src/routes/admin.js, src/routes/challenges.js, public/js/commentary.js (new), public/js/app.js, public/js/admin.js, public/css/style.css, public/index.html, public/sw.js (cache v88), scripts/commentary-test.js (new), package.json (2.57.0).

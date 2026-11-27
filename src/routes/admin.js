@@ -13,6 +13,8 @@ const { HttpError } = require('../util');
 const P = require('../puzzles');
 const Ads = require('../ads');
 const Pop = require('../popups');
+const Commentary = require('../commentary');
+const Radio = require('../radio');
 const Adsense = require('../adsense');
 const Bg = require('../loginbg');
 const WorldBg = require('../worldbg');
@@ -133,6 +135,26 @@ function accountFacts(u) {
 module.exports = ({ route }) => {
   // Any logged-in player can ask "am I an admin?" (the app uses it to show the Admin link).
   route('GET', '/api/admin/status', (ctx) => ({ admin: isAdmin(ctx.user), resetRequests: isAdmin(ctx.user) ? resetReq.open() : 0 }), { auth: true });
+
+  // ---------- backup and restore (one file with players, coins, and everything uploaded on the admin page) ----------
+  const Backup = require('../backup');
+  route('GET', '/api/admin/backup', (ctx) => { needAdmin(ctx); return Backup.status(); }, { auth: true });
+  route('POST', '/api/admin/backup/start', (ctx) => { needAdmin(ctx); return { url: '/api/admin/backup/file?t=' + Backup.newToken(ctx.user.id) }; }, { auth: true });
+  route('GET', '/api/admin/backup/file', async (ctx) => {
+    needAdmin(ctx);
+    if (!Backup.useToken(ctx.query.t, ctx.user.id)) throw new HttpError(403, 'That download link has expired. Press Download backup again.');
+    ctx.handled = true;
+    await Backup.streamBackup(ctx.res);
+  }, { auth: true });
+  route('POST', '/api/admin/restore', async (ctx) => {
+    needAdmin(ctx);
+    if (ctx.req.headers['x-confirm'] !== 'RESTORE') throw new HttpError(400, 'Type RESTORE to confirm.');
+    const out = await Backup.receiveRestore(ctx.req, ctx.res);
+    ctx.handled = true;
+    ctx.res.writeHead(200, { 'Content-Type': 'application/json; charset=utf-8', 'Cache-Control': 'no-store' });
+    ctx.res.end(JSON.stringify(out));
+    Backup.restartSoon(ctx.res);
+  }, { auth: true, raw: true });
 
   // ---------- advertisements (six picture slots: three on the left, three on the right) ----------
   // Public: the game asks for these when the page opens (even before login).
@@ -401,6 +423,140 @@ module.exports = ({ route }) => {
     console.log(`[admin] ${ctx.user.username} added a pop-up advert (${type.kind})`);
     return popView();
   }, { auth: true, maxBody: 6_000_000 });
+
+  // ---------- contest commentary: the announcer's settings and the audio adverts for the commercial break ----------
+  // Players' devices ask for these. Premium members get no audio break.
+  route('GET', '/api/commentary', (ctx) => Commentary.configFor(Premium.isPremium(ctx.user)), { auth: true });
+  route('GET', '/api/commentary/ad', (ctx) => ({ ad: Premium.isPremium(ctx.user) ? null : Commentary.nextAd() }), { auth: true });
+
+  const commView = () => {
+    const { settings, ads } = Commentary.read();
+    return { settings, max: Commentary.MAX_ADS, maxBytes: Commentary.MAX_BYTES, ads: ads.map((a) => ({ ...a, url: Commentary.urlOf(a), missing: !fs.existsSync(Commentary.fileOf(a)) })) };
+  };
+  route('GET', '/api/admin/commentary', (ctx) => { needAdmin(ctx); return commView(); }, { auth: true });
+
+  route('PUT', '/api/admin/commentary/settings', (ctx) => {
+    needAdmin(ctx);
+    const breakEvery = Number(ctx.body.breakEvery);
+    if (!Number.isInteger(breakEvery) || breakEvery < 1 || breakEvery > 15) throw new HttpError(400, 'The commercial break can come every 1 to 15 minutes.');
+    const m = Commentary.read();
+    m.settings = { enabled: !!ctx.body.enabled, breakEvery, readBios: !!ctx.body.readBios };
+    Commentary.write(m);
+    console.log(`[admin] ${ctx.user.username} changed the commentary settings`);
+    return commView();
+  }, { auth: true });
+
+  route('POST', '/api/admin/commentary/ads', (ctx) => {
+    needAdmin(ctx);
+    const m = Commentary.read();
+    if (m.ads.length >= Commentary.MAX_ADS) throw new HttpError(400, `You can keep up to ${Commentary.MAX_ADS} audio adverts. Delete one first.`);
+    const raw = String(ctx.body.file || '');
+    const comma = raw.indexOf(',');
+    if (comma < 0 || !/^data:audio\/[a-z0-9.+-]+;base64$/i.test(raw.slice(0, comma))) throw new HttpError(400, 'Use an MP3, M4A, OGG or WAV sound file.');
+    const buf = Buffer.from(raw.slice(comma + 1), 'base64');
+    if (buf.length < 2000) throw new HttpError(400, 'That sound file looks empty.');
+    if (buf.length > Commentary.MAX_BYTES) throw new HttpError(413, `That sound file is too big. Limit: ${Math.round(Commentary.MAX_BYTES / 100000) / 10} MB (about 30 to 60 seconds).`);
+    const type = Commentary.typeOf(buf);
+    if (!type) throw new HttpError(400, 'That is not a real MP3, M4A, OGG or WAV sound file.');
+    const ad = { id: Commentary.newId(), ext: type.ext, bytes: buf.length, label: clean(ctx.body.label, 60), advertiser: clean(ctx.body.advertiser, 40), active: ctx.body.active !== false, plays: 0, createdAt: Date.now() };
+    fs.mkdirSync(Commentary.DIR, { recursive: true });
+    fs.writeFileSync(Commentary.fileOf(ad), buf);
+    m.ads.push(ad);
+    Commentary.write(m);
+    console.log(`[admin] ${ctx.user.username} added an audio advert`);
+    return commView();
+  }, { auth: true, maxBody: 1_600_000 });
+
+  route('PUT', '/api/admin/commentary/ads/:id', (ctx) => {
+    needAdmin(ctx);
+    const m = Commentary.read();
+    const ad = m.ads.find((a) => a.id === ctx.params.id);
+    if (!ad) throw new HttpError(404, 'That advert no longer exists. Reload the page.');
+    ad.label = clean(ctx.body.label, 60); ad.advertiser = clean(ctx.body.advertiser, 40); ad.active = !!ctx.body.active;
+    Commentary.write(m);
+    return commView();
+  }, { auth: true });
+
+  route('DELETE', '/api/admin/commentary/ads/:id', (ctx) => {
+    needAdmin(ctx);
+    const m = Commentary.read();
+    const at = m.ads.findIndex((a) => a.id === ctx.params.id);
+    if (at < 0) throw new HttpError(404, 'That advert no longer exists. Reload the page.');
+    const [gone] = m.ads.splice(at, 1);
+    try { fs.unlinkSync(Commentary.fileOf(gone)); } catch { /* already gone */ }
+    Commentary.write(m);
+    return commView();
+  }, { auth: true });
+
+  // ---------- PixSabi Radio ----------
+  route('GET', '/api/radio', () => Radio.publicView());
+  route('GET', '/api/admin/radio', (ctx) => { needAdmin(ctx); return Radio.adminView(); }, { auth: true });
+
+  // The audio is sent as the raw file (not inside JSON), so a long audio does not fill the server's memory or time out.
+  // Details travel in headers: X-Duration (seconds), X-Title (URL-encoded), X-Active.
+  let radioBusy = false;
+  route('POST', '/api/admin/radio/upload', async (ctx) => {
+    needAdmin(ctx);
+    const req = ctx.req;
+    const len = Number(req.headers['content-length'] || 0);
+    if (len > Radio.MAX_BYTES) throw new HttpError(413, `That sound file is too big. Limit: ${Math.round(Radio.MAX_BYTES / 1e6)} MB. A 64 kbps MP3 is about 0.5 MB a minute.`);
+    const duration = Math.round(Number(req.headers['x-duration']) * 10) / 10;
+    if (!(duration >= Radio.MIN_SECONDS && duration <= Radio.MAX_SECONDS)) throw new HttpError(400, 'The length of the audio could not be read. Try another file.');
+    if (radioBusy) throw new HttpError(409, 'An upload is already running. Try again in a minute.');
+    let title = '';
+    try { title = clean(decodeURIComponent(String(req.headers['x-title'] || '')), 80); } catch { /* ignore a broken title */ }
+    radioBusy = true;
+    fs.mkdirSync(Radio.DIR, { recursive: true });
+    const tmp = path.join(Radio.DIR, 'upload.tmp');
+    try {
+      let head = Buffer.alloc(0);
+      const size = await new Promise((resolve, reject) => {
+        const ws = fs.createWriteStream(tmp);
+        let n = 0, failed = false;
+        const fail = (e) => { if (!failed) { failed = true; ws.destroy(); reject(e); } };
+        req.on('data', (c) => {
+          if (failed) return;
+          n += c.length;
+          if (head.length < 16) head = Buffer.concat([head, c.subarray(0, 16 - head.length)]);
+          if (n > Radio.MAX_BYTES) return fail(new HttpError(413, `That sound file is too big. Limit: ${Math.round(Radio.MAX_BYTES / 1e6)} MB.`));
+          if (!ws.write(c)) { req.pause(); ws.once('drain', () => req.resume()); }
+        });
+        req.on('end', () => { if (!failed) ws.end(() => resolve(n)); });
+        req.on('error', fail); ws.on('error', fail);
+      });
+      if (size < 5000) throw new HttpError(400, 'That sound file looks empty.');
+      const type = Radio.typeOf(head);
+      if (!type) throw new HttpError(400, 'That is not a real MP3, M4A, OGG or WAV sound file.');
+      const old = Radio.read();
+      const r = { id: Radio.newId(), ext: type.ext, bytes: size, duration, title, active: String(req.headers['x-active']) !== 'false', startedAt: Date.now(), uploadedAt: Date.now() };
+      fs.renameSync(tmp, Radio.fileOf(r));
+      Radio.write(r);
+      if (old) { try { fs.unlinkSync(Radio.fileOf(old)); } catch { /* already gone */ } }
+      console.log(`[admin] ${ctx.user.username} put new audio on PixSabi Radio (${Math.round(size / 1000)} KB)`);
+      return Radio.adminView();
+    } finally {
+      radioBusy = false;
+      fs.rmSync(tmp, { force: true });
+    }
+  }, { auth: true, raw: true });
+
+  route('PUT', '/api/admin/radio', (ctx) => {
+    needAdmin(ctx);
+    const r = Radio.read();
+    if (!r) throw new HttpError(404, 'There is no radio audio yet.');
+    if (ctx.body.title !== undefined) r.title = clean(ctx.body.title, 80);
+    if (ctx.body.active !== undefined) r.active = !!ctx.body.active;
+    if (ctx.body.restart) r.startedAt = Date.now();          // go back to the beginning for everyone
+    Radio.write(r);
+    return Radio.adminView();
+  }, { auth: true });
+
+  route('DELETE', '/api/admin/radio', (ctx) => {
+    needAdmin(ctx);
+    const r = Radio.read();
+    if (r) { try { fs.unlinkSync(Radio.fileOf(r)); } catch { /* already gone */ } Radio.write(null); }
+    return Radio.adminView();
+  }, { auth: true });
 
   // Google's rules do not allow its ads in pop-ups, so this is refused (pop-ups carry your own adverts only).
   route('POST', '/api/admin/popups/adsense', (ctx) => {

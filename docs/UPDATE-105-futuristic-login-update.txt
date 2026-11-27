@@ -1,0 +1,8 @@
+UPDATE 105 - v2.56.0 - Futuristic sign-in page (Hologram Frame)
+
+- New look for the sign-in / create-account screen (design B, chosen from four mock-ups): a floating hologram picture frame (four glowing picture tiles, a question mark, scan lines, a cyan light beam), the PS mark, "You think say / you sabi?" in glowing cyan, and a dark glass form with cyan edges, underline tabs and a cyan-to-violet button.
+- Same form, same behaviour: username, email and recovery question on sign-up, the 18+ box, the padlock show-password button, Forgot password, and the sliding background pictures you upload (they now sit behind a dark violet tint).
+- Phones: centred. Small/short phones: the frame shrinks so the form stays in view. Laptops: frame, title and slogan on the left, form on the right. Reduced-motion setting: the frame stops moving.
+- The green-white-green flag stripe stays at the bottom. No new files, fonts or libraries.
+
+FILES: public/css/style.css (login section, two new colour variables), public/js/app.js (login markup), public/sw.js (cache v87), package.json (2.56.0).

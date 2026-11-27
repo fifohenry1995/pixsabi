@@ -727,7 +727,10 @@
     const bgLayer = h('div', { class: 'lg-bg', 'aria-hidden': 'true' });
     app.append(h('div', { class: 'lg' }, bgLayer,
       h('section', { class: 'lg-hero' },
-        h('div', { class: 'lg-brand' }, h('span', { class: 'orn', 'aria-hidden': 'true' }, '✦'), 'PIXSABI'),
+        h('div', { class: 'lg-brand' }, h('span', { class: 'lg-ps', 'aria-hidden': 'true' }, 'PS'), 'PIXSABI'),
+        h('div', { class: 'lg-holo', 'aria-hidden': 'true' },
+          h('i', { class: 'c tl' }), h('i', { class: 'c tr' }), h('i', { class: 'c bl' }), h('i', { class: 'c br' }),
+          h('div', { class: 'lg-holo-grid' }, h('i', { class: 't1' }), h('i', { class: 't2' }), h('i', { class: 't3' }), h('i', { class: 't4' }), h('b', { class: 'lg-holo-q' }, '?'))),
         h('h1', { class: 'lg-title' }, h('span', {}, 'You think say'), h('b', {}, 'you sabi?')),
         h('p', { class: 'lg-sub' }, 'Play. Learn. Sabi.')),
       h('div', { class: 'lg-side' }, form, authLive, legalLinks('lg-legal')),
@@ -2192,12 +2195,15 @@
         h('p', { class: 'muted' }, 'You are watching. You can only see how far everyone has got.'),
         !w.started && !w.cancelled && w.playerCount < w.maxPlayers ? h('a', { class: 'btn block', href: `#/join/${w.id}` }, 'Join this race instead') : null,
         h('a', { class: 'btn alt block', href: '#/' }, 'Back to home')));
+      if (cm && !w.cancelled) main.append(cm.panel());
     };
+    const cm = NS.commentary ? NS.commentary.session(code6, 'watch', me) : null;
     const load = async () => {
       try {
         const w = await api('/watch/' + encodeURIComponent(code6));
-        if (w.participant) { clearInterval(timer); return go('/c/' + w.id); }
+        if (w.participant) { clearInterval(timer); if (cm) cm.stop(); return go('/c/' + w.id); }
         draw(w);
+        if (cm) cm.feed(w);
         if (w.finished || w.cancelled) clearInterval(timer);
       } catch (e) {
         clearInterval(timer);
@@ -2237,6 +2243,8 @@
       const headHolder = h('div', {}, raceHeader(s));
       main.append(pill, s.race && s.endsAt ? raceClock(s.endsAt, () => setTimeout(() => viewChallenge(id), 800)) : null, headHolder, h('p', { class: 'muted center note' }, sub));
       if (s.race) main.append(watchButtons(s));
+      const cm = s.race && NS.commentary ? NS.commentary.session(s.id, 'race', me) : null;
+      if (cm) { main.append(cm.panel()); cm.feed({ started: true, rounds: s.rounds, players: (s.players || []).map((p) => ({ username: p.username, solved: p.solved || 0, done: !!p.done, bio: p.bio, title: p.title, wins: p.wins })) }); }
       const holder = h('div');
       if (s.game !== 'wordsearch' && s.game !== 'slide') main.append(h('div', { class: 'card' }, holder));
       const next = () => viewChallenge(id);
@@ -2247,6 +2255,7 @@
           if (!main.isConnected) { clearInterval(timer); return; }
           try {
             const r = await api(`/challenges/${id}/progress`);
+            if (cm) cm.feed({ started: true, rounds: r.rounds, finished: r.finished, cancelled: r.cancelled, winnerName: r.winnerName, players: r.players });
             if (r.finished || r.cancelled) { clearInterval(timer); NS.toast(r.cancelled ? 'Time ran out.' : r.timedOut ? `Time ran out. ${r.winnerName || 'Someone'} won with the most levels.` : `${r.winnerName || 'Someone'} finished first!`); viewChallenge(id); return; }
             headHolder.textContent = '';
             headHolder.append(raceHeader({ ...s, players: r.players, watching: r.watching, me: { ...s.me, score: s.me.score } }));
@@ -2922,7 +2931,7 @@
           h('label', { for: 'snd' }, 'Sound effects (taps, right and wrong answers, wins)')),
         NS.music ? h('div', { class: 'field alert-check' },
           h('input', { type: 'checkbox', id: 'mus', checked: NS.music.isOn() ? true : null, onchange: (e) => NS.music.setOn(e.target.checked) }),
-          h('label', { for: 'mus' }, 'Theme song (afro rap beat)')) : null,
+          h('label', { for: 'mus' }, NS.music.name())) : null,
         h('p', { class: 'muted' }, 'These choices are kept on this phone.')),
       h('div', { class: 'card' },
         h('h3', {}, 'Chat'),

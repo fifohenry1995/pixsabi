@@ -207,6 +207,60 @@
       social.links.length ? h('p', { class: 'adm-hint' }, 'Players will see: ', social.links.map((l, i) => [i ? ' · ' : '', h('a', { href: l.url, target: '_blank', rel: 'noopener noreferrer' }, l.kind)])) : h('p', { class: 'adm-hint' }, 'Nothing is filled in yet, so players see no contact section.'));
   }
 
+  // ---------- Backup and restore ----------
+  let backupInfo = { lastAt: 0, maxMb: 300 };
+  function backupSection() {
+    const ago = (t) => { const d = Math.floor((Date.now() - t) / 86400000); return d <= 0 ? 'today' : d === 1 ? 'yesterday' : d + ' days ago'; };
+    const stale = !backupInfo.lastAt || Date.now() - backupInfo.lastAt > 7 * 86400000;
+    const last = h('p', { class: stale ? 'adm-hint adm-warn' : 'adm-hint' },
+      backupInfo.lastAt ? `Last backup downloaded: ${new Date(backupInfo.lastAt).toLocaleString()} (${ago(backupInfo.lastAt)}).${stale ? ' Time for a new one.' : ''}` : 'No backup has been downloaded yet. Download one now.');
+    const dl = h('button', { class: 'btn', type: 'button' }, 'Download backup');
+    dl.addEventListener('click', async () => {
+      dl.disabled = true;
+      try {
+        const r = await api('/admin/backup/start', { method: 'POST' });
+        const a = h('a', { href: r.url, download: '' }); document.body.append(a); a.click(); a.remove();
+        toast('Your backup is downloading. It can take a moment.');
+        setTimeout(async () => { try { backupInfo = await api('/admin/backup'); draw(); } catch { /* ignore */ } }, 6000);
+      } catch (e) { toast(e.message, true); }
+      setTimeout(() => { dl.disabled = false; }, 4000);
+    });
+    const file = h('input', { type: 'file', accept: '.pxbackup,.gz,application/gzip', 'aria-label': 'Backup file to restore' });
+    const word = h('input', { type: 'text', placeholder: 'Type RESTORE', maxlength: '10', autocomplete: 'off', 'aria-label': 'Type RESTORE to confirm' });
+    const go = h('button', { class: 'btn danger', type: 'button', disabled: true }, 'Restore from this file');
+    const bar = h('p', { class: 'adm-hint', role: 'status' });
+    const check = () => { go.disabled = !(file.files[0] && word.value.trim() === 'RESTORE'); };
+    file.addEventListener('change', check); word.addEventListener('input', check);
+    go.addEventListener('click', () => {
+      const f = file.files[0];
+      if (!f) return;
+      if (f.size > backupInfo.maxMb * 1048576) { toast(`That file is larger than the ${backupInfo.maxMb} MB limit.`, true); return; }
+      if (!confirm('This REPLACES every player, coin, puzzle, picture and advert on the live game with what is in this file. Continue?')) return;
+      go.disabled = true; file.disabled = true; word.disabled = true;
+      const x = new XMLHttpRequest();
+      x.open('POST', '/api/admin/restore');
+      x.setRequestHeader('Content-Type', 'application/octet-stream');
+      x.setRequestHeader('X-Confirm', 'RESTORE');
+      x.upload.onprogress = (e) => { if (e.lengthComputable) bar.textContent = `Uploading... ${Math.round(e.loaded / e.total * 100)}%`; };
+      x.onerror = () => { bar.textContent = 'The upload failed. Check your connection and try again.'; file.disabled = false; word.disabled = false; check(); };
+      x.onload = () => {
+        let d = {}; try { d = JSON.parse(x.responseText); } catch { /* empty */ }
+        if (x.status !== 200) { bar.textContent = d.error || 'The restore did not work. Nothing was changed.'; file.disabled = false; word.disabled = false; check(); return; }
+        bar.textContent = `Backup accepted (${d.users} players). The game is restarting... this page reloads by itself. If it stays offline for more than two minutes, press Redeploy in Railway.`;
+        const wait = async () => { try { const r = await fetch('/health', { cache: 'no-store' }); if (r.ok) { location.reload(); return; } } catch { /* still restarting */ } setTimeout(wait, 3000); };
+        setTimeout(wait, 4000);
+      };
+      bar.textContent = 'Uploading... 0%';
+      x.send(f);
+    });
+    return h('section', { class: 'adm-ads' }, h('h2', {}, 'Backup and restore'),
+      h('p', { class: 'adm-hint' }, 'One file with all your players (accounts, coins, levels, chat), payment records, and everything you uploaded here: puzzles, pictures, adverts, pop-ups, slide and site texts. Download one every week and keep it safe (it also holds private keys, so never share it). If the game\'s disk is ever lost, put the game back online, create your admin account, and restore this file.'),
+      h('div', { class: 'card stack' }, last, h('div', { class: 'adm-actions' }, dl)),
+      h('div', { class: 'card stack' }, h('h3', {}, 'Restore a backup'),
+        h('p', { class: 'adm-hint' }, `This REPLACES everything on the live game with the file's contents, then the game restarts (about a minute). What was there before is kept aside on the server in a folder called before-restore. The file can be up to ${backupInfo.maxMb} MB.`),
+        file, word, h('div', { class: 'adm-actions' }, go), bar));
+  }
+
   // ---------- Google AdSense ----------
   let adsense = { publisher: '', enabled: false, adsTxt: '', side: {} };
   function adsenseSection() {
@@ -1055,6 +1109,164 @@
           h('p', { class: 'adm-hint' }, 'Pop-ups are for your own adverts only. Google does not allow its AdSense ads inside pop-ups.')));
   }
 
+  // ---------- PixSabi Radio ----------
+  let radioInfo = { max: 8000000, radio: null, now: Date.now() };
+  const fmtDur = (sec) => { sec = Math.round(sec); const m = Math.floor(sec / 60), r = sec % 60; return `${m}:${String(r).padStart(2, '0')}`; };
+  function audioDuration(file) {
+    return new Promise((resolve, reject) => {
+      const url = URL.createObjectURL(file);
+      const a = new Audio();
+      const done = (fn, v) => { URL.revokeObjectURL(url); fn(v); };
+      a.preload = 'metadata';
+      a.onloadedmetadata = () => (isFinite(a.duration) && a.duration > 0 ? done(resolve, a.duration) : done(reject, new Error('The length of that audio could not be read.')));
+      a.onerror = () => done(reject, new Error('This browser cannot play that file. Use MP3, M4A, OGG or WAV.'));
+      a.src = url;
+    });
+  }
+  function radioSection() {
+    const cur = radioInfo.radio;
+    let chosen = null, duration = 0;
+    const info = h('p', { class: 'adm-hint' }, `MP3, M4A, OGG or WAV, up to ${fmtMB(radioInfo.max)}. A 64 kbps MP3 is about 0.5 MB a minute, so you get around ${Math.round(radioInfo.max / 500000)} minutes (a 32 kbps mono MP3 is plenty for speech and doubles that). It goes on air the moment it is added.`);
+    const file = h('input', { type: 'file', id: 'rd-file', accept: 'audio/mpeg,audio/mp4,audio/ogg,audio/wav,.mp3,.m4a,.ogg,.wav' });
+    file.addEventListener('change', async () => {
+      chosen = null; const f = file.files[0]; if (!f) return;
+      if (f.size > radioInfo.max) { file.value = ''; info.textContent = `That file is too big. The limit is ${fmtMB(radioInfo.max)}.`; return; }
+      info.textContent = 'Reading the length…';
+      try { duration = await audioDuration(f); chosen = f; info.textContent = `Ready: ${f.name} (${fmtMB(f.size)}, ${fmtDur(duration)})`; }
+      catch (e) { file.value = ''; info.textContent = e.message; toast(e.message, true); }
+    });
+    const nTitle = h('input', { type: 'text', maxlength: '80', placeholder: 'Title, e.g. Friday news (shown on the sound button)', 'aria-label': 'Radio title' });
+    const add = h('button', { class: 'btn', type: 'button' }, cur ? 'Replace and go on air' : 'Put on air');
+    // The file goes up as it is (not wrapped in text), with a progress figure, so a long audio does not time out.
+    const send = (f) => new Promise((resolve, reject) => {
+      const x = new XMLHttpRequest();
+      x.open('POST', '/api/admin/radio/upload');
+      x.withCredentials = true;
+      x.setRequestHeader('Content-Type', 'application/octet-stream');
+      x.setRequestHeader('X-Duration', String(duration));
+      x.setRequestHeader('X-Title', encodeURIComponent(nTitle.value));
+      x.upload.onprogress = (e) => { if (e.lengthComputable) add.textContent = `Uploading… ${Math.round((e.loaded / e.total) * 100)}%`; };
+      x.onload = () => { let d = {}; try { d = JSON.parse(x.responseText); } catch { /* not JSON */ } x.status === 200 ? resolve(d) : reject(new Error(d.error || `The upload failed (${x.status}).`)); };
+      x.onerror = () => reject(new Error('The upload was cut off. Check your connection and try again.'));
+      x.send(f);
+    });
+    add.addEventListener('click', async () => {
+      if (!chosen) return toast('Choose a sound file first.', true);
+      if (cur && !confirm('This replaces what is on air now. Continue?')) return;
+      add.disabled = true;
+      try { radioInfo = await send(chosen); toast('On air'); draw(); }
+      catch (e) { toast(e.message, true); add.disabled = false; add.textContent = cur ? 'Replace and go on air' : 'Put on air'; }
+    });
+    let now = null;
+    if (cur) {
+      const title = h('input', { type: 'text', maxlength: '80', value: cur.title || '', 'aria-label': 'On-air title' });
+      const active = h('input', { type: 'checkbox', id: 'rd-act' }); active.checked = !!cur.active;
+      const call = async (body, msg) => { try { radioInfo = await api('/admin/radio', { method: 'PUT', body }); toast(msg); draw(); } catch (e) { toast(e.message, true); } };
+      const save = h('button', { class: 'btn small', type: 'button' }, 'Save');
+      save.addEventListener('click', () => call({ title: title.value, active: active.checked }, 'Saved'));
+      const restart = h('button', { class: 'btn small alt', type: 'button' }, 'Start again from the beginning');
+      restart.addEventListener('click', () => { if (confirm('Everyone listening will jump back to the start. Continue?')) call({ restart: true }, 'Restarted'); });
+      const del = h('button', { class: 'btn small danger', type: 'button' }, 'Take off air and delete');
+      del.addEventListener('click', async () => {
+        if (!confirm('Delete this audio? Players will hear the theme song again.')) return;
+        try { radioInfo = await api('/admin/radio', { method: 'DELETE' }); toast('Deleted'); draw(); } catch (e) { toast(e.message, true); }
+      });
+      const into = Math.max(0, ((Date.now() - cur.startedAt) / 1000) % cur.duration);
+      now = h('div', { class: 'card' },
+        h('div', { class: 'adm-answer' }, cur.active ? 'On air now' : 'Switched off (players hear the theme song)'),
+        cur.missing ? h('p', { class: 'adm-warn' }, 'The sound file is missing. Delete this and upload it again.') : h('audio', { controls: '', preload: 'none', src: cur.url }),
+        h('p', { class: 'adm-hint' }, `${cur.ext.toUpperCase()}, ${fmtMB(cur.bytes)}, ${fmtDur(cur.duration)} long, loops all day. Right now the broadcast is at ${fmtDur(into)}.`),
+        h('div', { class: 'field' }, title),
+        h('div', { class: 'field adm-check' }, active, h('label', { for: 'rd-act' }, 'On air (replaces the theme song)')),
+        h('div', { class: 'adm-actions' }, save, restart, del));
+    }
+    return h('section', { class: 'adm-ads' },
+      h('h2', {}, 'PixSabi Radio'),
+      h('p', { class: 'adm-hint' }, 'Put a news bulletin, music or podcast on air. It replaces the theme song for every player whose sound is on. It plays like a live radio: everybody hears the same moment, and someone who comes back later joins where the broadcast is now, not from the start. It repeats until you upload the next one. Upload a new one each day.'),
+      now,
+      h('div', { class: 'card' },
+        h('div', { class: 'adm-answer' }, cur ? 'Replace it' : 'Add audio'),
+        h('div', { class: 'field' }, h('label', { for: 'rd-file' }, 'Sound file'), file, info),
+        h('div', { class: 'field' }, nTitle),
+        h('div', { class: 'adm-actions' }, add)));
+  }
+
+  // ---------- contest commentary ----------
+  let comm = { settings: { enabled: true, breakEvery: 3, readBios: true }, max: 8, maxBytes: 900000, ads: [] };
+  function commentarySection() {
+    const st = comm.settings;
+    const on = h('input', { type: 'checkbox', id: 'cm-on' }); on.checked = !!st.enabled;
+    const bios = h('input', { type: 'checkbox', id: 'cm-bios' }); bios.checked = !!st.readBios;
+    const every = h('input', { type: 'text', inputmode: 'numeric', id: 'cm-every', maxlength: '2', value: String(st.breakEvery) });
+    const saveSet = h('button', { class: 'btn small', type: 'button' }, 'Save settings');
+    saveSet.addEventListener('click', async () => {
+      saveSet.disabled = true;
+      try { comm = await api('/admin/commentary/settings', { method: 'PUT', body: { enabled: on.checked, readBios: bios.checked, breakEvery: Number(every.value) } }); toast('Settings saved'); draw(); }
+      catch (e) { toast(e.message, true); saveSet.disabled = false; }
+    });
+    const adItem = (a) => {
+      const label = h('input', { type: 'text', maxlength: '60', value: a.label || '', 'aria-label': 'Audio advert label' });
+      const who = h('input', { type: 'text', maxlength: '40', value: a.advertiser || '', 'aria-label': 'Audio advert advertiser' });
+      const active = h('input', { type: 'checkbox', id: 'cma-' + a.id }); active.checked = !!a.active;
+      const save = h('button', { class: 'btn small', type: 'button' }, 'Save');
+      save.addEventListener('click', async () => {
+        save.disabled = true;
+        try { comm = await api('/admin/commentary/ads/' + a.id, { method: 'PUT', body: { label: label.value, advertiser: who.value, active: active.checked } }); toast('Saved'); draw(); }
+        catch (e) { toast(e.message, true); save.disabled = false; }
+      });
+      const del = h('button', { class: 'btn small danger', type: 'button' }, 'Delete');
+      del.addEventListener('click', async () => {
+        if (!confirm('Delete this audio advert?')) return;
+        try { comm = await api('/admin/commentary/ads/' + a.id, { method: 'DELETE' }); toast('Deleted'); draw(); } catch (e) { toast(e.message, true); }
+      });
+      return h('div', { class: 'card' },
+        a.missing ? h('p', { class: 'adm-warn' }, 'The sound file is missing. Delete this and add it again.') : h('audio', { controls: '', preload: 'none', src: a.url }),
+        h('p', { class: 'adm-hint' }, `${a.ext.toUpperCase()}, ${fmtMB(a.bytes)}, played ${a.plays || 0} time${a.plays === 1 ? '' : 's'}`),
+        h('div', { class: 'field' }, label), h('div', { class: 'field' }, who),
+        h('div', { class: 'field adm-check' }, active, h('label', { for: 'cma-' + a.id }, 'Active (played in the break)')),
+        h('div', { class: 'adm-actions' }, save, del));
+    };
+    let fileData = null;
+    const info = h('p', { class: 'adm-hint' }, `MP3, M4A, OGG or WAV, up to ${fmtMB(comm.maxBytes)} (about 30 to 60 seconds).`);
+    const file = h('input', { type: 'file', id: 'cm-file', accept: 'audio/mpeg,audio/mp4,audio/ogg,audio/wav,.mp3,.m4a,.ogg,.wav' });
+    file.addEventListener('change', async () => {
+      const f = file.files[0]; fileData = null; if (!f) return;
+      if (f.size > comm.maxBytes) { file.value = ''; info.textContent = `That file is too big. The limit is ${fmtMB(comm.maxBytes)}.`; return; }
+      try {
+        const d = await readAsDataUrl(f);
+        const ext = (f.name.split('.').pop() || '').toLowerCase();
+        const mime = { mp3: 'audio/mpeg', m4a: 'audio/mp4', ogg: 'audio/ogg', wav: 'audio/wav' }[ext] || f.type || 'audio/mpeg';
+        fileData = d.replace(/^data:[^;,]*/, 'data:' + mime);
+        info.textContent = `Ready: ${f.name} (${fmtMB(f.size)})`;
+      } catch (e) { file.value = ''; info.textContent = e.message; }
+    });
+    const nLabel = h('input', { type: 'text', maxlength: '60', placeholder: 'Label (for you)', 'aria-label': 'New audio advert label' });
+    const nWho = h('input', { type: 'text', maxlength: '40', placeholder: 'Advertiser name (for the dashboard report)', 'aria-label': 'New audio advert advertiser' });
+    const add = h('button', { class: 'btn', type: 'button' }, 'Add audio advert');
+    add.addEventListener('click', async () => {
+      if (!fileData) return toast('Choose a sound file first.', true);
+      add.disabled = true;
+      try { comm = await api('/admin/commentary/ads', { method: 'POST', body: { file: fileData, label: nLabel.value, advertiser: nWho.value, active: true } }); toast('Advert added'); draw(); }
+      catch (e) { toast(e.message, true); add.disabled = false; }
+    });
+    return h('section', { class: 'adm-ads' },
+      h('h2', {}, 'Contest commentary'),
+      h('p', { class: 'adm-hint' }, 'A spoken announcer for races. Each listener hears it in the voice of their own phone or computer. At the commercial break one of the audio adverts below plays. Premium players do not hear the break.'),
+      h('div', { class: 'card' },
+        h('div', { class: 'field adm-check' }, on, h('label', { for: 'cm-on' }, 'Offer live commentary in races')),
+        h('div', { class: 'field adm-check' }, bios, h('label', { for: 'cm-bios' }, 'Read each player\'s profile description aloud')),
+        h('div', { class: 'field' }, h('label', { for: 'cm-every' }, 'Commercial break every … minutes (1 to 15)'), every),
+        h('div', { class: 'adm-actions' }, saveSet)),
+      h('div', { class: 'adm-ad-grid' }, comm.ads.map(adItem)),
+      comm.ads.length >= comm.max
+        ? h('p', { class: 'adm-note' }, `You have ${comm.max} audio adverts, the most allowed. Delete one to add another.`)
+        : h('div', { class: 'card' },
+          h('div', { class: 'adm-answer' }, 'Add an audio advert'),
+          h('div', { class: 'field' }, h('label', { for: 'cm-file' }, 'Sound file'), file, info),
+          h('div', { class: 'field' }, nLabel), h('div', { class: 'field' }, nWho),
+          h('div', { class: 'adm-actions' }, add)));
+  }
+
   // ---------- list ----------
   function matches(p, cat) {
     if (p.category !== cat) return false;
@@ -1107,6 +1319,8 @@
       h('div', { class: 'adm-foldbar' },
         h('button', { class: 'btn small alt', type: 'button', onclick: () => folds.forEach((f) => f.set(true, true)) }, 'Open all'),
         h('button', { class: 'btn small alt', type: 'button', onclick: () => folds.forEach((f) => f.set(false, true)) }, 'Close all')),
+      fold('backup', backupSection()),
+      fold('radio', radioSection()),
       fold('resets', resetRequestsSection()),
       fold('announce', announceSection()),
       fold('sponsor', sponsorSection()),
@@ -1123,6 +1337,7 @@
       fold('bg', bgSection()),
       fold('worldbg', worldBgSection()),
       fold('popups', popupsSection()),
+      fold('commentary', commentarySection()),
       fold('puzzles-naija', naijaSection),
       fold('puzzles-universal', universalSection));
     refreshers.forEach((f) => f());
@@ -1141,10 +1356,13 @@
     bgs = (await api('/admin/loginbg')).pictures;
     wbgs = (await api('/admin/worldbg')).pictures;
     popups = await api('/admin/popups');
+    try { radioInfo = await api('/admin/radio'); } catch { /* keep default */ }
+    try { comm = await api('/admin/commentary'); } catch { /* keep default */ }
     adsense = await api('/admin/adsense');
     social = await api('/admin/social');
     try { wm = await api('/admin/watermark'); } catch { /* keep default */ }
     chatLock = await api('/admin/chat-lock');
+    try { backupInfo = await api('/admin/backup'); } catch { /* keep default */ }
     draw();
   }
 
