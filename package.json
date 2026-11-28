@@ -1,6 +1,6 @@
 {
   "name": "pixsabi",
-  "version": "2.59.1",
+  "version": "2.62.0",
   "description": "PixSabi - a look, think, answer picture game on Nigerian food, places, stars, slang and culture. One collage picture per puzzle, login, profiles with photos, solo play, daily puzzle, group challenges for 2 to 8 players, leaderboard. Admin page for puzzles and installable app. SQLite database. Buy coins with Paystack. Zero dependencies.",
   "main": "src/server.js",
   "scripts": {
@@ -8,7 +8,7 @@
     "dev": "node --watch src/server.js",
     "validate": "node scripts/validate-puzzles.js",
     "images": "node scripts/check-images.js",
-    "test": "node scripts/syntax-test.js && node scripts/compress-test.js && node scripts/income-test.js && node scripts/rename-test.js && node scripts/persist-test.js && node scripts/backup-test.js && node scripts/validate-puzzles.js && node scripts/image-test.js && node scripts/db-test.js && node scripts/smoke-test.js && node scripts/group-test.js && node scripts/profile-test.js && node scripts/pay-test.js && node scripts/admin-test.js && node scripts/chat-test.js && node scripts/alerts-test.js && node scripts/worlds-test.js && node scripts/ranks-test.js && node scripts/account-test.js && node scripts/home-test.js && node scripts/announce-test.js && node scripts/wordsearch-test.js && node scripts/dashboard-test.js && node scripts/music-test.js && node scripts/slide-test.js && node scripts/naijapic-test.js && node scripts/premium-test.js && node scripts/sponsor-test.js && node scripts/quiz-test.js && node scripts/racetimer-test.js && node scripts/adsense-test.js && node scripts/social-test.js && node scripts/raceclean-test.js && node scripts/verify-test.js && node scripts/delete-test.js && node scripts/commentary-test.js && node scripts/radio-test.js",
+    "test": "node scripts/syntax-test.js && node scripts/compress-test.js && node scripts/income-test.js && node scripts/rename-test.js && node scripts/persist-test.js && node scripts/backup-test.js && node scripts/validate-puzzles.js && node scripts/image-test.js && node scripts/db-test.js && node scripts/smoke-test.js && node scripts/group-test.js && node scripts/profile-test.js && node scripts/pay-test.js && node scripts/admin-test.js && node scripts/chat-test.js && node scripts/alerts-test.js && node scripts/worlds-test.js && node scripts/ranks-test.js && node scripts/account-test.js && node scripts/home-test.js && node scripts/announce-test.js && node scripts/wordsearch-test.js && node scripts/dashboard-test.js && node scripts/music-test.js && node scripts/slide-test.js && node scripts/naijapic-test.js && node scripts/premium-test.js && node scripts/sponsor-test.js && node scripts/quiz-test.js && node scripts/racetimer-test.js && node scripts/adsense-test.js && node scripts/social-test.js && node scripts/raceclean-test.js && node scripts/verify-test.js && node scripts/delete-test.js && node scripts/commentary-test.js && node scripts/radio-test.js && node scripts/theme-test.js",
     "backup": "node scripts/backup.js",
     "orders": "node scripts/orders.js"
   },

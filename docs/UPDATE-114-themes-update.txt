@@ -1,0 +1,9 @@
+UPDATE 114 - v2.62.0 - Futuristic look for the whole game, with themes players can pick
+
+- The whole game now has the futuristic look of the login screen: dark glass panels with glowing outlines, a faint grid in the background, gradient buttons, a glowing picture frame, glowing letter keys, and a spaced-out PIXSABI logo.
+- Players choose their theme in Settings > Theme (tap a card, the whole game changes at once): Futuristic (cyan glow on deep violet, the default), Naija Green, Sunset (orange and pink) and Classic (the original violet and gold, unchanged).
+- The choice is kept on the player's phone. New players start on Futuristic. The phone's top bar colour follows the theme.
+- Coins, Premium crowns and stars stay gold in every theme. The login screen is unchanged.
+- Nothing about puzzles, races, coins or accounts changed. The theme is a look only.
+
+FILES: public/css/themes.css (new), public/js/theme.js (new), public/index.html, public/js/app.js (Settings picker), public/sw.js (cache v92), scripts/theme-test.js (new), package.json (2.62.0).

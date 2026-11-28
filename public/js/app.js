@@ -2919,11 +2919,30 @@
     img.addEventListener('load', () => { box.textContent = ''; box.classList.add('has-img'); box.append(img); }, { once: true });
     return box;
   }
+  // Theme picker: tap a look and the whole game changes at once. Kept on this phone.
+  function themeCard() {
+    const cur = () => NS.theme.get();
+    const list = h('div', { class: 'th-list' });
+    const draw = () => {
+      list.textContent = '';
+      for (const t of NS.theme.list) {
+        const on = cur() === t.id;
+        const sw = h('span', { class: 'th-sw', 'aria-hidden': 'true' });
+        sw.append(...t.swatch.map((c) => { const i = document.createElement('i'); i.style.background = c; return i; }));
+        list.append(h('button', { class: 'th-card', type: 'button', 'aria-pressed': on ? 'true' : 'false', onclick: () => { NS.theme.set(t.id); draw(); } },
+          sw, h('b', {}, t.name), h('small', {}, t.note), h('span', { class: 'th-on' }, on ? 'In use' : '')));
+      }
+    };
+    draw();
+    return h('div', { class: 'card' }, h('h3', {}, 'Theme'), h('p', { class: 'muted' }, 'Pick the look of the whole game. It is kept on this phone.'), list);
+  }
+
   async function viewSettings() {
     const main = shell('me');
     main.classList.add('stack');
     main.append(h('h2', {}, 'Settings'),
       h('div', { class: 'card' }, h('h3', {}, 'Install the game'), installSlot(false)),
+      NS.theme ? themeCard() : null,
       h('div', { class: 'card' },
         h('h3', {}, 'Sound'),
         h('div', { class: 'field alert-check' },
